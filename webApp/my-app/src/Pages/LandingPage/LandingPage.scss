@@ -1,0 +1,74 @@
+main.LandingPage {
+    .myIntro {
+        padding: 1em 0.8em;
+        padding-bottom: 2em;
+    }
+
+    p {
+        font-family: "Fira Code", monospace;
+        font-weight: 800;
+        font-size: 16px;
+        text-align: left;
+
+        @media screen and (min-width: 420px) {
+            & {
+                font-size: 20px;
+            }
+        }
+    }
+
+    > nav {
+        height: var(--topNav-height);
+        position: sticky;
+        top: 0;
+        display: flex;
+        z-index: 9;
+        align-items: center;
+        background-color: var(--headerBar-bg-color);
+        justify-content: space-around;
+
+        a {
+            color: var(--headerBar-link-color);
+        }
+        figure {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    > section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 1em;
+
+        &:nth-of-type(odd) {
+            background-color: var(--background-color);
+            p {
+                color: var(--text-color);
+            }
+            h1 {
+                color: var(--title-color);
+            }
+        }
+        &:nth-of-type(even) {
+            background-color: var(--background2-color);
+            p {
+                color: var(--text2-color);
+            }
+            h1 {
+                color: var(--title2-color);
+            }
+        }
+    }
+
+    .flexGrid {
+        justify-content: center;
+        align-items: center;
+
+        > * {
+            min-width: 300px;
+            max-width: 900px;
+        }
+    }
+}

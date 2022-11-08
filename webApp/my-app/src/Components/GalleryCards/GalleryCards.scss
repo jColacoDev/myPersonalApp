@@ -1,0 +1,123 @@
+.GalleryCards {
+    @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+    font-size: 16px;
+
+    figure.snip1113 {
+        font-family: "Raleway", Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+        min-width: 10em;
+        max-width: 310px;
+        background: #ffffff;
+        text-align: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+
+    figure.snip1113 * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    figure.snip1113 img {
+        max-width: 8em;
+        margin: 20px auto;
+        display: block;
+        position: relative;
+        border: 3px solid #666666;
+        padding: 0.8em 0.8em 5em 0.8em;
+        transform: translate(0, 0);
+    }
+
+    figure.snip1113 figcaption {
+        position: absolute;
+        bottom: 2em;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+
+    figure.snip1113 h3 {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 1.2em;
+        width: 100%;
+        padding: 5px 12px;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    figure.snip1113 h3 span {
+        font-weight: 800;
+    }
+
+    figure.snip1113 h4 {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        opacity: 0.6;
+        font-size: 1em;
+    }
+
+    figure.snip1113.blue img {
+        border-color: #2472a4;
+    }
+
+    figure.snip1113.blue h3,
+    figure.snip1113.blue h4 {
+        color: #2472a4;
+    }
+
+    figure.snip1113.red img {
+        border-color: #ab3326;
+    }
+
+    figure.snip1113.red h3,
+    figure.snip1113.red h4 {
+        color: #ab3326;
+    }
+
+    figure.snip1113.yellow img {
+        border-color: #e08e0b;
+    }
+
+    figure.snip1113.yellow h3,
+    figure.snip1113.yellow h4 {
+        color: #e08e0b;
+    }
+
+    figure.snip1113.green img {
+        border-color: #229955;
+    }
+
+    figure.snip1113.green h3,
+    figure.snip1113.green h4 {
+        color: #229955;
+    }
+
+    figure.snip1113.orange img {
+        border-color: #d67118;
+    }
+
+    figure.snip1113.orange h3,
+    figure.snip1113.orange h4 {
+        color: #d67118;
+    }
+
+    figure.snip1113.navy img {
+        border-color: #2b3c4e;
+    }
+
+    figure.snip1113.navy h3,
+    figure.snip1113.navy h4 {
+        color: #2b3c4e;
+    }
+}

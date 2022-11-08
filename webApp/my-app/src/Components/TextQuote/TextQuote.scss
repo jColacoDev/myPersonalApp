@@ -1,0 +1,32 @@
+.TextQuote {
+    max-width: 750px;
+    display: flex;
+    position: relative;
+    margin: 1em 0;
+
+    cite {
+        display: relative;
+        color: var(--text2-color);
+        font-family: "Hoefler Text", Georgia, Garamond, Times, serif;
+        letter-spacing: 0.1em;
+        text-align: center;
+        line-height: 110%;
+        font-size: 1.5em;
+        padding: 0 1em;
+        font-variant: small-caps;
+    }
+    cite:before {
+        content: "’’";
+        position: absolute;
+        left: 16px;
+        top: 4px;
+        pointer-events: none;
+        font-size: 8em;
+        text-align: left;
+        font-family: Arial;
+        letter-spacing: -14px;
+        font-style: normal;
+        font-weight: normal;
+        color: #7b9ab9;
+    }
+}

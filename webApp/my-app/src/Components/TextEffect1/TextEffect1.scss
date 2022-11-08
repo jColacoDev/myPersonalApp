@@ -1,0 +1,90 @@
+/* NOTE: I only tested this on Google Chrome.*/
+
+.TextEffect1 {
+    padding: 0em 1em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    max-width: 30em;
+    width: 22em;
+    font-family: "Fira Code", monospace;
+
+    .container {
+        width: 100%;
+    }
+
+    .container p {
+        font-weight: 800;
+        font-size: 1.2em;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: type 1.5s steps(40, end) forwards;
+        animation-delay: 1000ms;
+        width: 9.5em;
+        white-space: nowrap;
+        opacity: 0;
+        color: black;
+    }
+
+    .container h1 {
+        white-space: nowrap;
+        width: 6.2em;
+        opacity: 0;
+        margin: 0 auto auto auto;
+        color: var(--title-color);
+        font-weight: 800;
+        line-height: 1.2;
+        font-size: 2em;
+        overflow: hidden;
+        animation: shring-animation 1.5s steps(40, end) 2s forwards,
+            blink 0.5s step-end infinite alternate;
+        animation-delay: 3000ms;
+    }
+
+    @keyframes shring-animation {
+        0% {
+            background-position: 0 0;
+            opacity: 0;
+            width: 0;
+        }
+        1% {
+            background-position: 0 0;
+            opacity: 1;
+            border-right: 1px solid #892cdc;
+        }
+        50% {
+            background-position: 150px 0;
+            opacity: 1;
+            border-right: 1px solid #892cdc;
+        }
+        100% {
+            background-position: 400px 0;
+            opacity: 1;
+            border-right: 1px solid #892cdc;
+        }
+    }
+
+    @keyframes type {
+        0% {
+            width: 0;
+            opacity: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        99% {
+            border-right: 1px solid #892cdc;
+        }
+        100% {
+            opacity: 1;
+            border-right: none;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+}

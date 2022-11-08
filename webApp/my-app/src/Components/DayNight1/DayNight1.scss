@@ -1,0 +1,293 @@
+.DayNight1 {
+    &.darkTheme {
+        .container {
+            animation: gradientNight 3s forwards;
+        }
+        .spinner {
+            animation: spinMoon 3s forwards;
+        }
+        .stars {
+            animation: twinkleOn 3s forwards;
+        }
+    }
+
+    &:not(.darkTheme) {
+        .container {
+            animation: gradientDay 3s forwards;
+        }
+        .spinner {
+            animation: spinSun 3s forwards;
+        }
+        .stars {
+            animation: twinkleOff 3s forwards;
+        }
+    }
+
+    .wrapper {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .container {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(
+            -45deg,
+            #3bffff 15%,
+            #efe53c 40%,
+            #2360d5,
+            #9d00ff
+        );
+        background-size: 400% 400%;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    a {
+        display: block;
+        background-color: #ffffff;
+        font-size: 1.2em;
+        font-family: "Poppins", sans-serif;
+        margin-top: 1.4em;
+        padding: 0.8em 0;
+        text-align: center;
+        border-radius: 0.3em;
+        color: #0c1330;
+        text-decoration: none;
+    }
+    .spinner {
+        height: 100%;
+        width: 40%;
+        border-radius: 50%;
+        position: absolute;
+        top: 8.75em;
+        left: -5.62em;
+    }
+
+    .sun {
+        background-color: #f7f7de;
+        height: 3.75em;
+        width: 3.75em;
+        border-radius: 50%;
+        position: absolute;
+        left: 15em;
+        top: -1.87em;
+    }
+    .sun:before,
+    .sun:after {
+        position: absolute;
+        content: "";
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+    .sun:before {
+        height: 7.5em;
+        width: 7.5em;
+        right: -1.87em;
+        bottom: -1.87em;
+    }
+    .sun:after {
+        height: 12.5em;
+        width: 12.5em;
+        right: -4.37em;
+        bottom: -4.37em;
+    }
+    .ray1 {
+        height: 0;
+        width: 0.6em;
+        border-bottom: 10.6em solid rgba(255, 255, 255, 0.1);
+        border-left: 1.8em solid transparent;
+        border-right: 1.8em solid transparent;
+        position: absolute;
+        transform: rotate(130deg);
+        bottom: 0.6em;
+        right: 4em;
+    }
+    .ray2 {
+        position: absolute;
+        height: 0;
+        width: 0.9em;
+        border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+        border-left: 2.1em solid transparent;
+        border-right: 2.1em solid transparent;
+        transform: rotate(230deg);
+        left: 3.75em;
+        bottom: -0.3em;
+    }
+    .ray3 {
+        position: absolute;
+        height: 0;
+        width: 0.3em;
+        border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+        border-left: 0.9em solid transparent;
+        border-right: 0.9em solid transparent;
+        transform: rotate(80deg);
+        left: -5.3em;
+        bottom: -5.6em;
+    }
+    .ray4 {
+        position: absolute;
+        height: 0;
+        width: 0.1em;
+        border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+        border-left: 0.5em solid transparent;
+        border-right: 0.5em solid transparent;
+        transform: rotate(280deg);
+        left: 7.5em;
+        bottom: -5.6em;
+    }
+    .stars {
+        height: 0.15em;
+        width: 0.15em;
+        background-color: white;
+        position: absolute;
+        top: 3.7em;
+        left: 9.3em;
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    .glow {
+        height: 21.8em;
+        width: 21.8em;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        bottom: -19em;
+        animation: float 5s;
+    }
+    @keyframes float {
+        50% {
+            transform: translateY(0.75em);
+        }
+    }
+    .glow:before,
+    .glow:after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border-radius: 50%;
+    }
+    .glow:before {
+        left: -9.3em;
+        top: -3.1em;
+    }
+    .glow:after {
+        right: -5.6em;
+        top: -0.9em;
+    }
+    @media screen and (min-width: 600px) {
+        .container {
+            font-size: 20px;
+        }
+    }
+
+    .moon {
+        margin-top: 20px;
+        background: #d9d8d0;
+        box-shadow: inset -10px 2px 0 0px #899098;
+        height: 3.75em;
+        width: 3.75em;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -3.1em;
+        left: -5em;
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        &:before {
+            height: 6.25em;
+            width: 6.25em;
+            right: -1.5em;
+            bottom: -1em;
+        }
+        &:after {
+            height: 11.8em;
+            width: 11.8em;
+            left: -3.8em;
+            bottom: -3.8em;
+        }
+
+        & div:nth-child(n) {
+            position: relative;
+            background: #b9b8b0;
+            border-radius: 50%;
+            box-shadow: inset 4px -2px 0 0px #535457;
+        }
+        & div:nth-child(1) {
+            top: 25%;
+            left: 12%;
+            width: 27%;
+            height: 27%;
+        }
+        & div:nth-child(2) {
+            top: -10%;
+            left: 60%;
+            width: 16%;
+            height: 16%;
+        }
+        & div:nth-child(3) {
+            top: 25%;
+            left: 44%;
+            width: 16%;
+            height: 16%;
+        }
+    }
+
+    @keyframes spinMoon {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    @keyframes twinkleOn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.7;
+        }
+    }
+    @keyframes gradientNight {
+        0% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes spinSun {
+        0% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes twinkleOff {
+        0% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes gradientDay {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+}
