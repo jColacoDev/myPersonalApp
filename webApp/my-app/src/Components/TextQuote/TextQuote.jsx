@@ -2,7 +2,6 @@ import "./TextQuote.scss";
 import React from "react";
 
 export default function TextQuote() {
-    const [counter, setCounter] = React.useState(0);
     const [quote, setQuote] = React.useState("");
     const [author, setAuthor] = React.useState("");
 
