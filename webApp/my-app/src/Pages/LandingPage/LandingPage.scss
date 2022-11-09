@@ -1,6 +1,8 @@
 main.LandingPage {
     .AboutMe{
         .flexGrid{
+            width: 100%;
+
             .CanvasPortrait {
                 max-width: 650px;
             }
@@ -10,6 +12,7 @@ main.LandingPage {
     .myIntro {
         padding: 1em 0.8em;
         padding-bottom: 2em;
+        max-width: 1000px;
     }
 
     p {
