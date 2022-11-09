@@ -31,6 +31,7 @@ const LandingPage = () => {
                 <Link>I do</Link>
                 <figure></figure>
             </nav>
+
             <section className="AboutMe">
                 <TextEffect1></TextEffect1>
                 <div className="flexGrid">
@@ -44,7 +45,7 @@ const LandingPage = () => {
                     </p>
                 </div>
             </section>
-            <section className="flexGrid">
+            <section>
                 <TextQuote></TextQuote>
                 <ContactLetter></ContactLetter>
             </section>

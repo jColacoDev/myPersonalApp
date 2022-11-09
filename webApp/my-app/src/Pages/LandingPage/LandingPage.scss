@@ -1,4 +1,12 @@
 main.LandingPage {
+    .AboutMe{
+        .flexGrid{
+            .CanvasPortrait {
+                max-width: 650px;
+            }
+        }
+    }
+
     .myIntro {
         padding: 1em 0.8em;
         padding-bottom: 2em;
@@ -20,7 +28,7 @@ main.LandingPage {
     > nav {
         height: var(--topNav-height);
         position: sticky;
-        top: 0;
+        top: -1px;
         display: flex;
         z-index: 9;
         align-items: center;
@@ -38,8 +46,10 @@ main.LandingPage {
 
     > section {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2em;
         padding: 1em;
 
         &:nth-of-type(odd) {
@@ -63,12 +73,9 @@ main.LandingPage {
     }
 
     .flexGrid {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-
-        > * {
-            min-width: 300px;
-            max-width: 900px;
-        }
     }
 }

@@ -3,8 +3,8 @@
 
     height: 23em;
     width: 100%;
+    max-width: 450px;
     position: relative;
-    max-width: 26em;
 
     .wrapper .letter .side h1 {
         font-size: 2em;
@@ -67,16 +67,20 @@
     button {
         padding: 0.1em 1em;
         border-radius: 0.25em;
-        color: rgba(78, 94, 114, 0.9);
+        color: black;
         box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-            rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
         font-size: 1em;
         transition: background-color 0.2s;
+        cursor: pointer;
+        transition: .2s;
     }
     button:hover,
     button :focus {
+        box-shadow: none;
+        color: white;
         outline: none;
-        background-color: rgba(78, 94, 114, 1);
+        background-color: #0037ff8a;
     }
     input[type="text"]:focus,
     input[type="email"]:focus,
@@ -88,6 +92,7 @@
         position: relative;
         background-color: white;
         z-index: 2;
+        max-width: 450px;
     }
     .letter {
         position: absolute;
@@ -173,7 +178,6 @@
     .result-message {
         opacity: 0;
         transition: all 0.3s 2s;
-        transform: translateY(9em);
         z-index: -9999;
         text-align: center;
         max-width: 15em;
@@ -203,7 +207,11 @@
     }
     &.sent .result-message {
         opacity: 1;
-        transform: translateY(12em) translateX(3em);
+        transform: translateY(12em) translateX(5.5em);
+        &:hover{
+            transform: translateY(calc(12em + 4px)) translateX(5.5em);
+            background-color: #21337666;
+        }
     }
     &.sent small {
         opacity: 0;

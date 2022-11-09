@@ -4,6 +4,7 @@
 :root[data-theme="lightTheme"] {
     --background-color: #37ff4040;
     --text-color: #4c4c6d;
+    --text-color-hover: black;
     --title-color: #334f3b;
 
     --background2-color: #fffe3740;
@@ -19,6 +20,8 @@
 :root[data-theme="darkTheme"] {
     --background-color: #1d2226;
     --text-color: #78b7bb;
+    --text-color-hover: white;
+
     --title-color: #7ce3b3;
 
     --background2-color: #000;
