@@ -1,0 +1,27 @@
+{
+    "name": "package-json",
+    "version": "1.6.9",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "jColaco.dev",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.2",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-rate-limit": "^5.5.0",
+        "fs": "^0.0.1-security",
+        "helmet": "^4.6.0",
+        "http": "^0.0.1-security",
+        "https": "^1.0.0",
+        "node-fetch": "^2.6.7",
+        "path": "^0.12.7",
+        "pg": "^8.7.3",
+        "tunnel-ssh": "^4.1.6"
+    },
+    "keywords": [],
+    "description": ""
+}
