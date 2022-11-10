@@ -1,5 +1,7 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 import lxBg from "../../Images/lxBg.png";
+import lxBg1 from "../../Images/lx1.png";
+import lxBg2 from "../../Images/lx2.png";
 import "./ParallaxBanner1.scss";
 
 export const ParallaxBanner1 = () => {
@@ -12,7 +14,7 @@ export const ParallaxBanner1 = () => {
     };
 
     const headline = {
-        translateY: [0, 30],
+        translateY: [-10, 20],
         scale: [1, 1.05, "easeOutCubic"],
         shouldAlwaysCompleteAnimation: true,
         expanded: false,
