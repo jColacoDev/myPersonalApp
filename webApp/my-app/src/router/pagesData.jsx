@@ -1,5 +1,5 @@
 import About from "../Pages/About/About";
-import Home from "../Pages/Home/Home";
+import CurriculumV from "../Pages/CurriculumV/CurriculumV";
 import LandingPage from "../Pages/LandingPage/LandingPage";
 
 const pagesData = [
@@ -9,9 +9,9 @@ const pagesData = [
         title: "landing page",
     },
     {
-        path: "home",
-        element: <Home />,
-        title: "home",
+        path: "cv",
+        element: <CurriculumV />,
+        title: "cv",
     },
     {
         path: "about",
