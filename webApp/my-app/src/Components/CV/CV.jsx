@@ -3,81 +3,54 @@ import "./CV.scss";
 
 export default function CV() {
 
+    
     const [navButtons, setNavButtons] = React.useState([
         { state: "active", title: "CV" },
         { state: "", title: "PORTFOLIO" },
         { state: "", title: "PROJECTS" },
     ]);
     const [navUl, setNavUl] = React.useState(
-        <ul className="nav">
-            {navButtons.map((item, index) => 
-                <li key={index} className={item.state}>
-                    <button onClick={handleClick_btn} 
-                    className="btn--cv">{item.title}</button>
-                </li>
-            )}
-        </ul>
+        navButtons.map((item) => 
+            <li key={item.title} className={item.state}>
+                <button onClick={handleClick_btn} 
+                className="btn--cv">{item.title}</button>
+            </li>
+        )
     );
 
-
-        React.useEffect(() => {
-            console.log("lel useEffect");
-            setNavUl(
-                <ul className="nav">
-                {navButtons.map((item, index) => 
-                    <li key={index} className={item.state}>
-                        <button onClick={handleClick_btn} 
-                        className="btn--cv">{item.title}</button>
-                    </li>
-                )}
-            </ul>
-            );
-        }, [navButtons]);
-
-        const pages = document.querySelector(".page"),
-            pageCV = document.querySelector(".page--cv"),
-            pagePortfolio = document.querySelector(".page--portfolio"),
-            pageProjects = document.querySelector(".page--projects"),
-            btns = document.querySelector(".navbar button"),
-            btnCV = document.querySelector(".btn--cv"),
-            btnPortfolio = document.querySelector(".btn--portfolio"),
-            btnProjects = document.querySelector(".btn--projects");
+    React.useEffect(() => {
+        // console.log(navButtons);
+        setNavUl(
+            navButtons.map((item) => 
+                <li key={item.title} 
+                    data-key={item.title}
+                    className={item.state}
+                    onClick={handleClick_btn}>
+                    <button className="btn--cv">
+                        {item.title}
+                    </button>
+                </li>
+            )  
+        );
+        console.log(navUl);
+    }, []);
     
-        const disableAllNavbarItems = (event) => {
-            console.log(event.parentElement.parentElement);
-            const ul = event.parentElement.parentElement;
+    function handleClick_btn (event) {
+            const   pages = document.querySelectorAll(".page"),
+                    navLis = document.querySelectorAll(".navbar li"),
+                    currentTarget = event.currentTarget;
 
-            ul.map((li)=>{
-                return li.classList.add("active");
-            });
-            // event.parentElement.removeClass("active");
-            // pages.removeClass("active");
-        };
-        const enableNavbarItem = (item, page) => {
-            // item.parentElement().addClass("active");
-            // page.addClass("active");
-        };
-    
-        function handleClick_btn (event) {
-            let aux = [navButtons.map(btn=>btn.state="")];
-            setNavButtons(aux);
-            console.log(navButtons);
+            for(let ele of navLis){
+                ele.classList.remove("active");
+            }
+            for(let ele of pages){
+                ele.classList.remove("active");
+            }
 
-            // disableAllNavbarItems(event.currentTarget);
-            // enableNavbarItem(btnCV, pageCV);
-        }
-    
-        function handleClick_btnCV (event) {
-            disableAllNavbarItems(event.currentTarget);
-            enableNavbarItem(btnCV, pageCV);
-        }
-        function handleClick_btnPortfolio (event) {
-            disableAllNavbarItems(event.currentTarget);
-            enableNavbarItem(btnPortfolio, pagePortfolio);
-        }
-        function handleClick_btnProjects (event) {
-            disableAllNavbarItems(event.currentTarget);
-            enableNavbarItem(btnProjects, pageProjects);
+            currentTarget.classList.add("active");
+            
+            const btnKey = currentTarget.dataset.key.toLowerCase();
+            document.querySelector(`.page--${btnKey}`).classList.add("active");
         }
 
   return (
@@ -110,22 +83,18 @@ export default function CV() {
 
                     <article className="user__socials socials">
                         <a className="social social--twitter" href="https://twitter.com/JoãoColaço">
-                            <svg className="social__icon social__icon--twitter">
-                                <use xlinkHref="#logo-twitter" />
-                            </svg>
-                            <span>@JoãoColaço</span>
+                            <img className="social__icon" src={require("../../Images/icons/linkedin.png")} alt="" />
+                            <span>linkdIn.com/jColaco</span>
                         </a>
                         <a className="social social--codepen" href="http://codepen.io/Chmood/">
-                            <svg className="social__icon social__icon--codepen">
-                                <use xlinkHref="#logo-codepen" />
-                            </svg>
-                            <span>codepen.io/chmood</span>
+                            <img className="social__icon" src={require("../../Images/icons/github.png")} alt="" />
+
+                            <span>github.com/jColaco</span>
                         </a>
                         <a className="social social--github" href="https://github.com/Chmood">
-                            <svg className="social__icon social__icon--github">
-                                <use xlinkHref="#logo-github" />
-                            </svg>
-                            <span>github.com/chmood</span>
+                            <img className="social__icon" src={require("../../Images/icons/codepen.png")} alt="" />
+
+                            <span>codepen.io//jColaco</span>
                         </a>
                     </article>
                 </section>
@@ -154,7 +123,18 @@ export default function CV() {
     <main className="cv__main">
         <section className="section section--nav">
             <div className="navbar">
-                {navUl}
+                <ul className="nav">
+                {navButtons.map((item) => 
+                    <li key={item.title} 
+                        data-key={item.title}
+                        className={item.state}
+                        onClick={handleClick_btn}>
+                        <button className="btn--cv">
+                            {item.title}
+                        </button>
+                    </li>
+                )}
+                </ul>
             </div>
         </section>
         <div className="page page--cv active">

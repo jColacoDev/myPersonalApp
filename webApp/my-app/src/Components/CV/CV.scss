@@ -618,14 +618,18 @@
         margin-bottom: $gutter-half;
 
         display: block;
-
+        
         &:hover {
+            span{
+                opacity: 1;
+                transform: translate3d(-50%, 70%, 0);
+            }
         }
 
         .social__icon {
             display: block;
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate3d(-50%, -60%, 0);
             width: $social-icon-size;
@@ -648,6 +652,9 @@
             line-height: 1;
             font-style: italic;
             color: white;
+            opacity: .8;
+            transition: .2s;
+
 
             &:before {
                 // skewed bg
@@ -712,8 +719,14 @@
                     font-weight: $fontweight-light !important;
                     font-size: $fontsize-bigger;
 
+                    cursor: pointer;
                     background-color: transparent;
                     color: white;
+
+                    &:hover {
+                        background-color: #ffffff70;
+                        color: black;
+                    }
 
                     &:focus {
                         border-color: white;
