@@ -1,5 +1,8 @@
 .CV {
     ////////////////////////////////////////////////////////////////////////////////
+    menu, article, aside, details, footer, header, nav, section {
+        display: block;
+    }
     // CONFIGURATION
     // Layout
     $breakpoints: (
@@ -26,29 +29,26 @@
     $color-gray-lighter: #eee !default;
 
     // Type
-    $pixels-per-rem: 10 !default; // Kind of global zoom
-    $fontsize-base: 1.6rem !default;
-    $fontsize-base-print: 1.4rem !default;
+    $pixels-per-rem: 16 !default; // Kind of global zoom
+    $fontsize-base: 1rem !default;
+    $fontsize-base-print: .8rem !default;
     $lineheight-base: 1.5 !default;
-    $fontsize-small: 1.4rem !default;
-    $fontsize-smaller: 1.2rem !default;
-    $fontsize-big: 1.8rem !default;
-    $fontsize-bigger: 2rem !default;
-    $fontsize-biggest: 2.4rem !default;
-    $fontsize-huge: 3rem !default;
-    $fontsize-huger: 3.6rem !default;
-    $fontsize-giant: 4rem !default;
+    $fontsize-small: .8rem !default;
+    $fontsize-smaller: .6rem !default;
+    $fontsize-big: 1.2rem !default;
+    $fontsize-bigger: 1.5rem !default;
+    $fontsize-biggest: 1.8rem !default;
+    $fontsize-huge: 2rem !default;
+    $fontsize-huger: 2.2rem !default;
+    $fontsize-giant: 2.6rem !default;
 
     $fontsize-h1: $fontsize-giant !default;
     $fontsize-h2: $fontsize-huger !default;
     $fontsize-h3: $fontsize-bigger !default; // 20px
 
-    // $fontweight-hair:           100 !default;
-    $fontweight-light: 300 !default; // normal & italic
-    $fontweight-base: 400 !default; // normal (body default) & italic
-    // $fontweight-semibold:       500 !default;
-    $fontweight-bold: 900 !default; // italic
-    // $fontweight-book:           900 !default;
+    $fontweight-light: 300 !default; 
+    $fontweight-base: 400 !default; 
+    $fontweight-bold: 900 !default; 
 
     $fontfamily-base: "Lato"; // Very compact, could fit with a 900 bold
 
@@ -101,10 +101,6 @@
     ////////////////////////////////////////////////////////////////////////////////
     // MIXINS
 
-    // / Mixin to manage responsive breakpoints
-    // / @author Hugo Giraudel
-    // / @param {String} $breakpoint - Breakpoint name
-    // / @require $breakpoints
     @mixin bp($breakpoint) {
         // If the key exists in the map
         @if map-has-key($breakpoints, $breakpoint) {
@@ -123,9 +119,6 @@
 
     // / Gives a card depth effect.
     // / @param {Number} $depth - depth level (between 1 and 5)
-    // / @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
-    // / @requires {function} top-shadow
-    // / @requires {function} bottom-shadow
     @mixin shadow($depth) {
         @if $depth < 1 {
             box-shadow: none;
@@ -160,7 +153,6 @@
 
     ////////////////////////////////////////////////////////////////////////////////
     // BOX MODEL
-
     *,
     *:before,
     *:after {
@@ -168,7 +160,6 @@
     }
 
     // Links
-
     a {
         $link-color--hover: lighten($color-secondary, 20%);
 
@@ -186,7 +177,6 @@
     }
 
     // Headings
-
     h1 {
         font-size: $fontsize-h1;
         line-height: 0.9;
@@ -194,7 +184,6 @@
         text-transform: uppercase;
         font-style: italic;
     }
-
     h2 {
         font-size: $fontsize-h2;
         line-height: 1.25;
@@ -210,14 +199,12 @@
     }
 
     // Images
-
     img {
         display: block;
         max-width: 100%;
     }
 
     // List
-
     ul {
         padding-left: 0;
     }
@@ -228,11 +215,9 @@
     }
 
     // Paragraphs
-
     p {
         margin-bottom: $gutter;
     }
-
     em {
         font-style: italic;
     }
@@ -250,7 +235,6 @@
             flex-shrink: 0;
             flex-basis: 100%;
         }
-
         &.grid--50 > * {
             @include bp("sm") {
                 flex-basis: 50%;
@@ -267,7 +251,6 @@
 
     ////////////////////////////////////////////////////////////////////////////////
     // LAYOUT
-
     .cv {
         position: relative;
         overflow: hidden;
@@ -291,7 +274,6 @@
             flex-wrap: wrap;
         }
     }
-
     .cv__head {
         background-color: white;
         color: white;
@@ -551,7 +533,8 @@
     .user__name {
         //outline: 4px solid rgba(255,0,0,0.5);
         position: absolute;
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         top: 0;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
@@ -623,18 +606,8 @@
         text-transform: uppercase;
     }
 
-    .status__age {
-    }
-    .status__city {
-    }
-    .status__job {
-    }
-
     ////////////////////////////////////////////////////////////////////////////////
     // SOCIAL
-
-    .socials {
-    }
 
     .social {
         border: none;
@@ -698,14 +671,11 @@
     .contact {
         > * {
             display: block;
-            margin-bottom: $gutter * 0.75;
+            margin-bottom: $gutter * 0.5;
             font-style: italic;
         }
     }
 
-    .contact__phone {
-        font-size: $fontsize-big;
-    }
     .adress__country {
         text-transform: uppercase;
     }
@@ -719,26 +689,24 @@
     }
 
     .navbar {
-        margin: 0;
+        margin: 0 -2rem;
         font-size: $fontsize-bigger;
 
         > /*ul*/.nav {
-            width: calc(100% + 9rem);
+            width: 100%;
             margin: 0;
             display: flex;
-            // justify-content: flex-end;
-            // border-top: 4px solid white;
-            transform: translateX(-$gutter-double) skewX($skew-angle);
+            transform: skewX(-7deg);
 
             > li {
                 margin: 0;
-                // margin-right: $gutter-half;
-
+                flex-grow: 1;
                 > button {
+                    width: 100%;
                     display: inline-block;
                     font-family: $fontfamily-base !important;
                     border: 0 !important; // OMG Kills focus styles
-                    padding: $gutter-half $gutter;
+                    padding: 0.5rem 1rem;
                     text-align: center;
                     text-transform: uppercase;
                     font-weight: $fontweight-light !important;
@@ -754,7 +722,7 @@
 
                 &:first-child {
                     > button {
-                        padding-left: $gutter-double;
+                        padding-left: $gutter;
                     }
                 }
 

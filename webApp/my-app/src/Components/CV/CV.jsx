@@ -2,6 +2,38 @@ import React from 'react'
 import "./CV.scss";
 
 export default function CV() {
+
+    const [navButtons, setNavButtons] = React.useState([
+        { state: "active", title: "CV" },
+        { state: "", title: "PORTFOLIO" },
+        { state: "", title: "PROJECTS" },
+    ]);
+    const [navUl, setNavUl] = React.useState(
+        <ul className="nav">
+            {navButtons.map((item, index) => 
+                <li key={index} className={item.state}>
+                    <button onClick={handleClick_btn} 
+                    className="btn--cv">{item.title}</button>
+                </li>
+            )}
+        </ul>
+    );
+
+
+        React.useEffect(() => {
+            console.log("lel useEffect");
+            setNavUl(
+                <ul className="nav">
+                {navButtons.map((item, index) => 
+                    <li key={index} className={item.state}>
+                        <button onClick={handleClick_btn} 
+                        className="btn--cv">{item.title}</button>
+                    </li>
+                )}
+            </ul>
+            );
+        }, [navButtons]);
+
         const pages = document.querySelector(".page"),
             pageCV = document.querySelector(".page--cv"),
             pagePortfolio = document.querySelector(".page--portfolio"),
@@ -11,29 +43,42 @@ export default function CV() {
             btnPortfolio = document.querySelector(".btn--portfolio"),
             btnProjects = document.querySelector(".btn--projects");
     
-        // const disableAllNavbarItems = () => {
-        //     btns.parent().removeClass("active");
-        //     pages.removeClass("active");
-        // };
-        // const enableNavbarItem = (item, page) => {
-        //     item.parent().addClass("active");
-        //     page.addClass("active");
-        // };
+        const disableAllNavbarItems = (event) => {
+            console.log(event.parentElement.parentElement);
+            const ul = event.parentElement.parentElement;
+
+            ul.map((li)=>{
+                return li.classList.add("active");
+            });
+            // event.parentElement.removeClass("active");
+            // pages.removeClass("active");
+        };
+        const enableNavbarItem = (item, page) => {
+            // item.parentElement().addClass("active");
+            // page.addClass("active");
+        };
     
-        // btnCV.on("click", function () {
-        //     disableAllNavbarItems();
-        //     enableNavbarItem(btnCV, pageCV);
-        // });
+        function handleClick_btn (event) {
+            let aux = [navButtons.map(btn=>btn.state="")];
+            setNavButtons(aux);
+            console.log(navButtons);
+
+            // disableAllNavbarItems(event.currentTarget);
+            // enableNavbarItem(btnCV, pageCV);
+        }
     
-        // btnPortfolio.on("click", function () {
-        //     disableAllNavbarItems();
-        //     enableNavbarItem(btnPortfolio, pagePortfolio);
-        // });
-    
-        // btnProjects.on("click", function () {
-        //     disableAllNavbarItems();
-        //     enableNavbarItem(btnProjects, pageProjects);
-        // });
+        function handleClick_btnCV (event) {
+            disableAllNavbarItems(event.currentTarget);
+            enableNavbarItem(btnCV, pageCV);
+        }
+        function handleClick_btnPortfolio (event) {
+            disableAllNavbarItems(event.currentTarget);
+            enableNavbarItem(btnPortfolio, pagePortfolio);
+        }
+        function handleClick_btnProjects (event) {
+            disableAllNavbarItems(event.currentTarget);
+            enableNavbarItem(btnProjects, pageProjects);
+        }
 
   return (
 <div className="CV">
@@ -45,26 +90,17 @@ export default function CV() {
                 <article className="user__media user__media--hero">
                     <div className="media">
                         <div className="media__wrapper">
-                            <img className="media__image" src="https://chmood.github.io/img/nico2.jpg" alt="Nicolas Giethlen" />
+                            <img className="media__image" src="https://chmood.github.io/img/nico2.jpg" alt="João Colaço" />
                         </div>
                     </div>
                 </article>
             </section>
             <section className="user-title section ">
                 <h1 className="user__name name">
-                    <span className="name__first-name">Nicolas</span>
-                    <span className="name__last-name">Giethlen</span>
+                    <span className="name__first-name">João</span>
+                    <span className="name__last-name">Colaço</span>
                 </h1>
-                <h2 className="user__job">Développeur web<br/>Expert front-end</h2>
-                <article className="user__status status">
-                    <span className="status__age">
-                        <script>
-                            document.write(parseInt(new Date().getFullYear()) - 1978);
-                        </script> &nbsp;ans
-                    </span>
-                    <span className="status__city">/ /&nbsp;Strasbourg</span>
-                    <span className="status__job">/ /&nbsp;En&nbsp;poste</span>
-                </article>
+                <h2 className="user__job">Web developer<br/>Front-end expert<br/>Back-end connoisseur</h2>
             </section>
 
             <div className="user__metas">
@@ -73,21 +109,21 @@ export default function CV() {
                     <h2 className="section__title--simple">Social</h2>
 
                     <article className="user__socials socials">
-                        <a className="social social--twitter" href="https://twitter.com/nicolasgiethlen">
+                        <a className="social social--twitter" href="https://twitter.com/JoãoColaço">
                             <svg className="social__icon social__icon--twitter">
-                                <use xmlnsXlink="#logo-twitter" />
+                                <use xlinkHref="#logo-twitter" />
                             </svg>
-                            <span>@nicolasgiethlen</span>
+                            <span>@JoãoColaço</span>
                         </a>
                         <a className="social social--codepen" href="http://codepen.io/Chmood/">
                             <svg className="social__icon social__icon--codepen">
-                                <use xmlnsXlink="#logo-codepen" />
+                                <use xlinkHref="#logo-codepen" />
                             </svg>
                             <span>codepen.io/chmood</span>
                         </a>
                         <a className="social social--github" href="https://github.com/Chmood">
                             <svg className="social__icon social__icon--github">
-                                <use xmlnsXlink="#logo-github" />
+                                <use xlinkHref="#logo-github" />
                             </svg>
                             <span>github.com/chmood</span>
                         </a>
@@ -99,19 +135,12 @@ export default function CV() {
 
                     <article className="contact">
                         <span className="contact__mail">
-                            <a href="mailto:giethlen.nicolas@gmail.com">giethlen.nicolas@gmail.com</a>
-                        </span>
-                        <span className="contact__phone">
-                            <a href="tel:033624922679">06.24.92.26.79</a>
+                            <a href="mailto:me@jColaco.dev">me@jColaco.dev</a>
                         </span>
                         <div className="contact__adress adress">
-                            <span className="adress__number">5</span>
-                            <span className="adress__street">rue de Kaysersberg</span>
+                            <span className="adress__city">Lisboa</span>
                             <br/>
-                            <span className="adress__zipcode">67100</span>
-                            <span className="adress__city">Strasbourg</span>
-                            <br/>
-                            <span className="adress__country">France</span>
+                            <span className="adress__country">Portugal</span>
                         </div>
                     </article>
                 </section>
@@ -125,17 +154,7 @@ export default function CV() {
     <main className="cv__main">
         <section className="section section--nav">
             <div className="navbar">
-                <ul className="nav">
-                    <li className="active">
-                        <button className="btn--cv">CV</button>
-                    </li>
-                    <li>
-                        <button className="btn--portfolio">Portfolio</button>
-                    </li>
-                    <li>
-                        <button className="btn--projects">Projects</button>
-                    </li>
-                </ul>
+                {navUl}
             </div>
         </section>
         <div className="page page--cv active">
@@ -231,10 +250,10 @@ export default function CV() {
                             </p>
                         </article>
                         <svg className="timeline__icon timeline__icon--top">
-                            <use xmlnsXlink="#timeline-top" />
+                            <use xlinkHref="#timeline-top" />
                         </svg>
                         <svg className="timeline__icon timeline__icon--bottom">
-                            <use xmlnsXlink="#timeline-bottom" />
+                            <use xlinkHref="#timeline-bottom" />
                         </svg>
                     </div>
                 </div>
@@ -521,7 +540,7 @@ export default function CV() {
     <footer className="cv__foot">
         <article className="copyright">
             Version web de ce CV :
-            <a href="https://cdpn.io/Chmood/debug/daWjgd/VJrxxOOaDjXr" target="_blank" rel="noreferrer">https://chmood.github.io</a> ©&nbsp;Nicolas&nbsp;Giethlen&nbsp;
+            <a href="https://cdpn.io/Chmood/debug/daWjgd/VJrxxOOaDjXr" target="_blank" rel="noreferrer">https://chmood.github.io</a> ©&nbsp;João&nbsp;Colaço&nbsp;
             <script>
                 document.write(new Date().getFullYear());
             </script>
