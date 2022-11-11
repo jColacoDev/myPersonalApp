@@ -1,5 +1,3 @@
-
-// mixin
 @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
     @if $dir == null {
       @if $type == fade {

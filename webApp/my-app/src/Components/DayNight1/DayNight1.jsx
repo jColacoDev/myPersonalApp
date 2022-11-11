@@ -50,7 +50,6 @@ export default function DayNight1({ theme }) {
                             <div></div>
                             <div></div>
                         </div>
-                        {/* <div className="moon"></div> */}
                     </div>
                 </div>
             </div>

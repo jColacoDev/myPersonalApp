@@ -116,7 +116,6 @@
         border-radius: 50%;
         transition: all 0.5s ease;
 
-        /* Default to Moon */
         border: 0.25em solid #dee2c6;
     }
 
@@ -155,7 +154,7 @@
         }
     }
 
-    /* Transition to Sun */
+    // Transition to Sun
 
     .switch input:checked ~ .sun-moon {
         left: calc(100% - 4em);

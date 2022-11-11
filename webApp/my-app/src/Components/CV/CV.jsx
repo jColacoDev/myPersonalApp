@@ -4,36 +4,11 @@ import "./CV.scss";
 export default function CV() {
 
     
-    const [navButtons, setNavButtons] = React.useState([
+    const navButtons = [
         { state: "active", title: "CV" },
         { state: "", title: "PORTFOLIO" },
         { state: "", title: "PROJECTS" },
-    ]);
-    const [navUl, setNavUl] = React.useState(
-        navButtons.map((item) => 
-            <li key={item.title} className={item.state}>
-                <button onClick={handleClick_btn} 
-                className="btn--cv">{item.title}</button>
-            </li>
-        )
-    );
-
-    React.useEffect(() => {
-        // console.log(navButtons);
-        setNavUl(
-            navButtons.map((item) => 
-                <li key={item.title} 
-                    data-key={item.title}
-                    className={item.state}
-                    onClick={handleClick_btn}>
-                    <button className="btn--cv">
-                        {item.title}
-                    </button>
-                </li>
-            )  
-        );
-        console.log(navUl);
-    }, []);
+    ];
     
     function handleClick_btn (event) {
             const   pages = document.querySelectorAll(".page"),
@@ -82,19 +57,22 @@ export default function CV() {
                     <h2 className="section__title--simple">Social</h2>
 
                     <article className="user__socials socials">
-                        <a className="social social--twitter" href="https://twitter.com/JoãoColaço">
+                        <a className="social social--twitter" 
+                            href="https://www.linkedin.com/in/jcolacodev/" target="_blank" rel="noopener noreferrer">
                             <img className="social__icon" src={require("../../Images/icons/linkedin.png")} alt="" />
-                            <span>linkdIn.com/jColaco</span>
+                            <span>linkedin.com/jColacoDev</span>
                         </a>
-                        <a className="social social--codepen" href="http://codepen.io/Chmood/">
+                        <a className="social social--codepen" href="https://github.com/jColacoDev" target="_blank" rel="noopener noreferrer">
                             <img className="social__icon" src={require("../../Images/icons/github.png")} alt="" />
-
-                            <span>github.com/jColaco</span>
+                            <span>github.com/jColacoDev</span>
                         </a>
-                        <a className="social social--github" href="https://github.com/Chmood">
+                        <a className="social social--github" href="https://codepen.io/jcolacodev" target="_blank" rel="noopener noreferrer">
                             <img className="social__icon" src={require("../../Images/icons/codepen.png")} alt="" />
-
-                            <span>codepen.io//jColaco</span>
+                            <span>codepen.io/jColacoDev</span>
+                        </a>
+                        <a className="social social--github" href="https://forum.arduino.cc/u/jcolaco/" target="_blank" rel="noopener noreferrer">
+                            <img className="social__icon" src={require("../../Images/icons/arduino.png")} alt="" />
+                            <span>arduino.com/jColaco</span>
                         </a>
                     </article>
                 </section>
