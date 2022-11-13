@@ -2,7 +2,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:14.20.1-browsers
  
     working_directory: ~/repo
  
