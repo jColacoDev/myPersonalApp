@@ -15,7 +15,7 @@ jobs:
             sudo apt-get update
             sudo apt-get -qq install git-ftp
             echo "Deploying project ..."
-            git ftp init --remote-root htdocs --user '${username}' --passwd '${password}' ${ftp_location}
+            git ftp init --remote-root htdocs --user 'admin@jcolaco.dev' --passwd 'SEZ610ii!!' ftp.jcolaco.dev/public_html
 
  
 workflows:
