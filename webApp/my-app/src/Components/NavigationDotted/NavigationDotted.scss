@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.NavigationDotted {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+
+    a {
+        color: #f6f4e6;
+        text-decoration: none;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: inline-block;
+        width: 80px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover,
+        &.active {
+            color: #fddb3a;
+        }
+        
+        &:hover ~ .dot,
+        &.active ~ .dot {
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            opacity: 1;
+        }
+
+        &:nth-child(1).active ~ .dot {
+            -webkit-transform: translate(-9em, 2em);
+            transform: translate(-9em, 2em);
+        }
+    
+        &:nth-child(2).active ~ .dot {
+            -webkit-transform: translate(-3em, 2em);
+            transform: translate(-3em, 2em);
+        }
+    
+        &:nth-child(3).active ~ .dot {
+            -webkit-transform: translate(2.5em, 2em);
+            transform: translate(2.5em, 2em);
+        }
+    
+        &:nth-child(4).active ~ .dot {
+            -webkit-transform: translate(7.5em, 2em);
+            transform: translate(7.5em, 2em);
+        }
+
+        &:nth-child(1):hover ~ .dot{
+            -webkit-transform: translate(-9em, 2em);
+            transform: translate(-9em, 2em);
+        }
+    
+        &:nth-child(2):hover ~ .dot{
+            -webkit-transform: translate(-3em, 2em);
+            transform: translate(-3em, 2em);
+        }
+    
+        &:nth-child(3):hover ~ .dot{
+            -webkit-transform: translate(2.5em, 2em);
+            transform: translate(2.5em, 2em);
+        }
+    
+        &:nth-child(4):hover ~ .dot{
+            -webkit-transform: translate(7.5em, 2em);
+            transform: translate(7.5em, 2em);
+        }
+    }
+
+
+    .dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #fddb3a;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+}

@@ -5,12 +5,12 @@ export default function DayNight1({ theme }) {
     const [starsShadow, setStarsShadow] = useState(generateStarShadows());
 
     useEffect(() => {
-        function handleResize() {
-            setStarsShadow(generateStarShadows());
-        }
-
         window.addEventListener("resize", handleResize);
-    });
+    },[]);
+    
+    function handleResize() {
+        setStarsShadow(generateStarShadows());
+    }
 
     function generateStarShadows() {
         const STAR_COUNT = (window.innerWidth * window.innerHeight) / 1000;

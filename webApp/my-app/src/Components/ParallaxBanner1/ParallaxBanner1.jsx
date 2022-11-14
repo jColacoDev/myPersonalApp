@@ -1,7 +1,5 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 import lxBg from "../../Images/lxBg.png";
-import lxBg1 from "../../Images/lx1.png";
-import lxBg2 from "../../Images/lx2.png";
 import "./ParallaxBanner1.scss";
 
 export const ParallaxBanner1 = () => {
