@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./MenuButton.scss";
 import SocialButtons from "../SocialButtons/SocialButtons";
+import { NavLink } from "react-router-dom";
 
 export default class MenuButton extends Component {
     render() {
@@ -16,16 +17,16 @@ export default class MenuButton extends Component {
                 <nav className="nav gradient-border">
                     <ul className="pt-5">
                         <li>
-                            <a href="#">Work</a>
+                            <NavLink to={`/`} activeClassName="active">About Me</NavLink>
                         </li>
                         <li>
-                            <a href="#">Studio</a>
+                            <NavLink to={`/1`} activeClassName="active">Studio</NavLink>
                         </li>
                         <li>
-                            <a href="#">News</a>
+                            <NavLink to={`/2`} activeClassName="active">News</NavLink>
                         </li>
                         <li>
-                            <a href="#">C. Vitae</a>
+                            <NavLink to={`/cv`} activeClassName="active">C. Vitae</NavLink>
                         </li>
                         <li>
                             <SocialButtons></SocialButtons>
