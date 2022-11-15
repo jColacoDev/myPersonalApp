@@ -1,0 +1,18 @@
+nav.stickyNav {
+    height: var(--topNav-height);
+    position: sticky;
+    top: -1px;
+    display: flex;
+    z-index: 99;
+    align-items: center;
+    background-color: var(--headerBar-bg-color);
+    justify-content: space-around;
+
+    a {
+        color: var(--headerBar-link-color);
+    }
+    figure {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,49 @@
+    #landingParallax{
+        position: relative;
+        z-index: 99;
+    }
+
+    @media (min-width: 960px) {
+        #RouteStart{
+            padding-right: 300px;
+            z-index: 99;
+        }
+    }
+    
+.text-underlined {
+    position: relative;
+    overflow: hidden;
+  
+    will-change: color;
+    transition: color 0.25s ease-out;
+    
+    &::before,
+    &::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: var(--textUnderlinedLineColor, currentColor);
+    
+        will-change: width;
+        transition: width 0.1s ease-out;
+    
+        position: absolute;
+        bottom: 0;
+    }
+    
+    &::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    &::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    &:hover::before,
+    &:hover::after {
+        width: 100%;
+        transition-duration: 0.2s;
+    }
+}

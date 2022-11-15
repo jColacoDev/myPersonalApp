@@ -34,8 +34,7 @@
         text-align: center;
     }
 
-    [type="checkbox"]:checked,
-    [type="checkbox"]:not(:checked) {
+    [type="checkbox"]{
         position: absolute;
         left: -9999px;
     }
@@ -115,7 +114,7 @@
         width: 5em;
         height: 5em;
         z-index: 9;
-        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: -6px 12px 15px 8px rgba(0, 0, 0, 0.3);
         background-color: black;
         animation: border-transform 7s linear infinite;
         transition: transform 250ms 1100ms ease,
@@ -246,5 +245,38 @@
     }
     .menu-icon:checked ~ .nav > ul > li:nth-child(4) {
         transition-delay: 1640ms;
+    }
+}
+
+@media (min-width: 960px) {
+    .MenuButton {
+        .menu-icon{
+
+            &:checked ~ .nav {
+                animation-play-state: paused;
+                animation: none;
+                transform: none;
+                transition: none;
+                width: 300px;
+                height: 100vh;
+                max-height: 100vh;
+                bottom: 0;
+                right: 0;
+                
+                > ul{
+                    padding-right: 25px;
+                }
+            }
+        }
+        .menu-icon{
+
+            &:checked::before{
+                content: none;
+            }
+
+            + label{
+                display: none;
+            }
+        }
     }
 }

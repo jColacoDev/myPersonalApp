@@ -1,5 +1,5 @@
 main.LandingPage {
-    .AboutMe{
+    #AboutMe{
         .flexGrid{
             width: 100%;
 
@@ -25,25 +25,6 @@ main.LandingPage {
             & {
                 font-size: 20px;
             }
-        }
-    }
-
-    > nav {
-        height: var(--topNav-height);
-        position: sticky;
-        top: -1px;
-        display: flex;
-        z-index: 9;
-        align-items: center;
-        background-color: var(--headerBar-bg-color);
-        justify-content: space-around;
-
-        a {
-            color: var(--headerBar-link-color);
-        }
-        figure {
-            width: 60px;
-            height: 60px;
         }
     }
 
