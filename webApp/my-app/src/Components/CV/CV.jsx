@@ -1,27 +1,34 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
 import "./CV.scss";
+import pagesData from '../../router/pagesData';
 
 export default function CV() {
     const location = useLocation();
     const [hash, setHash] = React.useState("");
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         setHash(location.hash);
     }, [location]);
-
+    
     React.useEffect(() => {
-        if(hash)
-            handleClick_btn({currentTarget: document.querySelector(hash)})
+        if(hash){
+            handleClick_btn(document.querySelector(hash).closest("li"));
+        }
     }, [hash]);
 
     const navButtons = [
-        { state: "active", title: "CV" },
-        { state: "", title: "PORTFOLIO" },
-        { state: "", title: "PROJECTS" },
+        { state: "active", title: pagesData[1].navLinks[0].label, ref: pagesData[1].navLinks[0].ref },
+        { state: "", title: pagesData[1].navLinks[1].label, ref: pagesData[1].navLinks[1].ref },
+        { state: "", title: pagesData[1].navLinks[2].label, ref: pagesData[1].navLinks[2].ref },
     ];
     
-    function handleClick_btn ({currentTarget}) {
+    function handleLinkClick ({currentTarget}) {
+        location.pathname = `${currentTarget.href}`
+        return false;
+    }
+
+    function handleClick_btn (currentTarget) {
         const   pages = document.querySelectorAll(".page"),
                 navLis = document.querySelectorAll(".navbar li");
         const btnKey = currentTarget.dataset.key.toLowerCase();
@@ -113,11 +120,12 @@ return (
                         <li key={item.title} 
                             id={`${item.title}--btn`}
                             data-key={item.title}
-                            className={item.state}
-                            onClick={handleClick_btn}>
-                            <button className="btn--cv">
-                                {item.title}
-                            </button>
+                            className={item.state}>
+                            <a onClick={handleLinkClick} href={item.ref} className='cv--link'>
+                                <button id={item.ref.substring(1)} className="btn--cv">
+                                    {item.title}
+                                </button>
+                            </a>
                         </li>
                     )}
                     </ul>

@@ -160,7 +160,7 @@
     }
 
     // Links
-    a {
+    a:not(.cv--link) {
         $link-color--hover: lighten($color-secondary, 20%);
 
         color: $color-secondary;
@@ -358,7 +358,7 @@
             color: $color-primary;
         }
 
-        a {
+        a:not(.cv--link) {
             color: $color-primary;
 
             &:hover {
@@ -702,7 +702,7 @@
             > li {
                 margin: 0;
                 flex-grow: 1;
-                > button {
+                > a button {
                     width: 100%;
                     display: inline-block;
                     font-family: $fontfamily-base !important;
@@ -728,13 +728,13 @@
                 }
 
                 &:first-child {
-                    > button {
+                    > a button {
                         padding-left: $gutter;
                     }
                 }
 
                 &.active {
-                    > button {
+                    > a button {
                         background-color: white;
                         color: $color-secondary;
                         @include shadow(1);

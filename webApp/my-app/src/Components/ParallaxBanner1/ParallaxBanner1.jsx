@@ -1,6 +1,7 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 import lxBg from "../../Images/lxBg.png";
 import "./ParallaxBanner1.scss";
+import LogoJcolaco from "../LogoJcolaco/LogoJcolaco";
 
 export const ParallaxBanner1 = () => {
     const background = {
@@ -18,8 +19,7 @@ export const ParallaxBanner1 = () => {
         expanded: false,
         children: (
             <div className="inset landingHeader ">
-                <h1 className="headline white">jColaco.dev</h1>
-                <p>Frontend developer</p>
+                <LogoJcolaco></LogoJcolaco>
             </div>
         ),
     };

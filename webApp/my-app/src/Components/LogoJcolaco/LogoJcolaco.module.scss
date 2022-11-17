@@ -1,0 +1,41 @@
+
+.logoFont{
+    position: relative;
+    font-size: 1.2em;
+
+    @media (min-width: 500px) {
+        &{
+            font-size: 1.5em;
+        }
+    }
+    @media (min-width: 960px) {
+        &{
+            font-size: 2.5em;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1.5em;
+        background: var(--light-black);
+        bottom: -2px;
+        transition: all 0.2s ease-out;
+    }
+    
+    p {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        font-size: 3em;
+        background: linear-gradient(to bottom, var(--light-black), var(--light-black) 60%, var(--light-white) 60%, var(--light-white) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-repeat: no-repeat;
+        transition: background 0.2s ease-out;
+        white-space: nowrap;
+    }
+}

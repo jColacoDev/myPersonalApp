@@ -9,6 +9,7 @@ import ThemeToggle from "./../Components/ThemeToggle/ThemeToggle";
 import ScrollToTop from "../Hooks/ScrollToTop";
 import "./routerPages.scss"
 import StickyNav from "../Components/StickyNav/StickyNav";
+import Footer from "../Components/Footer/Footer";
 
 const Router = () => {
     const pageRoutes = pagesData.map(({ path, title, element }) => {
@@ -18,8 +19,9 @@ const Router = () => {
 
     return (
         <>
-            <Theme />
+            <Theme/>
             <ScrollToTop />
+            <span id="top"></span>
             <div id="landingParallax">
                 <DayNight1 theme={theme}></DayNight1>
                 <ParallaxBanner1 />
@@ -31,7 +33,8 @@ const Router = () => {
 
                 <div id="RouteStart">
                     <Routes>{pageRoutes}</Routes>
-                </div>            
+                </div>      
+            <Footer></Footer>
         </>
     );
 };

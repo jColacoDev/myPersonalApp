@@ -7,6 +7,7 @@ import TextQuote from "./../../Components/TextQuote/TextQuote";
 import GalleryPollaroid from "./../../Components/GalleryPollaroid/GalleryPollaroid";
 import GalleryCards from "./../../Components/GalleryCards/GalleryCards";
 import { Animated } from 'react-animated-css'
+import Cubes from "../../Components/Cubes/Cubes";
 
 const LandingPage = () => {
 
@@ -31,7 +32,7 @@ const LandingPage = () => {
             </section>
             <section id="interests">
                 <GalleryPollaroid></GalleryPollaroid>
-                <GalleryCards></GalleryCards>
+                <Cubes></Cubes>
             </section>
             <section id="contactMe">
                 <TextQuote></TextQuote>

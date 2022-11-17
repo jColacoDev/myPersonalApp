@@ -6,7 +6,7 @@
     gap: .5em;
 
     a {
-        color: #f6f4e6;
+        color: var(--text-color);
         text-decoration: none;
         font-size: 1.2em;
         text-transform: uppercase;
@@ -18,7 +18,7 @@
         
         &:hover,
         &.active {
-            color: #fddb3a;
+            color: #3a48fd;
         }
         
         &:hover ~ .dot,
@@ -74,7 +74,7 @@
         position: absolute;
         width: 6px;
         height: 6px;
-        background: #fddb3a;
+        background: #3a48fd;
         border-radius: 50%;
         opacity: 0;
         -webkit-transition: all 0.2s ease-in-out;
