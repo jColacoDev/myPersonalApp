@@ -1,12 +1,18 @@
 :root {
-    --topNav-height: 60px;
+    --topNav-height: 3em;
+    --sideNav-width: 19em;
 }
+
 :root[data-theme="lightTheme"] {
+    --orange-white: #ee5722;
+
+    --dark-white: white;
+
     --light-white: white;
     --light-black: black;
     
     --background-color: #37ff4040;
-    --text-color: #4c4c6d;
+    --text-color: black;
     --text-color-hover: black;
     --title-color: #334f3b;
 
@@ -16,12 +22,15 @@
 
     --headerBar-bg-color: #000;
     --headerBar-link-color: #64ff75;
+    --linksColorShadow: #64ff7570;
 
     --letter-bg-color: #fcfcf8;
 }
 
 :root[data-theme="darkTheme"] {
-    --glow-color: #64ff75;
+    --orange-white: white;
+
+    --dark-white: #c3c3c3;
 
     --light-white: black;
     --light-black: white;
@@ -38,6 +47,8 @@
 
     --headerBar-bg-color: #000000;
     --headerBar-link-color: #fcff64;
+    --linksColorShadow: #fcff6470;
+
 
     --letter-bg-color: #adadad;
 }

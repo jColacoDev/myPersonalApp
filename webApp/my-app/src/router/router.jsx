@@ -21,20 +21,22 @@ const Router = () => {
         <>
             <Theme/>
             <ScrollToTop />
-            <span id="top"></span>
-            <div id="landingParallax">
-                <DayNight1 theme={theme}></DayNight1>
-                <ParallaxBanner1 />
-            </div>
+            <span id="top" />
 
-            <StickyNav pagesData={pagesData}/>
             <ThemeToggle themeToggle={theme}></ThemeToggle>
             <MenuButton></MenuButton>
 
-                <div id="RouteStart">
-                    <Routes>{pageRoutes}</Routes>
-                </div>      
-            <Footer></Footer>
+            <div className="marginMenu">
+                <div id="landingParallax">
+                    <DayNight1 theme={theme}></DayNight1>
+                    <ParallaxBanner1 />
+                </div>
+                <StickyNav pagesData={pagesData}/>
+                    <div id="RouteStart">
+                        <Routes>{pageRoutes}</Routes>
+                    </div>
+                <Footer></Footer>
+            </div>
         </>
     );
 };

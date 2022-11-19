@@ -1,49 +1,69 @@
-import React, { Component } from "react";
+import React from 'react'
 import "./GalleryPollaroid.scss";
 
-export default class GalleryPollaroid extends Component {
-    render() {
-        return (
-            <div className="GalleryPollaroid">
-                <div className="wrapper">
-                    <div className="item">
-                        <div className="polaroid">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/dXAhQuT.jpg" />
-                            <div className="caption">Everything .developer</div>
-                        </div>
-                    </div>
+export default function GalleryPollaroid() {
+    const galleryRef = React.createRef();
+    const [active, setActive] = React.useState(false);
+    
+    React.useEffect(() => {
+        if(!active){
+            closeModal();
+        }
+    }, [active]);
 
-                    <div className="item">
-                        <div className="polaroid">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/LZkivxR.jpg" />
-                            <div className="caption">Time to Give!</div>
-                        </div>
-                    </div>
+    function closeModal(){
+        const items =  galleryRef.current.querySelectorAll(".item");
+        for(const item of items){
+            item.classList.remove("active");
+        }
+    }
 
-                    <div className="item">
-                        <div className="polaroid">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/hqcMtrF.jpg" />
-                            <div className="caption">
-                                Lights, Camera, Action!
-                            </div>
-                        </div>
-                    </div>
+    function handleClick({currentTarget}){        
+        currentTarget.classList.add("active");
+        setActive(!active);
+    }
 
-                    <div className="item">
-                        <div className="polaroid">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/l867sBU.jpg" />
-                            <div className="caption">I wonder... I wander</div>
-                        </div>
-                    </div>
+    const itemsData = [
+        {
+            imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/dXAhQuT.jpg",
+            caption: "Everything .developer",
+            hidden: "lorem12 Everything .developer Everything .developerEverything .developer Everything .developer"
+        },
+        {
+            imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/LZkivxR.jpg",
+            caption: "Time to Give!",
+            hidden: "lorem12 Everything .developer Everything .developerEverything .developer Everything .developer"
+        },
+        {
+            imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/hqcMtrF.jpg",
+            caption: "Lights, Camera, Action!",
+            hidden: "lorem12 Everything .developer Everything .developerEverything .developer Everything .developer"
+        },
+        {
+            imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/l867sBU.jpg",
+            caption: "I wonder... I wander",
+            hidden: "lorem12 Everything .developer Everything .developerEverything .developer Everything .developer"
+        },
+        {
+            imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/7cQCk5I.jpg",
+            caption: "Think Green!",
+            hidden: "lorem12 Everything .developer Everything .developerEverything .developer Everything .developer"
+        }
+    ]
 
-                    <div className="item">
-                        <div className="polaroid">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/7cQCk5I.jpg" />
-                            <div className="caption">Think Green!</div>
-                        </div>
+    return (
+        <div ref={galleryRef} className="GalleryPollaroid">
+            <div className="wrapper">
+            {itemsData.map(e=>
+                <div onClick={handleClick} className="item">
+                    <div className="polaroid">
+                        <img src={e.imgSrc} alt={e.caption} />
+                        <div className="caption">{e.caption}</div>
+                        <section><p>{e.hidden}</p></section>
                     </div>
                 </div>
+            )}
             </div>
-        );
-    }
+        </div>
+    );
 }

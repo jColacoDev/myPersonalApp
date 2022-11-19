@@ -1,29 +1,40 @@
 main.LandingPage {
     #AboutMe{
+        padding: 3em 1em;
+
         .flexGrid{
             width: 100%;
-
-            .CanvasPortrait {
-                max-width: 650px;
-            }
         }
     }
 
+    #interests{
+        figure{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2em;
+
+            img{
+                width: 100%;
+                max-width: 30em;
+            }
+        }
+    }
     .myIntro {
         padding: 1em 0.8em;
         padding-bottom: 2em;
-        max-width: 1000px;
+        max-width: 40em;
     }
 
     p {
         font-family: "Fira Code", monospace;
         font-weight: 800;
-        font-size: 16px;
         text-align: left;
 
         @media screen and (min-width: 420px) {
             & {
-                font-size: 20px;
+                font-size: 1.2em;
             }
         }
     }

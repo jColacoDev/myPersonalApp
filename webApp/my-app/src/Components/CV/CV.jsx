@@ -136,93 +136,143 @@ return (
                 <section className="section section--secondary section--summary">
                     <div className="section__body">
                         <article>
-                            <h3>UI/UX design</h3>
-                            <p>Interfaces, prototypes, guides de style</p>
+                            <h3>U<span className="smallCaps">I</span>/U<span className="smallCaps">X</span> D<span className="smallCaps">esign</span></h3>
+                            <p>Figma, Sketch, Inkscape
+                               <br />Interfaces, prototypes, style guides</p>
                         </article>
                         <article>
-                            <h3>Intégration</h3>
-                            <p>Responsive & mobile-first, accessibilité, SEO, performance</p>
+                            <h3>I<span className="smallCaps">ntegration</span></h3>
+                            <p>Responsive & mobile-first, accessibility, SEO, performance</p>
                         </article>
                         <article>
-                            <h3>Développement JS</h3>
-                            <p>Applications web progressives, mobile et desktop</p>
+                            <h3>F<span className="smallCaps">rontend Development</span></h3>
+                            <p>HTML5, CSS3, Sass, Javascript, Typescript
+                               <br/>React, Angular, Redux, DevTools
+                            </p>
+                        </article>
+                        <article>
+                            <h3>B<span className="smallCaps">ackend Development</span></h3>
+                            <p>Node.Js, SQL, PhP, Java, Python
+                                <br/>Express, MongoDB, PostgreSQL, MySQL, Apache, XAMPP
+                            </p>
+                        </article>
+                        <article>
+                            <h3>D<span className="smallCaps">evOps (CI/CD)</span></h3>
+                            <p>Node npm, Git, GitHub, Bitbucket, Maven, Jenkins, CircleCI, Docker, Sonar, Kubernetes, Linux, Scripts</p>
+                        </article>
+                        <article>
+                            <h3>E<span className="smallCaps">lectronics</span></h3>
+                            <p>C, C++, Python, Js, Assembly, VHDL, Verilog
+                                <br />Electronic circuits, PCB design, Integrated circuits, Digital eletronics, IoT, LoraWAN, Wearables
+                                <br />Arduino, ESPressif, RaspberryPi, Microchip, TTN, RTOS
+                            </p>
                         </article>
                     </div>
                     <div className="section__foot"></div>
                 </section>
 
                 <section className="section section--primary section--tools">
-                    <h2 className="section__title section__title--white">Outils</h2>
+                    <h2 className="section__title section__title--white">Tools</h2>
                     <div className="section__body">
                         <article>
-                            <h3>Technos</h3>
+                            <h3>Tech</h3>
                             <p>
-                                <strong>CSS3 / Sass</strong> (méthode BEM), <strong>Bootstrap</strong> ou framework custom, Flexbox / CSS Grid, SVG. theming <strong>Wordpress</strong> (et WooCommerce, Drupal, Prestashop), templates <strong>PHP</strong> et Smarty / Twig / Blade. <strong>jQuery</strong>, <strong>ES6</strong>, <strong>Vue JS</strong>, ElectronJS, Canvas, WebGL, WebAudio et d'autres API <strong>HTML5</strong>.
+                                <strong>
+                                    Wordpress, Visual Studio, Postman, FileZilla, Gitbash, Atlas, Adobe Suite, Jest, Lens, GitLab, Terminal
+                                    , paint.Net, Filmora, Jira, Teams, Slack, Excel
+                                </strong>
                             </p>
                         </article>
                         <article>
-                            <h3>Workflow</h3>
-                            <p>Build front-end
-                                <strong>Webpack</strong> et Gulp (Browsersync, PostCSS, Babel), <strong>Node</strong> et NPM, versioning <strong>Git</strong> (gitflow), Trello / Redmine, <strong>méthodes agiles</strong> (Scrum/Kanban), administration système et workstation <strong>Linux</strong>. <strong>Télé-travail</strong> régulier.
-                            </p>
+                            <h3>Perks</h3>
+                            <ul>
+<li>Skilled and experienced in Agile Development process for diverse requirements</li>
+<li>Worked on different operating systems and platforms of software and application development</li>
+<li>Ability to work confidently and passionately until the desired outcome is achieved</li>
+<li>Strong analytical and problem solving skills</li>
+<li>Excellent communication skills; both verbal and written</li>
+<li>Willing to update my knowledge and learn new skills to perform efficiently</li>
+                            </ul>
+                            <img className='imgWorkflow' src={require("./imgs/agile.png")} alt="agile pic" />
                         </article>
                     </div>
                     <div className="section__foot"></div>
                 </section>
 
-                <section className="section section--white section--timeline">
-                    <h2 className="section__title">Expérience</h2>
+                <section className="section section--orange section--timeline">
+                    <h2 className="section__title">Experience</h2>
                     <div className="section__body">
                         <div className="timeline">
 
                             <article className="timeline__item">
                                 <h3>
                                     <time className="date-range">
+                                        2021 -2022
+                                    </time>
+                                    <span>Critical Techworks</span>
+                                </h3>
+                                <p>
+                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                </p>
+                            </article>
+                            <article className="timeline__item">
+                                <h3>
+                                    <time className="date-range">
+                                        2020 -2021
+                                    </time>
+                                    <span>Robert Mauser</span>
+                                </h3>
+                                <p>
+                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                </p>
+                            </article>
+                            <article className="timeline__item">
+                                <h3>
+                                    <time className="date-range">
                                         2020
                                     </time>
-                                    <span>Dev expert front-end</span>
-                                    <span>(
-                                        <a href="http://diatem.net">Diatem</a> à&nbsp;Strasbourg)</span>
+                                    <span>Critical Software</span>
                                 </h3>
-                                <p>Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.</p>
-                                <p>Optimisation mobile, ergonomie et UX, accessibilité et SEO, performance.
+                                <p>Summer internship</p>
+                            </article>
+                            <article className="timeline__item">
+                                <h3>
+                                    <time className="date-range">
+                                        20215 -2020
+                                    </time>
+                                    <span>Ergoface, <span style={{fontVariant: "all-small-caps"}}>mobiliário de escritório e projectos, lda</span></span>
+                                </h3>
+                                <p>
+                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                </p>
+                            </article>
+                            <article className="timeline__item">
+                                <h3>
+                                    <time className="date-range">
+                                        2020 -2021
+                                    </time>
+                                    <span>World Academy</span>
+                                </h3>
+                                <p>
+                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                </p>
+                            </article>
+                            <article className="timeline__item">
+                                <h3>
+                                    <time className="date-range">
+                                        20215 -2020
+                                    </time>
+                                    <span>IST
+                                        <span className='smallCaps'>
+                                            , Instituto Superior Técnico 
+                                        </span>
+                                    </span>
+                                </h3>
+                                <p>
+                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
                                 </p>
                             </article>
 
-                            <article className="timeline__item">
-                                <h3>
-                                    <time className="date-range">2014 - 2019</time>
-                                    <span>Lead intégrateur</span>
-                                    <span>(
-                                        <a href="http://webcd.fr">agence Webcd</a> à&nbsp;Obernai)</span>
-                                </h3>
-                                <p>Conception, intégration et contribution à de nombreux sites web, ecommerces, applications web et
-                                    extranets
-                                    <em>(visibles sur <a href="#portfolio">mon portfolio</a>).</em>
-                                </p>
-                                <p>Architecture, développement et maintenance de la partie front de nos CMS. Modernisation des process et des outils (framework Sass/Bootstrap et starter thème WordPress maison).</p>
-                                <p>Rédaction de documentation interne, formation des équipes. Délégué du personnel et évangéliste des bonnes pratiques et de la qualité web.</p>
-                            </article>
-
-                            <article className="timeline__item">
-                                <h3>
-                                    <time className="date-range">2009 - 2013</time>
-                                    <span>Développeur-intégrateur web</span>
-                                    <span>(Freelance)</span>
-                                </h3>
-                                <p>Conception, réalisation et maintenance de sites internet pour des TPE/PME.</p>
-                            </article>
-
-                            <article className="timeline__item">
-                                <h3>
-                                    <time className="date-range">2008</time>
-                                    <span>BTS gestion des ressources informatiques</span>
-                                    <span>(TSGRI)</span>
-                                </h3>
-                                <p>Diplôme d'état de niveau III (Bac+2)
-                                    <em>AFPA de Strasbourg</em>
-                                </p>
-                            </article>
                             <svg className="timeline__icon timeline__icon--top">
                                 <use xlinkHref="#timeline-top" />
                             </svg>
@@ -235,23 +285,45 @@ return (
                 </section>
 
                 <section className="section section--secondary section--profile">
-                    <h2 className="section__title section__title--primary">Profil</h2>
+                    <h2 className="section__title section__title--primary">Profile</h2>
                     <div className="section__body grid grid--50">
                         <article>
-                            <h3>Geek</h3>
-                            <p>Passionné depuis l'âge de 11 ans. Apprentissage perpétuel, veille technique active et constante.</p>
+                            <h3>Maker</h3>
+                            <p>
+                                I face projects with a can do attitude, using the best tools to produce the best artifacts.
+                                <br />I love creating digital and handcrafted ideas from sketch watching it grow to a fully functional thing.
+                            </p>
                         </article>
                         <article>
                             <h3>Team</h3>
-                            <p>Épanoui dans le travail d'équipe et impliqué dans la vie de l'entreprise.</p>
+                            <p>
+                                A work family where one learns and teaches, creating the Vision with Respect, Transparency, Reliability
+                                <br/><i>A team happens when I becomes We, I do my best so We can go further!</i>
+                                <br/>I've experienced team work in school/college, hackathons and professionally with the a notion of purpose and commitment. 
+                            </p>
                         </article>
                         <article>
-                            <h3>Com</h3>
-                            <p>Aisance à l'oral et à l'écrit. Très bon niveau en anglais courant et technique.</p>
+                            <h3>Comm</h3>
+                            <p>
+                                True magic happens when shared ideas are listened and understood.
+                                <br /><i>A different language is a different vision of life.</i>
+                                <br /><strong>I know:</strong> 
+                                <br />Português, English, Español
+                                <br /><strong>I'm learning:</strong>
+                                <br />Deutsh
+                                <br /><strong>I want to learn:</strong>
+                                <br />Italiano, Français, Sign language
+                            </p>
                         </article>
                         <article>
                             <h3>Hobbies</h3>
-                            <p>Ma gratte 🎸, la VR 😎, les romans de SF 👽, localhost:8080 🖥, mes amis et ma famille ❤️.</p>
+                            <p>
+                                Play the <strong>guitar</strong>, walk my <strong>dogs</strong>, <strong>build</strong> something <strong>digital, analog, artistic</strong>.
+                                <br />Go deep into the <strong>wild! Nature</strong>, fresh air and sweet sounds. 
+                                <br /><strong>Photography</strong> and <strong>cinematography</strong>, <i>the angles and perspective as a means for experiencing the world in different lights</i>.
+                                <br />I fly a drone, handle a gimbal and edit with Filmora.
+                                <br />I go explore everywhere with my custom made eScooter!
+                            </p>
                         </article>
                     </div>
                 </section>
@@ -261,23 +333,19 @@ return (
                 <section className="section section--secondary section--summary">
                     <div className="section__body">
                         <article>
-                            <h3>Sites clients</h3>
+                            <h3>WebApps</h3>
                             <p>Mes derniers projets</p>
                         </article>
                         <article>
-                            <h3>Multi-sites</h3>
+                            <h3>Electronics</h3>
                             <p>Socles front-end</p>
-                        </article>
-                        <article>
-                            <h3>Divers</h3>
-                            <p>Frameworks, thèmes, applications et jeux</p>
                         </article>
                     </div>
                     <div className="section__foot"></div>
                 </section>
 
-                <section className="section section--white section--portfolio-1">
-                    <h2 className="section__title section__title--primary">Sites client</h2>
+                <section className="section section--orange section--portfolio-1">
+                    <h2 className="section__title section__title--primary">Web Apps</h2>
                     <div className="section__body">
                         <div className="grid grid--50">
                             <article>
@@ -425,7 +493,7 @@ return (
                 </section>
 
                 <section className="section section--primary section--portfolio-2">
-                    <h2 className="section__title">Multi-sites</h2>
+                    <h2 className="section__title">Electronics</h2>
                     <div className="section__body" style={{paddingBottom: "1.6rem"}}>
                         <p>
                             <em>Les multi-sites dont j'ai conçu le socle front-end, intégrés en masse par d'autres que moi</em>
@@ -449,22 +517,14 @@ return (
                 <section className="section section--secondary section--summary">
                     <div className="section__body">
                         <article>
-                            <h3>Outils open-source</h3>
-                            <p>Ma trousse à outil professionnelle</p>
-                        </article>
-                        <article>
-                            <h3>Applications web</h3>
+                            <h3>Web App Developer</h3>
                             <p>Developpement JS sur-mesure</p>
-                        </article>
-                        <article>
-                            <h3>Jeux 2D & 3D</h3>
-                            <p>Do you speak pixel?</p>
                         </article>
                     </div>
                     <div className="section__foot"></div>
                 </section>
-                <section className="section section--white section--projects-1">
-                    <h2 className="section__title section__title--primary">Frameworks &amp; thèmes</h2>
+                <section className="section section--orange section--projects-1">
+                    <h2 className="section__title section__title--primary">What drives me</h2>
                     <div className="section__body">
                         <p><em>Mes outils open-source, exploités en production pour nos clients</em></p>
                         <ul>
@@ -476,26 +536,32 @@ return (
                     </div>
                 </section>
                 <section className="section section--primary section--projects-2">
-                    <h2 className="section__title section__title--secondary">Applications web</h2>
+                    <h2 className="section__title section__title--secondary">Hackathons</h2>
                     <div className="section__body">
                         <p><em>Les applis web que j'ai développées</em></p>
                         <ul>
-                            <li><a href="https://www.lol-item-sets-builder.com/" target="_blank" rel="noreferrer">LoL Item Set Builder</a>, aide au jeu League of Legends
-                                <span className="pill">perso</span>
+                            <li><a href="taikai.network/en/cityhack/challenges/city-hack-2021/projects/ckp1yk9ak13436020rugdbzyuzmt/idea" target="_blank" rel="noreferrer">
+                            Future City2022- Compass Rose</a>
+                                Smart Environment pretende dar ouvidos ao Meio Ambiente, sentindo os fenómenos de forma precisa e quantitativa e qualificativa para que nós possamos perceber fenómenos ambientais e como agir!
+                                <span className="pill">Critical Software</span>
                             </li>
-                            <li>Dashboard pour les coachs Plus que PRO ( <a href="http://codepen.io/Chmood/full/NdXzNM/" target="_blank" rel="noreferrer">prototype
-                                    Codepen</a>) <span className="pill">privé</span></li>
-                            <li>Dashboard de résultats de sondage interne ( <a href="http://codepen.io/Chmood/full/RWQgrp/" target="_blank" rel="noreferrer">prototype
-                                    Codepen</a>) <span className="pill">privé</span></li>
-                            <li>Appli mobile des commerciaux Plus que PRO (avec Appccelerator) <span className="pill">privé</span></li>
-                            <li><a href="http://makemyjuice.fr/" target="_blank" rel="noreferrer">MakeMyJuice</a>, un calculateur de liquide pour e-cigarette <span className="pill">old</span>
-                                <span className="pill">perso</span>
+                            <li><a href="taikai.network/en/cityhack/challenges/city-hack-2021/projects/ckp1yk9ak13436020rugdbzyuzmt/idea" target="_blank" rel="noreferrer">
+                            CityHack2021- Smart Environment</a>
+                                Smart Environment pretende dar ouvidos ao Meio Ambiente, sentindo os fenómenos de forma precisa e quantitativa e qualificativa para que nós possamos perceber fenómenos ambientais e como agir!
+                            </li>
+                            <li><a href="taikai.network/en/cityhack/challenges/city-hack-2020/projects/ckak3a179fj4808646dysqmc9/idea" target="_blank" rel="noreferrer">
+                                CityHack2020- eMotion Flow</a>
+                                An IoT RADAR/InfraR electronic control system that counts the occupancy rate of a public place, providing real-time data and protecting Public Health
+                            </li>
+                            <li><a href="taikai.network/en/cityhack/challenges/city-hack-2021/projects/ckp1yk9ak13436020rugdbzyuzmt/idea" target="_blank" rel="noreferrer">
+                            Tech4Covid19- Q-Card</a>
+                                A card that is a ticket for a line queue in any commercial space(RFID, NFC or QRcode) People register their turn by swiping these or Online, than receive an SMS with their number and updates on the Q!
                             </li>
                         </ul>
                     </div>
                 </section>
                 <section className="section section--secondary section--projects-3">
-                    <h2 className="section__title section__title--white">Jeux</h2>
+                    <h2 className="section__title section__title--white">Tools &amp; Bookmarks</h2>
                     <div className="section__body">
                         <p><em>Quel dev n'aime pas coder ça&nbsp;? (voir mon <a href="https://github.com/Chmood" target="_blank" rel="noreferrer">github</a> pour les
                                 sources)</em></p>

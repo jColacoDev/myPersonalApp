@@ -5,11 +5,18 @@ import TextEffect1 from "./../../Components/TextEffect1/TextEffect1";
 import ContactLetter from "./../../Components/ContactLetter/ContactLetter";
 import TextQuote from "./../../Components/TextQuote/TextQuote";
 import GalleryPollaroid from "./../../Components/GalleryPollaroid/GalleryPollaroid";
-import GalleryCards from "./../../Components/GalleryCards/GalleryCards";
 import { Animated } from 'react-animated-css'
 import Cubes from "../../Components/Cubes/Cubes";
+import { useSelector } from "react-redux";
 
 const LandingPage = () => {
+    const theme = useSelector((state) => state.theme);
+    const [imgSrc, setImgSrc] = React.useState("");
+
+    
+    React.useEffect(() => {
+        setImgSrc(theme === "darkTheme" ? require("./favThingsWhite.png") : require("./favThings.png"));
+    }, [theme]);
 
     return (
         <Animated 
@@ -31,6 +38,7 @@ const LandingPage = () => {
                 </div>
             </section>
             <section id="interests">
+                <figure><img src={imgSrc} alt="" /></figure>
                 <GalleryPollaroid></GalleryPollaroid>
                 <Cubes></Cubes>
             </section>

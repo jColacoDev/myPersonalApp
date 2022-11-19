@@ -17,10 +17,10 @@ export default function Footer() {
                 <Link to="/#interests">Interests</Link>
             </article>
             <article>
-                <h2>Informação</h2>
-                <Link to="#top">Politica de Privacidade</Link>
-                <Link to="#top">Politica de Devoluções</Link>
-                <Link to="#top">Termos de Serviço</Link>
+                <h2>Curriculum Vitae</h2>
+                <Link to="#top">CV</Link>
+                <Link to="#top">Portfolio</Link>
+                <Link to="#top">Projects</Link>
             </article>
             <article>
                 <Link onClick={handleTopClick}>

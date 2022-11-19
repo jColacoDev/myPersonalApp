@@ -14,7 +14,7 @@ export default function StickyNav({pagesData}) {
     }, [location]);
 
     return (
-        <nav className="stickyNav hover-underline07">
+        <nav className="stickyNav hover-underline07 ">
             {pagesData[linkIndex].navLinks.map((navLink, i)=>
                 <a key={i} href={navLink.ref}>{navLink.label}</a>    
             )}

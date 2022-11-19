@@ -5,15 +5,14 @@
     justify-content: center;
     align-items: center;
     padding: 2.5em 2em;
-    font-size: 1.1em;
     background-color: var(--headerBar-bg-color);
-    z-index: 999;
+    z-index: 9999;
     position: relative;
 
     figure{
         max-width: 400px;
         margin: 0 auto;
-        margin-bottom: 0.8em;
+        margin-bottom: 0.4em;
 
         span{
             font-size: 25px;
@@ -71,16 +70,8 @@
     }
 }
 
-@media (min-width: 960px) {
-    footer.appFooter{
-        margin-right: 300px;
-    }
-}
-
-
 @media screen and (min-width: 1100px) {
     footer.appFooter{ 
-
         article,
         article:last-child{
             width: 32%;

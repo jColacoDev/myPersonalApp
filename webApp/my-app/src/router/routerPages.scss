@@ -1,19 +1,23 @@
-    #landingParallax{
-        position: relative;
-        z-index: 99;
-    }
-    #top{
-        position: fixed;
-        top: 0;
-        left: -100px;
-        opacity: 0;
-    }
-    @media (min-width: 960px) {
-        #RouteStart{
-            padding-right: 300px;
-            z-index: 99;
+.marginMenu{
+    position: relative;
+
+    @media screen and (min-width: 1100px) {
+        &{ 
+            margin-right: var(--sideNav-width);
         }
     }
+}
+
+#landingParallax{
+    position: relative;
+    z-index: 99;
+}
+#top{
+    position: fixed;
+    top: 0;
+    left: -100px;
+    opacity: 0;
+}
     
 .text-underlined {
     position: relative;

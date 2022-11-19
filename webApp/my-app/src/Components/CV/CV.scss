@@ -1,5 +1,33 @@
 .CV {
-    ////////////////////////////////////////////////////////////////////////////////
+    --orange: #ee5722;
+
+    & *,
+    > * {
+        transition: all .25s;
+        transition-property: none;
+        transition-delay: 0ms;
+    }
+
+    .imgWorkflow{
+        display: none;
+        max-width: 300px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: -2em;
+        right: -1em;
+        z-index: 1;
+        opacity: .3;
+        
+        @media (min-width: 960px) {
+            &{
+                display: inline-block;
+            }
+        }
+    }
+
+    p, li{
+        font-weight: 600;
+    }
     menu, article, aside, details, footer, header, nav, section {
         display: block;
     }
@@ -20,27 +48,27 @@
 
     // Palette colors
     $color-primary: #ee5722 !default;
-    $color-secondary: #2d3e4e !default;
+    $color-secondary: #202020 !default;
     $color-gray-darkest: #111 !default;
     $color-gray-darker: #222 !default;
     $color-gray-dark: #444 !default;
-    $color-gray: #888 !default;
+    $color-gray: var(--text-color) !default;
     $color-gray-light: #aaa !default;
     $color-gray-lighter: #eee !default;
 
     // Type
-    $pixels-per-rem: 16 !default; // Kind of global zoom
-    $fontsize-base: 1rem !default;
-    $fontsize-base-print: .8rem !default;
+    $pixels-per-em: 16 !default; // Kind of global zoom
+    $fontsize-base: 1em !default;
+    $fontsize-base-print: .8em !default;
     $lineheight-base: 1.5 !default;
-    $fontsize-small: .8rem !default;
-    $fontsize-smaller: .6rem !default;
-    $fontsize-big: 1.2rem !default;
-    $fontsize-bigger: 1.5rem !default;
-    $fontsize-biggest: 1.8rem !default;
-    $fontsize-huge: 2rem !default;
-    $fontsize-huger: 2.2rem !default;
-    $fontsize-giant: 2.6rem !default;
+    $fontsize-small: .8em !default;
+    $fontsize-smaller: .6em !default;
+    $fontsize-big: 1.2em !default;
+    $fontsize-bigger: 1.5em !default;
+    $fontsize-biggest: 1.8em !default;
+    $fontsize-huge: 2em !default;
+    $fontsize-huger: 2.2em !default;
+    $fontsize-giant: 2.6em !default;
 
     $fontsize-h1: $fontsize-giant !default;
     $fontsize-h2: $fontsize-huger !default;
@@ -68,12 +96,10 @@
 
     ////////////////////////////////////////////////////////////////////////////////
     // COMPUTED
-    // /!\ Don't edit below unless you know the game! /!\
-
     // Gutter
 
     $gutter: $fontsize-base * $lineheight-base;
-    $gutter-in-px: round($gutter * $pixels-per-rem / 1rem);
+    $gutter-in-px: round($gutter * $pixels-per-em / 1em);
 
     $gutter-half: $gutter / 2;
     $gutter-third: $gutter / 3;
@@ -161,19 +187,15 @@
 
     // Links
     a:not(.cv--link) {
-        $link-color--hover: lighten($color-secondary, 20%);
+        $link-color--hover: lighten($color-secondary, 80%);
 
         color: $color-secondary;
         font-weight: $fontweight-bold;
         font-style: italic;
         text-decoration: none;
         border-bottom: 2px dotted transparent;
-        transition: all 0.25s;
-
-        &:hover {
-            color: $link-color--hover;
-            border-color: $link-color--hover;
-        }
+        transition: all 0.2s;
+        margin-right: 1em;
     }
 
     // Headings
@@ -257,7 +279,7 @@
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        background-color: white;
+        background-color: var(--dark-white);
 
         @include bp("md") {
             width: $cv-width-md;
@@ -275,8 +297,8 @@
         }
     }
     .cv__head {
-        background-color: white;
-        color: white;
+        background-color: var(--dark-white);
+        color: black;
         text-align: center;
         overflow: hidden;
 
@@ -290,14 +312,16 @@
     }
 
     .cv__foot {
-        background-color: $color-primary;
+        background-color: var(--orange);
         color: white;
         text-align: center;
         padding: $gutter-half;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
 
         @include bp("lg") {
-            flex: 0 0 (100.1% - $aside-width);
-            margin-left: $aside-width;
             box-shadow: -7cm 0 0 0 $color-gray-lighter;
             z-index: 12;
         }
@@ -309,6 +333,7 @@
         color: $color-gray-dark;
         flex: 1; // sticky footer
         background-color: $color-secondary;
+        overflow: hidden;
 
         @include bp("lg") {
             flex: 1 0 (100% - $aside-width);
@@ -323,6 +348,10 @@
 
     .page {
         display: none;
+        
+        section:not(:first-of-type){
+            padding-top: 3em;
+        }
 
         &.active {
             display: initial;
@@ -332,44 +361,63 @@
     ////////////////////////////////////////////////////////////////////////////////
     // Color variants 
 
-    %bg--white {
-        background-color: white;
-        color: $color-gray-dark;
+    %bg--orange {
+        background-color: var(--orange);
+        color: black;
 
-        h3 {
-            color: $color-primary;
+        p{
+            color: #040358;
         }
-    }
-
-    %bg--primary {
-        background-color: $color-primary;
-        color: white;
 
         h3 {
             color: $color-secondary;
         }
     }
 
+    %bg--primary {
+        background-color: var(--dark-white);
+        color:black;
+
+        h3 {
+            color: $color-primary;
+        }
+        a:not(.cv--link) {
+            &:hover {
+                color: var(--orange-white);
+                border-color: var(--orange-white);
+            }
+        }
+    
+    }
+
     %bg--secondary {
         background-color: $color-secondary;
-        color: white;
+        color: var(--dark-white);
 
         h3 {
             color: $color-primary;
         }
 
         a:not(.cv--link) {
-            color: $color-primary;
+            color: var(--orange);
 
             &:hover {
-                color: $color-primary-light;
-                border-color: $color-primary-light;
+                color: var(--orange)-light;
+                border-color: var(--orange)-light;
             }
         }
     }
 
-    .section--white {
-        @extend %bg--white;
+    .section--orange {
+        @extend %bg--orange;
+        color: black;
+        a:not(.cv--link) {
+            color: black;
+            &:hover {
+                color: white;
+                border-color: white;
+            }
+        }
     }
     .section--primary {
         @extend %bg--primary;
@@ -384,7 +432,8 @@
 
     .section {
         position: relative;
-        padding: $gutter-and-half $gutter;
+        padding: $gutter;
+        font-size: 1.02em;
 
         @include bp("lg") {
             .cv__main {
@@ -402,7 +451,7 @@
     // USER
 
     .user-title {
-        background-color: $color-primary;
+        background-color: var(--orange);
     }
 
     .user__social {
@@ -421,20 +470,15 @@
     }
 
     .user__contact {
-        @include bp("lg") {
-            // Compact mode on desktop
-            padding-top: 0;
-            // Reset grid on desktop
-            padding-left: $gutter !important;
-        }
+        padding: 0 !important;
     }
 
     // METAS
     .user__metas {
         flex: 1;
         align-content: flex-start;
-        background-color: white;
-        color: $color-gray;
+        background-color: var(--dark-white);
+        color: black;
 
         @extend .grid;
         @extend .grid--50;
@@ -448,7 +492,6 @@
         position: relative;
 
         .media {
-            // max-height: 50rem;
             overflow: hidden;
         }
 
@@ -486,7 +529,7 @@
     }
 
     .user__media--round {
-        $media-size: 28rem;
+        $media-size: 28em;
 
         display: inline-block;
         width: 100%;
@@ -499,7 +542,7 @@
             height: 0;
             padding-bottom: 100%;
             border-radius: 50%;
-            box-shadow: 0 0 0 $gutter lighten($color-primary, 15%);
+            box-shadow: 0 0 0 $gutter lighten($color-primary-dark, 15%);
         }
 
         .media__wrapper {
@@ -566,6 +609,7 @@
     // User job
 
     .user__job {
+        color: var(--light-black);
         margin-bottom: 0;
         margin-top: $gutter-and-half;
         font-weight: $fontweight-light;
@@ -581,12 +625,7 @@
 
     .section.user-title {
         position: relative;
-        padding-top: $gutter-double;
-        padding-bottom: $gutter-double;
-
-        @include bp("sm") {
-            padding-bottom: $gutter-and-half;
-        }
+        padding: 3em 1em;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -606,14 +645,15 @@
 
     .social {
         border: none;
-        $social-icon-size: 6rem;
+        $social-icon-size: 6em;
+
+        display: flex;
+        justify-content: center;
 
         position: relative;
         min-height: $social-icon-size;
         margin-bottom: $gutter-half;
 
-        display: block;
-        
         &:hover {
             span{
                 opacity: 1;
@@ -622,14 +662,9 @@
         }
 
         .social__icon {
-            display: block;
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate3d(-50%, -60%, 0);
-            width: $social-icon-size;
-            height: $social-icon-size;
-            font-size: $social-icon-size;
+            width: 1em;
+            height: 1em;
+            font-size: 6em;
             line-height: 1;
             text-align: center;
             font-family: "FontAwesome";
@@ -639,7 +674,7 @@
 
         span {
             position: absolute;
-            top: 50%;
+            top: 65%;
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
             padding: $gutter-quarter / 2 $gutter-half;
@@ -648,7 +683,7 @@
             font-style: italic;
             color: white;
             opacity: .8;
-            transition: .2s;
+            transition: all .2s;
 
 
             &:before {
@@ -671,10 +706,19 @@
     // CONTACT
 
     .contact {
+        font-size: 1.6em;
+
         > * {
             display: block;
             margin-bottom: $gutter * 0.5;
             font-style: italic;
+        }
+        .contact__mail{
+            
+            a:hover{
+                color: var(--headerBar-link-color);
+                -webkit-text-stroke: 1px black;
+            }
         }
     }
 
@@ -685,45 +729,50 @@
     ////////////////////////////////////////////////////////////////////////////////
     // NAVBAR
     .section--nav {
-        padding-top: 0;
-        padding-bottom: 0;
+        width: 100%;
+        padding: 0;
         overflow: hidden;
+        position: relative;
     }
     .navbar {
-        margin: 0 -2rem;
-        font-size: $fontsize-bigger;
+        width: 100%;
+        transform: skewX(-7deg);
 
         > ul.nav {
             width: 100%;
             margin: 0;
             display: flex;
-            transform: skewX(-7deg);
 
             > li {
                 margin: 0;
                 flex-grow: 1;
-                > a button {
+                > a {
                     width: 100%;
-                    display: inline-block;
-                    font-family: $fontfamily-base !important;
-                    border: 0 !important; // OMG Kills focus styles
-                    padding: 0.5rem 1rem;
-                    text-align: center;
-                    text-transform: uppercase;
-                    font-weight: $fontweight-light !important;
-                    font-size: $fontsize-bigger;
+                     
+                    button {
+                        width: 100%;
+                        display: inline-block;
+                        font-family: $fontfamily-base !important;
+                        border: 0 !important; // OMG Kills focus styles
+                        padding: 0.5em 1em;
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-weight: $fontweight-light !important;
+                        font-size: $fontsize-bigger;
 
-                    cursor: pointer;
-                    background-color: transparent;
-                    color: white;
+                        cursor: pointer;
+                        background-color: transparent;
+                        color: white;
 
-                    &:hover {
-                        background-color: #ffffff70;
-                        color: black;
-                    }
+                        &:hover {
+                            background-color: var(--dark-white);
+                            opacity: .7;
+                            color: black;
+                        }
 
-                    &:focus {
-                        border-color: white;
+                        &:focus {
+                            border-color: var(--dark-white);
+                        }
                     }
                 }
 
@@ -735,9 +784,14 @@
 
                 &.active {
                     > a button {
-                        background-color: white;
+                        background-color: var(--dark-white);
                         color: $color-secondary;
                         @include shadow(1);
+
+                        &:hover {
+                            opacity: 1;
+                            cursor: default;
+                        }
                     }
                 }
             }
@@ -780,7 +834,7 @@
             color: $color-secondary;
 
             &::before {
-                background-color: white;
+                background-color: var(--dark-white);
             }
         }
 
@@ -788,7 +842,8 @@
             color: white;
 
             &::before {
-                background-color: $color-primary;
+                background-color: var(--orange);
+                border: 1px solid black;
             }
         }
 
@@ -801,11 +856,11 @@
 
     .section__title--simple {
         // BEM fuxed!
-        font-size: $fontsize-bigger;
+        font-size: 2em;
         text-transform: uppercase;
         font-weight: 400;
-        margin-bottom: $gutter;
-        color: $color-gray;
+        margin-bottom: 1em;
+        color: black;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -922,8 +977,8 @@
 
     .pill {
         position: relative;
-        top: -0.5rem;
-        color: $color-primary;
+        top: -0.5em;
+        color: var(--orange);
         font-size: $fontsize-smaller;
         text-transform: uppercase;
         font-style: italic;
@@ -944,11 +999,6 @@
             span:nth-child(2) {
                 @extend %trailing-slashes;
             }
-
-            span:nth-child(3) {
-                color: $color-gray;
-                font-weight: $fontweight-base;
-            }
         }
     }
 
@@ -957,7 +1007,7 @@
         padding-top: $gutter;
         margin-left: 0;
         padding-left: $timeline-tree-size / 2;
-        box-shadow: inset $timeline-line-size / 2 0 0 0 $color-primary, -$timeline-line-size / 2 0 0 0 $color-primary;
+        box-shadow: inset $timeline-line-size / 2 0 0 0 var(--orange), -$timeline-line-size / 2 0 0 0 var(--orange);
 
         .timeline__icon {
             position: absolute;
@@ -966,7 +1016,7 @@
             width: $timeline-tips-size;
             height: $timeline-tips-size;
 
-            fill: $color-primary; // base svg fill
+            fill: var(--orange); // base svg fill
         }
 
         .timeline__icon--top {
@@ -997,24 +1047,27 @@
                     height: $timeline-dot-size;
                     background-color: white;
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 $timeline-line-size $color-primary;
+                    box-shadow: inset 0 0 0 $timeline-line-size var(--orange);
                 }
             }
 
             h3 {
                 margin-top: 0;
             }
+
+            span{
+                letter-spacing: -1px;
+            }
         }
 
         .date-range {
-            color: tomato;
             display: block;
             margin-bottom: $gutter-quarter;
             font-weight: $fontweight-bold;
             font-style: italic;
-            letter-spacing: -0.2rem;
+            letter-spacing: -0.1em;
             line-height: 1;
-            color: $color-secondary-lighter;
+            color: white;
 
             @include bp("lg") {
                 margin-bottom: 0;
@@ -1028,10 +1081,10 @@
     // FAVICONS IN PORTFOLIO
 
     .favicon {
-        $favicon-size: 2rem;
+        $favicon-size: 2em;
         display: inline-block;
-        width: 2rem;
+        width: 2em;
         margin-right: $gutter-quarter;
-        transform: translateY(2rem / 8 * 1.5); // Magic value!
+        transform: translateY(2em / 8 * 1.5); // Magic value!
     }
 }
