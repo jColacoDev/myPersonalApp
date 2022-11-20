@@ -68,6 +68,10 @@
           height: 225px;
           transform-style: preserve-3d;
           transform: rotateY(-15deg);
+
+          img{
+            border: 1px solid var(--headerBar-link-color);
+          }
         
         &.first{
             transform: rotateY(-105deg);

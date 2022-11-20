@@ -69,7 +69,10 @@
                 cursor: zoom-out;
 
                 section{
-                    display: inline-block;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4em;
+                    padding: 1em;
                 }
 
                 p{

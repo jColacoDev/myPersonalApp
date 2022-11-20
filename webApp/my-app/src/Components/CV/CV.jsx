@@ -146,7 +146,7 @@ return (
                         </article>
                         <article>
                             <h3>F<span className="smallCaps">rontend Development</span></h3>
-                            <p>HTML5, CSS3, Sass, Javascript, Typescript
+                            <p>HTML5, CSS3, Sass, Javascript ES6, Typescript
                                <br/>React, Angular, Redux, DevTools
                             </p>
                         </article>
