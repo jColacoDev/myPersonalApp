@@ -1,0 +1,39 @@
+nav.stickyNav {
+    height: var(--topNav-height);
+    position: sticky;
+    top: -1px;
+    display: flex;
+    z-index: 9999;
+    align-items: center;
+    background-color: var(--headerBar-bg-color);
+    opacity: .9;
+    justify-content: space-around;
+
+    box-shadow: -10px 1px 16px var(--linksColorShadow);
+
+    a {
+        color: var(--headerBar-link-color);
+        font-weight: 700;
+    
+        @media (min-width: 500px) {
+            &{
+                font-size: 1.3em;
+            }
+        }
+    
+        @media (min-width: 690px) {
+            &{
+                font-size: 1.5em;
+            }
+        }
+        
+
+        &::after{
+            background: var(--headerBar-link-color);
+        }
+    }
+    figure {
+        width: 60px;
+        height: 60px;
+    }
+}

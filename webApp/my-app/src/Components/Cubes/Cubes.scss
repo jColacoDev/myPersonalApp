@@ -1,0 +1,116 @@
+.Cubes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+        
+    @media screen and (min-width: 1600px) {
+        & {
+            max-width: 45%;
+        }
+    }
+    
+    h1{
+        font-size: 1.5em;
+        line-height: 1.2;    }
+        color: var(--title2-color);
+    p{
+        color: var(--text-color);
+        line-height: 1.1;
+    }
+    span{
+        color: var(--text-color);
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+
+    .cubes-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        gap: 1em;
+        min-height: 450px;
+
+        .cubeData{
+            display: flex;
+            width: 30%;
+            min-width: 150px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+      .cube-container {
+        display: flex;
+        box-shadow: 0 18px 40px 5px var(--linksColorShadow);
+        perspective: 800px;
+        margin: 50px 0 30px 0;
+        max-width: 200px;
+        text-align: center;
+      }
+
+      .photo-desc {
+        font-size: 0.85em;
+        color: #fff;
+        padding: 1.1em 1em 0;
+        background: #345d88;
+      }
+
+
+      
+    .photo-cube {
+          transition: transform 2s ease-in-out;
+          width: 140px;
+          height: 225px;
+          transform-style: preserve-3d;
+          transform: rotateY(-15deg);
+
+          img{
+            border: 1px solid var(--headerBar-link-color);
+          }
+        
+        &.first{
+            transform: rotateY(-105deg);
+        }
+        &.second{
+            transform: rotateY(-195deg);
+        }
+        &.third{
+            transform: rotateY(-285deg);
+        }
+      }
+      
+      .front,
+      .back,
+      .left,
+      .right {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        object-fit: cover;
+      }
+      
+      .front {
+        transform: translate3d(0, 0, 75px);
+      }
+      
+      .back {
+        transform: translateZ(-65px) rotateY(270deg);
+        transform-origin: center left;
+      }
+      
+      .left {
+        transform: rotateY(-270deg) translate3d(65px, 0, 0);
+        transform-origin: top right;
+      }
+      
+      .right {
+        transform: translateZ(-65px) rotateY(180deg);
+      }
+      
+}

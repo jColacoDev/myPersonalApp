@@ -5,9 +5,9 @@ import Router from "./router/router";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <ParallaxProvider>
-                <Router />
+                    <Router />
             </ParallaxProvider>
         </BrowserRouter>
     );
