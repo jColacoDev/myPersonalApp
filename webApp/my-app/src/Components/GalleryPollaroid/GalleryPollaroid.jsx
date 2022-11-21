@@ -52,8 +52,7 @@ export default function GalleryPollaroid() {
                         "In a world where everyone can take a picture, take a picture with story.",
                         "Capturing moments takes a lot of perspectives, shadows and lights, looking at the world as such is much more interesting!",
                         "I do image and film editing to create memorable pieces!",
-                        "I focus on transitions and content with the help of a hand gimbal and a drone",
-                        "I'm just bad at doing poses ':)"
+                        "I focus on transitions and content with the help of a hand gimbal and a drone."
                     ]
         },
         {

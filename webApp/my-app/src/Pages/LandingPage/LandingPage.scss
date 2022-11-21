@@ -7,6 +7,10 @@ main.LandingPage {
         }
     }
 
+    #contactMe{
+        align-items: center;
+    }
+
     #interests{
         figure{
             width: 100%;
@@ -43,7 +47,7 @@ main.LandingPage {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
         gap: 2em;
         padding: 1em;
 
