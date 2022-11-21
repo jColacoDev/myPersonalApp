@@ -182,6 +182,16 @@
         max-width: 15em;
         color: var(--text2-color);
         transition: 0.2s;
+
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        z-index: 1;
+        font-size: 1.1em;
+        transform: translateX(-50%);
+    }
+    &.sent #sendLetter {
+        z-index: -1;
     }
     &.sent .letter {
         -webkit-animation: scaleLetter 1s forwards ease-in;
@@ -209,9 +219,9 @@
     }
     &.sent .result-message {
         opacity: 1;
-        transform: translateY(12em) translateX(5.5em);
+        width: 100%;
+        
         &:hover{
-            transform: translateY(calc(12em + 4px)) translateX(5.5em);
             background-color: #21337666;
         }
     }

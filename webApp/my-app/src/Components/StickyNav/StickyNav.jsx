@@ -18,7 +18,6 @@ export default function StickyNav({pagesData}) {
             {pagesData[linkIndex].navLinks.map((navLink, i)=>
                 <a key={i} href={navLink.ref}>{navLink.label}</a>    
             )}
-            <figure></figure>
         </nav>
   )
 }
