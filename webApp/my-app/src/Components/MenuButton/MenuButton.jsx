@@ -16,7 +16,7 @@ export default function MenuButton() {
 
     function handleResize() {
         if(innerWidth !== window.innerWidth){
-            if(window.innerWidth > 1100){
+            if(window.innerWidth > 1099){
                 setChecked(true);
             }else{
                 setChecked(false);

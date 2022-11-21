@@ -347,169 +347,18 @@ return (
                 <section className="section section--orange section--portfolio-1">
                     <h2 className="section__title section__title--primary">Web Apps</h2>
                     <div className="section__body">
-                        <div className="grid grid--50">
-                            <article>
-                                <h3>WordPress</h3>
-                                <ul className="no-bullet">
-                                    <li>
-                                        <a href="https://www.qwesta-builder.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.qwesta-builder.fr/wp-content/themes/lightwords/dist/img/favicon/favicon.ico" alt=""/>
-                                            Qwesta
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.the-disrupt-lab.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.the-disrupt-lab.com/wp-content/themes/lightwords/dist/img/favicon/favicon.ico" alt=""/>
-                                            The disrupt lab
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.echodalsace.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.echodalsace.com/public/donnees/cms/sources/favicons/favicon-32x32.png" alt=""/>
-                                            L'Écho d'Alsace
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://schaal-chocolatier.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://schaal-chocolatier.com/wp-content/uploads/2019/10/cropped-favicon-SCHAAL_version1-32x32.png" alt=""/>
-                                            Chocolats Schaal
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.monfournil.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.monfournil.fr/wp-content/uploads/2016/08/cropped-logo_monfournil_2-32x32.jpg" alt=""/>
-                                            monfournil.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.babychou.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.babychou.com/wp-content/uploads/2016/08/cropped-picto-uniquement-1-32x32.jpg" alt=""/>
-                                            babychou.com
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.krautergersheim.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.krautergersheim.com/wp-content/uploads/2018/07/cropped-favicon-32x32.png" alt=""/>
-                                            Mairie de Krautergersheim
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3>WooCommerce</h3>
-                                <ul className="no-bullet">
-                                    <li>
-                                        <a href="http://www.sebastien-gillmann.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.sebastien-gillmann.com/wp-content/themes/lightwords/dist/img/favicon/favicon-32x32.png" alt=""/>
-                                            sebastien-gillmann.com
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.fortal.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.fortal.fr/wp-content/themes/lightwords/dist/img/favicon/favicon-32x32.png" alt=""/>
-                                            fortal.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.edel.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.edel.fr/wp-content/uploads/2018/12/cropped-favicon-32x32.png" alt=""/>
-                                            edel.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.ateliers-marc-k.net/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.ateliers-marc-k.net/wp-content/uploads/2018/06/favicon-ateliers-marc-K-100x100.png" alt=""/>
-                                            Ateliers Marc K.
-                                        </a>
-                                    </li>
-                                </ul>
-                            </article>
-
-                            <article>
-                                <h3>CMS propriétaire</h3>
-                                <ul className="no-bullet">
-                                    <li>
-                                        <a href="https://www.obernai.shop/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.obernai.shop/images/front/favicons/favicon-32x32.png" alt=""/>
-                                            Alsace Shopping
-                                        </a> (Laravel)
-                                    </li>
-                                    <li>
-                                        <a href="http://www.petite-entreprise.net/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.petite-entreprise.net/images-donnees/cms/sources/favicons/favicon-32x32.png" alt=""/>
-                                            petite-entreprise.net
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.plus-que-pro.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.plus-que-pro.fr/public/donnees/cms/sources/favicons/favicon-32x32.png" alt=""/>
-                                            plus-que-pro.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.toute-la-franchise.com/" target="_blank" rel="noreferrer">
-                                            <img className="favicon favicon--inline" src="https://www.toute-la-franchise.com/images/ipd/icones/favicon.ico" alt=""/>
-                                            toute-la-franchise.com
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.camif-habitat.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon favicon--inline" src="https://cdn.camif-habitat.fr/Content/Images/Favicon/favicon.ico" alt=""/>
-                                            camif-habitat.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.chalet-armanaz.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.chalet-armanaz.fr/public/donnees/cms/sources/favicons/favicon-32x32.png" alt=""/>
-                                            chalet-armanaz.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.centre-affaires-lyon-monts-d-or.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.centre-affaires-lyon-monts-d-or.fr/public/donnees/cms/sources/favicons/favicon-32x32.png" alt=""/>
-                                            centre-affaires-lyon-monts-d-or.fr
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3>Prestashop</h3>
-                                <ul className="no-bullet">
-                                    <li>
-                                        <a href="https://www.oppermann.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.oppermann.fr/img/favicon.ico?1537456986" alt=""/>
-                                            oppermann.fr
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.clic-perruques.fr/" target="_blank" rel="noreferrer">
-                                            <img className="favicon" src="https://www.clic-perruques.fr/img/favicon.ico?1572527100" alt=""/>
-                                            clic-perruques.fr
-                                        </a>
-                                    </li>
-                                </ul>
-                            </article>
-                            <p style={{textAlign: "right", marginTop: "-1.5rem"}}><em>
-                                    &hellip;ainsi que la plupart des <a href="https://www.webcd.fr/tous-les-projets/" target="_blank" rel="noreferrer">réalisations de Webcd</a>.
-                                </em></p>
-                        </div>
+                        <figure className='underConstruction'>
+                            <img src={require("./../../Images/underConstruction.png")} alt="under Cunstruction" />
+                        </figure>
                     </div>
                 </section>
 
                 <section className="section section--primary section--portfolio-2">
                     <h2 className="section__title">Electronics</h2>
                     <div className="section__body" style={{paddingBottom: "1.6rem"}}>
-                        <p>
-                            <em>Les multi-sites dont j'ai conçu le socle front-end, intégrés en masse par d'autres que moi</em>
-                        </p>
-                        <h3 style={{color: "white"}}>
-                            Plus que PRO
-                        </h3>
-                        <p><a href="http://www.plus-que-pro.fr/adherents/" target="_blank" rel="noreferrer">Plus de 1500 mini-sites d'adhérents</a> (par exemple <a href="http://www.armony-cuisines.fr/" target="_blank" rel="noreferrer">armony-cuisines.fr</a>, <a href="http://www.mactbox.fr/">mactbox.fr</a> ou <a href="http://www.ecole-grandjean.fr/" target="_blank" rel="noreferrer">l'école Grandjean</a>)</p>
-                        <br/>
-                        <p></p>
-                        <h3 style={{color: "white"}}>Toute La Franchise</h3>
-                        <p>4 portails et 19 mini-sites ( <a href="http://www.franchise-service.fr/" target="_blank" rel="noreferrer">franchise-service.fr</a>, <a href="http://www.franchise-commerce.fr/">franchise-commerce.fr</a>,
-                            <a href="http://www.franchise-habitat.fr/" target="_blank" rel="noreferrer">franchise-habitat.fr</a> et <a href="http://www.masterfranchise.fr/" target="_blank" rel="noreferrer">masterfranchise.fr</a>,
-                            ainsi que <a href="http://www.franchise-restauration.fr" target="_blank" rel="noreferrer">restauration</a>, <a href="http://www.franchise-batiment-renovation.fr" target="_blank" rel="noreferrer">batiment-renovation</a>,
-                            <a href="http://www.franchise-d-agence-immobiliere.fr" target="_blank" rel="noreferrer">agence-immobiliere</a> , etc…)
-                        </p>
+                        <figure className='underConstruction'>
+                            <img src={require("./../../Images/underConstruction.png")} alt="under Cunstruction" />
+                        </figure>
                     </div>
                 </section>
             </div>
@@ -561,7 +410,7 @@ return (
                     </div>
                 </section>
                 <section className="section section--secondary section--projects-3">
-                    <h2 className="section__title section__title--white">Tools &amp; Bookmarks</h2>
+                    <h2 className="section__title section__title--white">Bookmarks</h2>
                     <div className="section__body">
                         <p><em>Quel dev n'aime pas coder ça&nbsp;? (voir mon <a href="https://github.com/Chmood" target="_blank" rel="noreferrer">github</a> pour les
                                 sources)</em></p>

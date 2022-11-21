@@ -4,6 +4,9 @@
 }
 
 :root[data-theme="lightTheme"] {
+    --green-gold: #78bb7e;
+    --green-gold-shadow: #26772d;
+
     --orange-white: #ee5722;
 
     --dark-white: white;
@@ -28,6 +31,9 @@
 }
 
 :root[data-theme="darkTheme"] {
+    --green-gold: #ffb338;
+    --green-gold-shadow: #77571d;
+
     --orange-white: white;
 
     --dark-white: #c3c3c3;
