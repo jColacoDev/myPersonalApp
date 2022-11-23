@@ -1,0 +1,41 @@
+import "./TheRoom.scss"
+import React from 'react'
+import SliderFrame from "../SliderFrame/SliderFrame";
+
+export default function TheRoom() {
+    const roomRef = React.useRef();
+
+    React.useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    }, []);
+
+    function calculatePerspective(elementPosition){
+
+        let perspectivePercent = 50 - (elementPosition / window.innerHeight * 50);
+        if(perspectivePercent < 0) perspectivePercent = 0;
+        if(perspectivePercent > 100) perspectivePercent = 100;
+
+        return perspectivePercent;
+    }
+    
+    function handleScroll() {
+
+        for(let room of roomRef.current.querySelectorAll(".room")){
+            room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
+        }
+    }
+
+    return (
+        <div ref={roomRef} className="TheRoom">
+            <section className="room">
+                <span className="ceiling"></span>
+                <div className="room-walls"></div>
+                <div className="frontWall_decor">
+                    <SliderFrame ></SliderFrame>
+                    <SliderFrame ></SliderFrame>
+                </div>
+                <span className="floor"></span>
+            </section>
+        </div>
+    )
+}

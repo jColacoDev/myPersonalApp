@@ -1,0 +1,98 @@
+.ExhibitCaroussel{
+    height: calc(100vh - var(--topNav-height));
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #79838b;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+
+    .bg {
+        gap: 3em;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        max-height: 70%;
+        background-color: var(--darker-white);
+
+        -webkit-perspective: 500px;
+        perspective: 500px;
+        transform: translateX(0);
+        display: -webkit-box;
+        display: flex;
+        align-items: center;
+
+        section{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 35%;
+            height: 100%;
+            min-width: 300px;
+
+            -webkit-box-flex: 0;
+            flex: 0 0 auto;
+            margin: 0;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 0.5s;
+            transition: -webkit-transform 0.5s;
+            transition: transform 0.5s;
+            transition: transform 0.5s, -webkit-transform 0.5s;
+
+            article {
+                min-height: 40vh;
+                margin: 1em;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                width: 80%;
+                height: calc( 65% - 3em);
+                background: var(--dark-white);
+                box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            }
+
+            figure{
+                width: 80%;
+                height: 20%;
+                background-color: red;
+            }
+        }
+    }
+    
+    .pngLights {
+        display: none;
+        position: absolute;
+        z-index: 8;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://user-images.githubusercontent.com/26748614/96336791-759dc980-1082-11eb-85cb-c8761a9a5672.png");
+        max-height: 500px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% -1em;
+    }
+    
+    & .pngLights {
+        background-image: 
+        url("https://user-images.githubusercontent.com/26748614/96336791-759dc980-1082-11eb-85cb-c8761a9a5672.png"), 
+        url("https://user-images.githubusercontent.com/26748614/96336777-72a2d900-1082-11eb-9422-8f2ca0a4f302.png"), 
+        url("https://user-images.githubusercontent.com/26748614/96336777-72a2d900-1082-11eb-9422-8f2ca0a4f302.png");
+    }
+    
+    .floor {
+        flex: 1 1 auto;
+        background-image: url("https://user-images.githubusercontent.com/26748614/96336787-746c9c80-1082-11eb-941f-7846cba8223b.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+
+        &{
+            filter: brightness(0.6);
+        }
+    }
+}

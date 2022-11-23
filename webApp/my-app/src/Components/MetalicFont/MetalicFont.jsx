@@ -4,8 +4,8 @@ import "./MetalicFont.scss"
 export default function MetalicFont({children}) {
     return (
         <div className='MetalicFont'>
-            <div class="bg"> {children} </div>
-            <div class="fg"> {children} </div>
+            <div className="bg"> {children} </div>
+            <div className="fg"> {children} </div>
         </div>
     )
 }

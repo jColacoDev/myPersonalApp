@@ -1,0 +1,9 @@
+.TheBuilding{
+    --depth: 2500px;
+    $turnLeft: 0.06turn;
+    $turnRight: -0.06turn;
+    $turn: $turnRight;
+
+	height: 100%;
+	overflow: hidden;
+}
