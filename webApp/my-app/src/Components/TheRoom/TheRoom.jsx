@@ -2,12 +2,29 @@ import "./TheRoom.scss"
 import React from 'react'
 import SliderFrame from "../SliderFrame/SliderFrame";
 
+import Pikachu from "../Pikachu/Pikachu"
+import Shinchan from "../Shinchan/Shinchan";
+import FloatingSphere from "../FloatingSphere/FloatingSphere";
+
+
 export default function TheRoom() {
     const roomRef = React.useRef();
 
     React.useEffect(() => {
         window.addEventListener("scroll", handleScroll);
     }, []);
+
+    const exhibitFrames = [
+        {
+            element: <Pikachu />,
+        },
+        {
+            element: <Shinchan />,
+        },
+        {
+            element: <FloatingSphere />,
+        }
+    ];
 
     function calculatePerspective(elementPosition){
 
@@ -31,8 +48,8 @@ export default function TheRoom() {
                 <span className="ceiling"></span>
                 <div className="room-walls"></div>
                 <div className="frontWall_decor">
-                    <SliderFrame ></SliderFrame>
-                    <SliderFrame ></SliderFrame>
+                    <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
+                    <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
                 </div>
                 <span className="floor"></span>
             </section>

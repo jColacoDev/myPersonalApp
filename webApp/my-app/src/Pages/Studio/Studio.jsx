@@ -22,7 +22,7 @@ const Studio = () => {
     return (
         <div className="Studio">
             <ExhibitCaroussel exhibitFrames={exhibitFrames}></ExhibitCaroussel>
-                <TheBuilding></TheBuilding>
+            <TheBuilding></TheBuilding>
         </div>
     );
 };
