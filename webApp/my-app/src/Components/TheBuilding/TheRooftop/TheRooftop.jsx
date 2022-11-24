@@ -1,11 +1,6 @@
 import "./TheRooftop.scss"
 import React from 'react'
 import SliderFrame from "../../SliderFrame/SliderFrame";
-
-import Pikachu from "../../Pikachu/Pikachu"
-import Shinchan from "../../Shinchan/Shinchan";
-import FloatingSphere from "../../FloatingSphere/FloatingSphere";
-import LightSwitch from "../../LightSwitch/LightSwitch";
 import { useSelector } from "react-redux";
 
 export default function TheRooftop() {
@@ -42,14 +37,14 @@ export default function TheRooftop() {
     }
 
     function handleClick(){
-        let room=  roomRef.current.querySelector(".room");
-        room.classList.add("sceneRotate");
-        setTimeout(()=> room.classList.remove("sceneRotate"), 16000);
+        let room = roomRef.current.querySelector(".room");
+        room.classList.add("sceneRotateSunset");
+        setTimeout(()=> room.classList.remove("sceneRotateSunset"), 16000);
     }
 
     return (
-        <div ref={roomRef} className="TheRooftop">
-            <section className={`room`}>
+        <div ref={roomRef} className={`TheRooftop ${sunset ? "dark" : ""}`}>
+            <section className={`room ${sunset ? "dark" : ""}`}>
                 <div className="room-walls"></div>
                 <div className={`frontWall_decor ${sunset ? "dark" : ""}`}>
                     <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
@@ -63,7 +58,6 @@ export default function TheRooftop() {
                 <div className="backWall_decor">
                     <div className="picnic"></div>
                 </div>
-            <LightSwitch></LightSwitch>
             </section>
         </div>
     )

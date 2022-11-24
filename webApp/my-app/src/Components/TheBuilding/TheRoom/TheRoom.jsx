@@ -45,13 +45,11 @@ export default function TheRoom() {
     return (
         <div ref={roomRef} className="TheRoom">
             <section className="room">
-                <span className="ceiling"></span>
                 <div className="room-walls"></div>
                 <div className="frontWall_decor">
-                    <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
+                    <SliderFrame autoPlay={[true, 3500]} exhibitFrames={exhibitFrames}></SliderFrame>
                     <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
                 </div>
-                <span className="floor"></span>
             </section>
         </div>
     )
