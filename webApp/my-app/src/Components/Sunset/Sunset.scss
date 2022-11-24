@@ -1,0 +1,375 @@
+.Sunset{
+    --animation-speed: 1;
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .sunset-sky {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      
+      .sunset-sky:before {
+        top: 0;
+        z-index: 2;
+        content: "";
+        height: 50%;
+        opacity: 0.65;
+        width: inherit;
+        position: fixed;
+        transition-duration: calc(25s * var(--animation-speed));
+        background: linear-gradient(#654363 15%, transparent 85%);
+      }
+      
+      .sunset-sky:after {
+        top: 0;
+        z-index: 2;
+        content: "";
+        height: 50%;
+        opacity: 0.15;
+        width: inherit;
+        position: fixed;
+        transition-duration: calc(25s * var(--animation-speed));
+        background: linear-gradient(#462d4e 15%, transparent 85%);
+      }
+      
+      .sunset-sky__sky {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#c15d21, #8b100b);
+        background: url(./../../Images//lxBg.png);
+      }
+      
+      .sunset-sky__sky:before {
+        top: 0;
+        z-index: 1;
+        content: "";
+        height: 100%;
+        width: inherit;
+        position: fixed;
+        transition-duration: calc(25s * var(--animation-speed));
+        background: linear-gradient(orange 15%, transparent 85%);
+        background-image: url(./background.jpg);
+
+      }
+      
+      .sunset-sky.active .sunset-sky__sky:before {
+        filter: brightness(.6);
+      }
+      
+      .sunset-sky__sky:after {
+        bottom: 0;
+        z-index: 1;
+        content: "";
+        height: 55%;
+        opacity: 0.95;
+        width: inherit;
+        position: fixed;
+        background: linear-gradient(transparent, #8b100b6e, #780f0f96);
+      }
+      
+      .sunset-sky__sun {
+        opacity: 1;
+
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 50vw;
+        height: 50vw;
+        position: fixed;
+        border-radius: 50vw;
+        transition-duration: calc(15s * var(--animation-speed));
+        transform: translate(-50%, -50%);
+        transition-timing-function: linear;
+        background: linear-gradient(#fef366, #fcdd34);
+        box-shadow: 0 0 10vw orange, 0 0 2vw #fdd852, 0 0 4vw #ffa040;
+      }
+      
+      .sunset-sky.active .sunset-sky__sun {
+        top: 100%;
+        opacity: 0;
+      }
+      
+      .sunset-sky__cloud {
+        top: 50%;
+        left: 25%;
+        height: 5vw;
+        width: 100%;
+        opacity: 0.15;
+        position: fixed;
+        filter: blur(1vh);
+        transition-duration: calc(15s * var(--animation-speed));
+        transition-timing-function: linear;
+      }
+      
+      .sunset-sky.active .sunset-sky__cloud {
+        left: 175%;
+      }
+      
+      .sunset-sky__cloud:nth-child(2) {
+        top: 45%;
+        left: 0%;
+        animation: cloud 30s infinite linear;
+      }
+      
+      .sunset-sky.active .sunset-sky__cloud:nth-child(2) {
+        left: -125%;
+      }
+      
+      .sunset-sky__cloud:nth-child(3) {
+        top: 58%;
+        left: 40%;
+      }
+      
+      .sunset-sky.active .sunset-sky__cloud:nth-child(3) {
+        left: 160%;
+      }
+      
+      .sunset-sky__cloud:nth-child(4) {
+        top: 62%;
+        left: 60%;
+      }
+      
+      .sunset-sky.active .sunset-sky__cloud:nth-child(4) {
+        left: -160%;
+      }
+      
+      .sunset-sky__cloud:nth-child(5) {
+        top: 61%;
+        left: 60%;
+      }
+      
+      .sunset-sky__cloud:nth-child(6) {
+        top: 61%;
+        left: 60%;
+      }
+      
+      [class*=cloud__wisp] {
+        width: 50%;
+        height: 1.5vh;
+        position: absolute;
+        background-color: #df4c19;
+        border-bottom: 0.1vw solid #530805;
+        transform: translate(-50%, -50%) skewY(-1.5deg);
+        box-shadow: 0 1vh 5vh #530805, 0 0.5vh 5vh yellow, 0 0.5vh 5vh white, 0 1.5vh 5vh #530805;
+      }
+      
+      .cloud__wisp2 {
+        top: 1vw;
+        width: 25%;
+        transform: translate(-50%, -50%) skewY(1.5deg);
+      }
+      
+      .cloud__wisp3 {
+        top: 2vw;
+        width: 75%;
+      }
+      
+      .cloud__wisp4 {
+        top: 3vw;
+        width: 80%;
+      }
+      
+      .bird {
+        font-size: 0.4vw;
+        animation-iteration-count: infinite;
+        animation-duration: 1.5s;
+        animation-name: bird;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        background-color: #1f1f1f;
+      }
+      
+      .bird--animate {
+        position: fixed;
+        top: 50%;
+        left: 60%;
+        animation: movebird infinite 40s linear;
+        z-index: 10;
+      }
+      
+      .bird--animate:nth-child(2) {
+        top: 40%;
+        animation: movebird2 infinite 40s linear;
+      }
+      
+      .bird--animate:nth-child(2) [class*=wing__],
+      .bird--animate:nth-child(2) [class*=wing__]:after {
+        animation-duration: 1.45s;
+      }
+      
+      .wing__right,
+      .wing__right:after,
+      .wing__left,
+      .wing__left:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        background-color: #1f1f1f;
+        width: 4em;
+        height: 1em;
+        border-radius: 0.2em;
+        animation-iteration-count: infinite;
+        animation-duration: 1.5s;
+        box-shadow: 0 0 0.25em #000;
+      }
+      
+      .wing__right,
+      .wing__right:after {
+        transform-origin: left center;
+      }
+      
+      .wing__right {
+        left: 2em;
+        transform: rotate(45deg);
+        animation-name: fly;
+      }
+      
+      .wing__right:after {
+        transform: translateX(100%) rotate(45deg);
+        animation-name: wave;
+        left: -0.25em;
+      }
+      
+      .wing__left,
+      .wing__left:after {
+        transform-origin: right center;
+        animation-name: flyleft;
+      }
+      
+      .wing__left {
+        transform: translateX(-100%) rotate(45deg);
+      }
+      
+      .wing__left:after {
+        transform: translateX(-100%) rotate(45deg);
+        animation-name: waveleft;
+        left: 0.25em;
+      }
+      
+      @keyframes fly {
+        from {
+          transform: rotate(30deg);
+        }
+        50% {
+          transform: rotate(-40deg);
+        }
+        to {
+          transform: rotate(30deg);
+        }
+      }
+      @keyframes flyleft {
+        from {
+          transform: translateX(-100%) rotate(-30deg);
+        }
+        50% {
+          transform: translateX(-100%) rotate(40deg);
+        }
+        to {
+          transform: translateX(-100%) rotate(-30deg);
+        }
+      }
+      @keyframes wave {
+        from {
+          transform: translateX(100%) rotate(30deg) skew(-45deg);
+        }
+        15% {
+          transform: translateX(100%) rotate(50deg) skew(-45deg);
+        }
+        50% {
+          transform: translateX(100%) rotate(10deg) skew(-45deg);
+        }
+        65% {
+          transform: translateX(100%) rotate(0deg) skew(-45deg);
+        }
+        to {
+          transform: translateX(100%) rotate(30deg) skew(-45deg);
+        }
+      }
+      @keyframes waveleft {
+        from {
+          transform: translateX(-100%) rotate(-30deg) skew(45deg);
+        }
+        15% {
+          transform: translateX(-100%) rotate(-50deg) skew(45deg);
+        }
+        50% {
+          transform: translateX(-100%) rotate(-10deg) skew(45deg);
+        }
+        65% {
+          transform: translateX(-100%) rotate(0deg) skew(45deg);
+        }
+        to {
+          transform: translateX(-100%) rotate(-30deg) skew(45deg);
+        }
+      }
+      @keyframes bird {
+        from {
+          transform: translateY(-0.5em);
+        }
+        50% {
+          transform: translateY(0.5em);
+        }
+        to {
+          transform: translateY(-0.5em);
+        }
+      }
+      @keyframes movebird {
+        from {
+          left: 60%;
+          transform: scale(1) rotate(30deg);
+        }
+        25% {
+          left: 65%;
+          top: 55%;
+          transform: scale(0.65) rotate(20deg);
+        }
+        50% {
+          left: 60%;
+          transform: scale(0.75) rotate(-45deg);
+        }
+        to {
+          left: 60%;
+          transform: scale(1) rotate(30deg);
+        }
+      }
+      @keyframes movebird2 {
+        from {
+          left: 70%;
+          transform: scale(0.75) rotate(0deg);
+        }
+        25% {
+          left: 65%;
+          top: 52%;
+          transform: scale(0.55) rotate(10deg);
+        }
+        50% {
+          left: 55%;
+          transform: scale(0.5) rotate(-30deg);
+        }
+        to {
+          left: 70%;
+          transform: scale(0.75) rotate(0deg);
+        }
+      }
+      @keyframes cloud {
+        from {
+          left: 0%;
+        }
+        50% {
+          left: 125%;
+        }
+        to {
+          left: 0%;
+        }
+      }
+}
