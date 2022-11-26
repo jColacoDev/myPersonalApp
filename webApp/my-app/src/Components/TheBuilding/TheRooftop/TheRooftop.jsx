@@ -2,18 +2,24 @@ import "./TheRooftop.scss"
 import React from 'react'
 import SliderFrame from "../../SliderFrame/SliderFrame";
 import { useSelector } from "react-redux";
+import useDidUpdateEffect from "../../../Hooks/useDidUpdateEffect";
 
-export default function TheRooftop() {
+export default function TheRooftop({changePerspective}) {
     const roomRef = React.useRef();
     const sunset = useSelector((state) => state.sunset);
+    const [timer, setTimer] = React.useState(false);
 
 
     React.useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        
+        setTimeout(() => {
+            setTimer(true);
+          }, 3000)
     }, []);
 
-    React.useEffect(() => {
-        handleClick();
+    useDidUpdateEffect(() => {
+        if(timer) handleClick();
     }, [sunset]);
 
     const exhibitFrames = [
@@ -32,8 +38,10 @@ export default function TheRooftop() {
     }
     
     function handleScroll() {
-        let room=  roomRef.current.querySelector(".room");
-        room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
+        if(changePerspective){
+            let room=  roomRef.current.querySelector(".room");
+            room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
+        }
     }
 
     function handleClick(){

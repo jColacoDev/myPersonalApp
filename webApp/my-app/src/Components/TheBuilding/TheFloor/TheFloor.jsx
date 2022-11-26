@@ -6,8 +6,7 @@ import Pikachu from "../../Pikachu/Pikachu"
 import Shinchan from "../../Shinchan/Shinchan";
 import FloatingSphere from "../../FloatingSphere/FloatingSphere";
 
-
-export default function TheFloor() {
+export default function TheFloor({changePerspective}) {
     const roomRef = React.useRef();
 
     React.useEffect(() => {
@@ -36,8 +35,8 @@ export default function TheFloor() {
     }
     
     function handleScroll() {
-
-        for(let room of roomRef.current.querySelectorAll(".room")){
+        if(changePerspective){
+            let room=  roomRef.current.querySelector(".room");
             room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
         }
     }

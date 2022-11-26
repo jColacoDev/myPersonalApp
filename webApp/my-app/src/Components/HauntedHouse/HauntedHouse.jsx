@@ -1,13 +1,20 @@
 import "./HauntedHouse.scss"
 import React from 'react'
 
-export default function HauntedHouse() {
+export default function HauntedHouse({escapeClick}) {
+
+    function handleEscapeClick(){
+        escapeClick();
+    }
+
+
   return (
+    <div className="HHwrapper">
     <div className="HauntedHouse">
   <div className="scene">
     <div className="floor"></div>
     <div className="cube">
-      <div className="screen1">
+      <div onClick={handleEscapeClick} className="screen1">
         <div className="left"></div>
         <div className="right"></div>
         <div className="front"></div>
@@ -31,7 +38,7 @@ export default function HauntedHouse() {
       </div>
     </div>
   </div>
-
+    </div>
     </div>
   )
 }

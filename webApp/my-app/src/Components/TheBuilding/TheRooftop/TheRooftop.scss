@@ -1,19 +1,13 @@
 @keyframes sceneRotateSunset {
     0%{ 
-        --depth: 1500px;
+        --depth: 700px;
         perspective-origin: 50% 50%;
     }
-    5%{ 
-        --depth: 700px;
-    }
-    10%{ 
+    30%{ 
         perspective-origin: 80% 90%;
     }
-    60%{ 
+    80%{ 
         perspective-origin: 20% 90%;
-    }
-    90%{ 
-        perspective-origin: 30% 90%;
     }
     100% {     
         --depth: 1500px;
@@ -62,8 +56,6 @@
         perspective: 1000px;
         perspective-origin: 50% 50%;
 
-        perspective-origin: 31% 36.2566%;
-
         scroll-snap-align: center;  
         position: relative;
         height: 80vh;
@@ -99,7 +91,7 @@
             bottom: 0;
             transform: rotateX(90deg);
             transform-origin: center bottom;
-            background-image: url("./mosaic.jpg");
+            background-image: url("./mosaicRoof.jpg");
             background-size: 15%;
             z-index: 0;
 
@@ -130,12 +122,12 @@
             }
 
             img{
-                background-color: #ffd292;
+                background-color: #161616;
             }
             
             &.dark{
                 img{
-                    background-color: #161616;
+                    background-color: #ffd292;
                 }
             }
         }

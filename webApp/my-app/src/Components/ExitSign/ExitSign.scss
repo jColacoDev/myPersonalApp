@@ -1,0 +1,165 @@
+.ExitSign{
+    font-size: .5em;
+    position: relative;
+    width: auto;
+    height: 18em;
+        
+    &.Right{
+        transform: rotateY(180deg);
+
+        .text{
+            transform: rotateY(180deg);
+        }
+    }
+
+    .sign_board {
+        padding: 0 2em;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        background: #016334;
+        border: 0.6em solid #f5f0ca;
+        border-radius: 3px;
+      }
+      .sign_board .arrow {
+        position: relative;
+        width: 9em;
+        height: 3em;
+        left: 3.5em;
+        background: #f5f0ca;
+      }
+      .sign_board .arrow:before, .sign_board .arrow:after {
+        content: "";
+        position: absolute;
+        width: 4em;
+        height: 5em;
+        top: -3.5em;
+        left: 0;
+        transform: skew(-40deg);
+        background: #f5f0ca;
+      }
+      .sign_board .arrow:after {
+        transform: skew(40deg);
+        top: 1.5em;
+      }
+      .sign_board .door {
+        position: relative;
+        margin: 0 2em 0 5em;
+        width: 12em;
+        height: calc(100% - 2em);
+        background: #f5f0ca;
+        border-radius: 0 0 0 30px;
+      }
+      .sign_board .door:after {
+        content: "";
+        height: 0;
+        width: 0;
+        border: 1.5em solid transparent;
+        border-bottom-color: #f5f0ca;
+        position: absolute;
+        bottom: 0;
+        right: -1.5em;
+      }
+      .sign_board .door .man .head {
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        top: 1em;
+        left: 2.5em;
+        border-radius: 100%;
+        background: #016334;
+      }
+      .sign_board .door .man .torso {
+        position: absolute;
+        width: 2.5em;
+        height: 6em;
+        top: 3.4em;
+        left: 4.8em;
+        border-radius: 30px;
+        background: #016334;
+        transform: rotate(-30deg);
+      }
+      .sign_board .door .man .hand {
+        position: absolute;
+        width: 1em;
+        height: 4em;
+        top: 3.8em;
+        left: 3.2em;
+        border-radius: 30px;
+        background: #016334;
+        transform: rotate(30deg);
+      }
+      .sign_board .door .man .hand:after {
+        content: "";
+        position: absolute;
+        width: 1em;
+        height: 2.5em;
+        top: 2.8em;
+        left: -0.9em;
+        background: #016334;
+        border-radius: 30px;
+        transform: rotate(60deg);
+      }
+      .sign_board .door .man .hand.right {
+        top: 2.1em;
+        left: 6.5em;
+        transform: rotate(270deg);
+      }
+      .sign_board .door .man .hand.right:after {
+        top: 2.7em;
+        left: -0.8em;
+        height: 3em;
+        transform: rotate(50deg);
+      }
+      .sign_board .door .man .leg {
+        position: absolute;
+        width: 1.3em;
+        height: 6em;
+        top: 7.5em;
+        left: 5em;
+        background: #016334;
+        border-radius: 30px;
+        transform: rotate(30deg);
+      }
+      .sign_board .door .man .leg:after {
+        content: "";
+        position: absolute;
+        width: 1.3em;
+        height: 3em;
+        top: 4.2em;
+        left: 0.8em;
+        background: #016334;
+        border-radius: 30px;
+        transform: rotate(-70deg);
+      }
+      .sign_board .door .man .leg.right {
+        position: absolute;
+        width: 1.3em;
+        height: 4.5em;
+        top: 7.2em;
+        left: 7.6em;
+        transform: rotate(-25deg);
+      }
+      .sign_board .door .man .leg.right:after {
+        position: absolute;
+        width: 1.3em;
+        height: 4em;
+        top: 2.5em;
+        left: 1.3em;
+        transform: rotate(-65deg);
+      }
+      .sign_board .text {
+        position: relative;
+        height: auto;
+        text-transform: uppercase;
+        font-family: arial;
+        color: #f5f0ca;
+        font-weight: 600;
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 5.8em;
+      }
+}
