@@ -11,6 +11,7 @@ import MysticRoom from "../../MysticRoom/MysticRoom";
 
 export default function TheRoom({changePerspective}) {
     const roomRef = React.useRef();
+    const [perspectiveObject, setPerspectiveObject] = React.useState("Origin");
     const [hauntedDivision, setHauntedDivision] = React.useState(false);
     const [mysticDivision, setMysticDivision] = React.useState(false);
 
@@ -65,22 +66,73 @@ export default function TheRoom({changePerspective}) {
     
     function handleMiddleClick() {
         let room=  roomRef.current.querySelector(".room");
-        room.classList.remove("RightSide");
-        room.classList.remove("LeftSide");
+        removeALLperspective();
+
+        switch (perspectiveObject) {
+            case 'Origin':
+                room.classList.add("Zoomed");
+                setPerspectiveObject("Zoomed");
+                break;
+            default:{
+                perspectiveOrigin();
+            }
+        }
     }
+    function handleLeftSliderClick(){
+        let room=  roomRef.current.querySelector(".room");
+        removeALLperspective();
+        switch (perspectiveObject) {
+            case 'LeftSlider':
+                perspectiveOrigin();
+                break;
+            default:{
+                room.classList.add("Zoomed");
+                room.classList.add("LeftSlider");
+                setPerspectiveObject("LeftSlider");
+            }
+        }
+    }
+    function handleRightSliderClick(){
+        let room=  roomRef.current.querySelector(".room");
+        removeALLperspective();
+        switch (perspectiveObject) {
+            case 'RightSlider':
+                perspectiveOrigin();
+                break;
+            default:{
+                room.classList.add("Zoomed");
+                room.classList.add("RightSlider");
+                setPerspectiveObject("RightSlider");
+            }
+            }
+    }
+
+    function removeALLperspective() {
+        let room=  roomRef.current.querySelector(".room");
+        room.classList = "room";
+    }
+
+    function perspectiveOrigin() {
+        setPerspectiveObject("Origin");
+    }
+
     function handleRightClick() {
         let room=  roomRef.current.querySelector(".room");
         room.classList.remove("LeftSide");
         room.classList.add("RightSide");
+        setPerspectiveObject("MysticRoom");
+
     }
     function handleLeftClick() {
         let room=  roomRef.current.querySelector(".room");
         room.classList.remove("RightSide");
         room.classList.add("LeftSide");
+        setPerspectiveObject("HauntedRoom");
+
     }
     function handleScroll() {
+        let room=  roomRef.current.querySelector(".room");
         if(changePerspective){
-            let room=  roomRef.current.querySelector(".room");
             room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
         }
     }
@@ -102,13 +154,17 @@ export default function TheRoom({changePerspective}) {
                 <div onClick={openMysticRoom} className="doorDecor right"></div>
                 <div onClick={openHauntedHause} className="doorDecor left"></div>
                 <div className="frontWall_decor">
-                    <SliderFrame autoPlay={3500} exhibitFrames={loremPics}></SliderFrame>
+                    <div onClick={handleLeftSliderClick}>
+                        <SliderFrame autoPlay={3500} exhibitFrames={loremPics}></SliderFrame>
+                    </div>
                     <div className="signs">
                         <button className="infoSign" onClick={handleMiddleClick}><span>Gallery</span></button>
                         <button onClick={handleRightClick}><ExitSign upWord="Mystic" downWord="Room" right={true}></ExitSign></button>
                         <button onClick={handleLeftClick}><ExitSign upWord="Haunted" downWord="Room" ></ExitSign></button>
                     </div>
-                    <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
+                    <div onClick={handleRightSliderClick}>
+                        <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
+                    </div>
                 </div>
             </section>
                 {hauntedDivision && 

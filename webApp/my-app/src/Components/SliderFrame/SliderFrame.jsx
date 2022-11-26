@@ -8,6 +8,10 @@ export default function SliderFrame({exhibitFrames = [], controls = false, autoP
     const sliderControlRef = React.useRef();
 
     React.useEffect(() => {
+        setIndex(0)
+    }, []);
+
+    React.useEffect(() => {
         let auxIndex = 0;
         const slider = sliderRef?.current.querySelectorAll("li");
         for(let slide of slider){
