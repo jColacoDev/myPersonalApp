@@ -1,10 +1,10 @@
-:root{
-    --room-perspective: 1000px;
-
-}
 
 .TheRoom{
-    --depth: 2500px;
+--room-perspective: 1000px;
+
+--depth: 2500px;
+--room-zoomed-depth: 200px;
+
 
     $turnLeft: 0.06turn;
     $turnRight: -0.06turn;
@@ -25,10 +25,6 @@
     // background: #5a1919;
     background-attachment: fixed;
     background-color: transparent;
-
-    &.zoomed{
-        --room-perspective: 2000px;
-    }
 
     .infoSign{
         font-size: .5em;
@@ -94,15 +90,42 @@
         transition-duration: .5s;
         transition-timing-function: ease-in-out;
 
-        &.RightSide{
-            // perspective: calc(var(--room-perspective) * 2);
-            // perspective-origin: 8% 50%;
-            transform: translate3d(-44%, 0px, 0px);
+        .infoSign,
+        .SliderFrame{
+            cursor: zoom-in;
+        }
+
+        &.Zoomed{
+            --depth: var(--room-zoomed-depth);
+            
+            .infoSign{
+                cursor: zoom-out;
+            }
+        }
+        &:not(.Zoomed){
+            --depth: 2500px;
         }
         &.LeftSide{
-            // perspective: calc(var(--room-perspective) * 2);
-            // perspective-origin: 8% 50%;
-            transform: translate3d(-30%, 0px, 0px);
+            --depth: 1500px;
+            transform: translate3d(-27%, 0%, 0px);
+        }
+        &.LeftSlider{
+            --depth: 200px;
+            transform: translate3d(-15%, 0px, 0px);
+            .SliderFrame{
+                cursor: zoom-out;
+            }
+        }
+        &.RightSlider{
+            --depth: 200px;
+            transform: translate3d(-60%, 0px, 0px);
+            .SliderFrame{
+                cursor: zoom-out;
+            }
+        }
+        &.RightSide{
+            --depth: 1500px;
+            transform: translate3d(-48%, 0%, 0px);
         }
 
         .signs{
