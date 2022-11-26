@@ -1,0 +1,284 @@
+:root{
+    --room-perspective: 1000px;
+
+}
+
+.TheRoom{
+    --depth: 2500px;
+
+    $turnLeft: 0.06turn;
+    $turnRight: -0.06turn;
+    $turn: $turnRight;
+    
+    width: 200%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: center;  
+    background: #1a1a1a;
+
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+    // background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    // background: #5a1919;
+    background-attachment: fixed;
+    background-color: transparent;
+
+    &.zoomed{
+        --room-perspective: 2000px;
+    }
+
+    .infoSign{
+        font-size: .5em;
+        position: relative;
+        width: auto;
+        height: 18em;
+
+        span{
+            margin: 0 0.2em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: #3b78c3;
+            border: 0.2em solid #f5f0ca;
+            color: #f5f0ca;
+            border-radius: 3px;
+            font-size: 10em;
+        }
+    }
+
+    .doorDivisions{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        animation: enterDivision .3s forwards linear;
+          
+        @media screen and (min-width: 1100px) {
+            &{ 
+                width: calc(100vw - var(--sideNav-width));
+            }
+        }
+
+        @keyframes enterDivision {
+            0% {
+                background-color: transparent;
+            }
+            100% {
+                background-color: black;
+            }
+        }
+
+    }
+
+    .room {
+        perspective: var(--room-perspective);
+        perspective-origin: 50% 50%;
+
+        scroll-snap-align: center;  
+        position: relative;
+        height: 80vh;
+        width: 200%;
+    
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        transform: translate3d(-37%, 0px, 0px);
+        
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+
+        &.RightSide{
+            // perspective: calc(var(--room-perspective) * 2);
+            // perspective-origin: 8% 50%;
+            transform: translate3d(-44%, 0px, 0px);
+        }
+        &.LeftSide{
+            // perspective: calc(var(--room-perspective) * 2);
+            // perspective-origin: 8% 50%;
+            transform: translate3d(-30%, 0px, 0px);
+        }
+
+        .signs{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 1em;
+            height: 100%;
+            font-size: .6em;
+            
+            &::before{
+                content: "";
+                position: absolute;
+                width: 1em;
+                height: 100%;
+                background-color: #3e3e3e;
+                left: calc(50% - .5em);
+            }
+
+            button{
+                filter: drop-shadow(2px 4px 6px black);
+            }
+        }
+
+        &:nth-child(odd) > .room-content {
+            $turn: $turnLeft;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            height: var(--depth);
+            width: 100%;
+            z-index: -1;
+        }
+        
+        &::before {
+            transform: rotateX(-90deg) scale(1.001);
+            transform-origin: center top;
+            background-image: url("./roofAngels.jpg");
+            background-size: contain;
+        }
+        &::after {
+            bottom: 0;
+            transform: rotateX(90deg);
+            transform-origin: center bottom;
+            background-image: url("./mosaic.jpg");
+            background-size: 15%;
+            z-index: 0;
+        }
+
+        .frontWall_decor{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 2em;
+            justify-content: space-evenly;
+            align-items: center;       
+            transform: translateZ(calc(var(--depth) * -1));
+            // transform: translateZ(calc(var(--depth) / -2)) rotateY($turn);
+            font-size: .6em;
+            @media screen and (min-width: 390px) {
+                font-size: .8em;
+            }
+            @media screen and (min-width: 500px) {
+                font-size: 1em;
+            }
+            @media screen and (min-width: 500px) {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .room-walls {
+        position: absolute;
+        inset: 0;
+        transform: translateZ(calc(var(--depth) * -1));
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;  
+        border-top: 2px solid #939393;
+        border-bottom: 2px solid #939393;    
+
+        background-clip: content-box;
+        
+        &::before,
+        &::after,
+        & {
+            height: 100%;
+            background-size: auto;
+            background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-image: url('https://i0.hippopx.com/photos/959/278/518/bricks-wall-white-brick-wall-white-preview.jpg');
+        }
+        
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: var(--depth);
+        }
+        
+        &::before {
+            right: 100%;
+            transform: rotateY(90deg);
+            transform-origin: right center;
+        }
+        
+        &::after {
+            left: 100%;
+            transform: rotateY(-90deg);
+            transform-origin: left center;
+        }
+    }
+    .doorDecor{
+        --door-width: 12em;
+        
+        max-height: 75%;
+        width: var(--door-width);
+        height: calc(var(--door-width) * 2);
+        bottom: 0;
+        position: absolute;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        
+        &.right{
+            left: 100%;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(3em) translateX(2em) translateZ(calc(var(--depth) * -1)) skewY(20deg);
+            
+            @media screen and (min-width: 620px) {
+                &{ 
+                    transform: translateY(3em) translateX(2em) translateZ(calc(var(--depth) * -1)) skewY(6deg);
+                }
+            }
+        }
+        
+        &.left{
+            right: 100%;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(3em) translateX(-2em) translateZ(calc(var(--depth) * -1)) skewY(-20deg);
+            
+            @media screen and (min-width: 620px) {
+                &{ 
+                    transform: translateY(3em) translateX(-2em) translateZ(calc(var(--depth) * -1)) skewY(-6deg);
+                }
+            }
+        }
+        
+        &::after{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("./door.png");
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover::after{
+            transform: translateX(-1em) scaleX(1.2) rotateY(45deg);
+        }
+    }
+
+    .room-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-size: clamp(1em, 20vmin, 8em);
+        font-weight: 200;
+        text-align: center;
+        text-shadow: 0 5px 10px hsl(0, 0, 0% / 20%);
+        transform: translateZ(calc(var(--depth) / -2)) rotateY($turn);
+    }
+}

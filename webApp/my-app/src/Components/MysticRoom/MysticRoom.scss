@@ -1,0 +1,304 @@
+.MysticRoom{
+    --delay: 1.5s;
+
+    .box:hover ~ .base-container::before{
+        animation: none;
+    }
+
+    animation: delayAnimation var(--delay) forwards linear;
+
+    @keyframes delayAnimation {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #room{
+        background:radial-gradient(transparent, rgba(0,0,0,0.9)),repeating-radial-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)),repeating-linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)),linear-gradient(teal,aquamarine,#42c390),linear-gradient(brown,orange,gold);
+    background-size: 100% 100%, 150px 50px, 20px 20px, 30px 130px;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    }
+    
+    .shadow{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: radial-gradient(transparent 50%,rgba(0,0,0,0.5) 60%);
+    }
+    
+    .ceiling-decor{
+    height:60px;
+    width:100%;
+    background:radial-gradient(transparent 50%, aquamarine 51%,#42c390 61%);
+    background-position:0px 10px;
+    background-size:70px 100%;
+    position:absolute;
+    top:15px;
+    box-shadow:inset 0px 10px 10px black;
+    }
+    
+    .ceiling-decor:before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:30px;
+    top:-15px;
+    background:repeating-linear-gradient(black,teal);
+    background-size:20px 20px;
+    }
+    
+    .pattern-tower{
+        background:repeating-radial-gradient(#42c390 51%, black 61%);
+    width:100px;
+    height:100%;
+    background-size:50px 50px;
+    box-shadow:0px 0px 10px aquamarine;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    position:absolute;
+    }
+    
+    .tower{
+    background:radial-gradient(transparent,black),repeating-linear-gradient(90deg,#42c390 60%, black 70%,#42c390 75%); 
+    position:absolute;
+    width:100px;
+    height:100%;
+    right:0;
+    margin-right:auto;
+    margin-left:auto;
+    }
+    
+    .tower:before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:30px;
+    background:radial-gradient(ellipse at top,aquamarine,teal,black);
+    left:-10px;
+    }
+    
+    
+    .tower:after{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:30px;
+    background:radial-gradient(ellipse at top,aquamarine,teal,black);
+    border-radius:10px 10px 0px 0px;
+    bottom:0;
+    left:-10px;
+    }
+    
+    .left-tower{
+    left:-600px;
+    }
+    
+    .right-tower{
+    left:600px;
+    }
+    
+    .box{
+    animation-name:rotateBox, rise;
+    animation-duration: 3s, 2s;
+    animation-iteration-count: infinite, 1;
+    animation-timing-function:linear, linear;
+    animation-delay: var(--delay);
+
+    width: 100px; 
+    height: 100px;
+    transform-origin:50% 50%;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    }
+    
+    .shrine{
+    z-index: 1;
+    position:absolute;
+    height:300px;
+    bottom:0;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    width: 100px;
+    /*new fix*/
+    perspective: 1000px;
+    perspective-origin: 100% 100%;
+    width: fit-content;
+    }
+    
+    .wall{
+    cursor: pointer;
+
+    display: block;
+    background:radial-gradient(aquamarine,teal);
+    border: 2px solid #42c390;
+    position:absolute;
+    width:100px;
+    height:100px;
+    -webkit-transform-style: preserve-3d;
+    box-shadow:0px 0px 10px white;
+    }
+    
+    .wall:before{
+    content:'';
+    position:absolute;
+    width:50px;
+    height:50px;
+    background:radial-gradient(aquamarine,teal);
+    left:0;
+    right:0;
+    top:25%;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow:0px 0px 10px aquamarine;
+    }
+    
+    
+    .wall:nth-child(2){
+    transform: rotateY(90deg) translateX(50px) translateZ(50px);
+    }
+    
+    .wall:nth-child(3){
+    transform: rotateY(90deg) translateX(50px) translateZ(-50px);
+    }
+    
+    .wall:nth-child(4){
+    transform: translateZ(-100px);
+    }
+    
+    .wall:nth-child(5){
+    transform: rotateX(90deg) translateX(0px) translateZ(-50px) translateY(-50px);
+    }
+    
+    .wall:nth-child(6){
+    transform: rotateX(90deg) translateX(0px) translateZ(50px) translateY(-50px);
+    }
+    
+    .base-container{
+
+        &::before{
+            content: "";
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            height: 200vh;
+            transform: translate3d(-50%, -50%, 10px);
+            background-color: transparent;
+            pointer-events: none;
+            background-color: #000000bd;
+            animation: text-flicker 3s linear infinite;
+        }
+        
+        .top-base{
+        width:200px;
+        height:30px;
+        background:radial-gradient(ellipse at top,aquamarine,teal,#1c7753,black);
+        position:absolute;
+        left:-50px;
+        bottom:120px;
+        border-radius:10px;
+        }
+        
+        .base{
+        position:absolute;
+        bottom:0;
+        width:250px;
+        height:150px;
+        background:radial-gradient(rgba(0,0,0,0.1) ,rgba(0,0,0,0.8)),radial-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8)), linear-gradient(black,#1c7753 80%,black);
+        background-size: 30px 15px, 100% 100%;
+        left:-75px;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+    }
+    
+    @keyframes rise{
+    0%{
+        transform:translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    }
+    @keyframes rotateBox{
+        100%{
+        transform: rotateY(360deg) rotateZ(360deg);
+        }
+    }
+    @media only screen and (max-width: 710px){
+    html,body{
+        overflow:hidden;
+    }
+    .tower{
+        margin:0;
+    }
+    .left-tower{
+        left:-50px;
+    }
+    .right-tower{
+        left:90%;
+    }
+    }
+
+
+    
+    @keyframes flicker1 {
+        0% {
+            opacity: 0.1;
+        }
+
+        2% {
+            opacity: 1;
+        }
+
+        8% {
+            opacity: 0.1;
+        }
+
+        9% {
+            opacity: 1;
+        }
+
+        12% {
+            opacity: 0.1;
+        }
+        20% {
+            opacity: 1;
+        }
+        25% {
+            opacity: 0.3;
+        }
+        30% {
+            opacity: 1;
+        }
+
+        70% {
+            opacity: 0.7;
+        }
+        72% {
+            opacity: 0.2;
+        }
+
+        77% {
+            opacity: 0.9;
+        }
+        100% {
+            opacity: 0.9;
+        }
+    }
+}

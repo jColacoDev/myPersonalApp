@@ -1,0 +1,233 @@
+.Shinchan{
+    width: 100%;
+    height: 100%;
+    font-size: .5em;
+
+    #head {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .face {
+        width: 16.6em;
+        height: 16.6em;
+        background-color: #ffb78e;
+        position: absolute;
+        border-radius: 70% 65% 12% 90% / 70% 50% 70% 65%;
+        border: 2px solid #000;
+      }
+      
+      .face::before {
+        content: "";
+        position: absolute;
+        width: 4.5em;
+        height: 6em;
+        background-color: #ffb78e;
+        transform: translate(-4em, 6em) rotate(-10deg);
+        border-radius: 80% 65% 73% 80% / 80% 40% 30% 70%;
+        border-top: 2px solid #000;
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+      }
+      
+      .face::after {
+        content: "";
+        position: absolute;
+        width: 11em;
+        height: 10em;
+        background-color: #ffb78e;
+        transform: translate(9em, 6.5em);
+        border-radius: 90% 65% 80% 90% / 40% 100% 70% 60%;
+        border-right: 4px solid#000;
+      }
+      
+      .hair {
+        width: 10em;
+        height: 1em;    
+        background-color: #000;
+        position: absolute;
+        border-radius: 45% 65% 0% 100% / 100% 100% 0% 0%;
+        top: -2px;
+        left: 39px;
+      }
+      
+      .hair::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 140px;
+        background-color: #000;
+        top: -5px;
+        left: -49px;
+        transform: rotate(19deg);
+        z-index: -1;
+        border-radius: 100% 0% 0% 100% / 100% 0% 100% 0%;
+      }
+      
+      .eyebrowLeft {
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 1.8em;
+        border-radius: 30px;
+        transform: rotate(137deg);
+        top: .5em;
+        left: 1.5em;
+        animation: hello 0.4s infinite ease-in-out reverse;
+      }
+      
+      .eyebrowLeft::after {
+        content: "";
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 1.8em;
+        border-radius: 30px;
+        transform: rotate(85deg);
+        top: -1.5em;
+        left: -1.5em;
+    
+      }
+      
+      .eyebrowRight {
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 1.8em;
+        border-radius: 30px;
+        transform: rotate(137deg);
+        top: 0.8em;
+        left: 8.5em;
+        animation: hello 0.4s infinite ease-in-out;
+      }
+      
+      .eyebrowRight::after {
+        content: "";
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 1.8em;
+        border-radius: 30px;
+        transform: rotate(85deg);
+        top: -1.5em;
+        left: -1.5em;
+    
+      }
+      
+      @keyframes hello {
+        to {
+          top: -0.01px;
+        }
+      }
+      
+      .eyeLeft {
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 4em;
+        border-radius: 50%;
+        top: 5.5em;
+        left: 3.5em;
+    
+      }
+      
+      .eyeLeft::before {
+        content: "";
+        position: absolute;
+        width: 5.5em;
+        height: 3em;
+        border-top: 4px solid #000;
+        border-radius: 53% 47% 45% 55% / 57% 36% 64% 43%;
+        top: -1.8em;
+        left: -1em;
+      }
+      
+      .eyeLeft::after {
+        content: "";
+        position: absolute;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 1em;
+        left: 1.5em;
+      }
+      
+      .eyeRight {
+        position: absolute;
+        background-color: #000;
+        width: 4.5em;
+        height: 4em;
+        border-radius: 50%;
+        top: 5em;
+        left: 10em;
+        z-index: 2;
+      }
+      
+      .eyeRight::before {
+        content: "";
+        position: absolute;
+        width: 5.5em;
+        height: 3em;
+        border-top: 4px solid #000;
+        border-radius: 53% 47% 45% 55% / 38% 52% 48% 66%;
+        top: -1em;
+        left: .1em;
+      }
+      
+      .eyeRight::after {
+        content: "";
+        position: absolute;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 1em;
+        left: 1.5em;
+      }
+      
+      .mouth {
+        position: absolute;
+        width: 3em;
+        height: 4em;
+        background-color: #a54354;
+        border-radius: 50%;
+        border: 2px solid #000;
+        top: 14em;
+        right: 2em;
+        z-index: 2;
+        animation: moveShinchan 2s infinite ease-in-out;
+      }
+      
+      @keyframes moveShinchan {
+        0% {
+          transform: scale(0.3, 0.5);
+        }
+        10% {
+          transform: scale(1, 1);
+        }
+        20% {
+          transform: scale(0.3, 0.5);
+        }
+        30% {
+          transform: scale(1, 1);
+        }
+        40% {
+          transform: scale(0.3, 0.7);
+        }
+        60% {
+          transform: scale(1, 1);
+        }
+        80% {
+          transform: scale(0.8, 0.3);
+        }
+        100% {
+          transform: scale(0.5, 0.9);
+        }
+      }
+      
+}

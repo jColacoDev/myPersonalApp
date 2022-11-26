@@ -1,4 +1,4 @@
-import About from "../Pages/About/About";
+import Studio from "../Pages/Studio/Studio";
 import CurriculumV from "../Pages/CurriculumV/CurriculumV";
 import LandingPage from "../Pages/LandingPage/LandingPage";
 
@@ -42,13 +42,13 @@ const pagesData = [
         ]
     },
     {
-        path: "about",
-        element: <About />,
-        title: "about",
+        path: "studio",
+        element: <Studio />,
+        title: "studio",
         navLinks: [
             {
-                ref: "#AboutMe",
-                label: "About me"
+                ref: "#studio",
+                label: "Studio"
             },
             {
                 ref: "#interests",

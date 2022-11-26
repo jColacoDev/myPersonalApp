@@ -1,0 +1,292 @@
+:root {
+    --delay: 1.5s;
+    --rotateSpeed: 8s;
+    --rotateSpeed2: 13s;
+    --borderColor: #333;
+    --borderAccent: #c0c0c0;
+    --wallColor: #3988;
+  }
+
+  .HHwrapper{
+    animation: delayAnimation var(--delay) forwards linear;
+
+    @keyframes delayAnimation {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+  }
+
+  .HauntedHouse {
+    background: var(--wallColor);
+    display: flex;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    perspective: 12em;
+    perspective-origin: 50% calc(50% - 0.5em);
+    animation: lightsOut var(--rotateSpeed) forwards linear;
+    animation-delay: var(--delay);
+    height: 100%;
+    width: 100%;
+
+    @media screen and (min-width: 1100px) {
+        &{ 
+            margin-right: var(--sideNav-width);
+        }
+    }
+    
+    .scene {
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: sceneRotateHaunted var(--rotateSpeed) forwards ease-in-out;
+      animation-delay: var(--delay);
+    }
+    
+  }
+
+  .floor {
+    width: 15em;
+    height: 15em;
+    background-image: radial-gradient(#0000, #000 75%),
+      repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
+    background-size: 100%, 1em 1em;
+    position: absolute;
+    transform: translate(-50%, -50%) rotateX(90deg);
+    top: 5em;
+  }
+  .cube {
+    width: 3em;
+    height: 4em;
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: -5em;
+  }
+  .screen1,
+  .screen2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 0.25em var(--borderAccent) inset;
+  }
+  
+  .screen1 {
+    transform-style: preserve-3d;
+    background: #3983;
+    transform: rotateY(180deg) translateZ(9em) translateY(-1em);
+    box-shadow: 0 0 0 0.1em inset var(--borderColor);
+  }
+  .screen2 {
+    transform-style: preserve-3d;
+    background: #3982;
+    transform: rotateY(180deg) translateZ(9em) translateX(5em) translateY(-1em);
+    box-shadow: 0 0 0 0.1em inset var(--borderColor);
+  }
+  .left,
+  .right,
+  .top {
+    position: absolute;
+    background: var(--borderColor);
+    box-shadow: 0 0 2px inset var(--borderAccent);
+  }
+  
+  .left {
+    height: 100%;
+    width: 0.2em;
+    transform: translateX(-0.1em) translateZ(0.1em) rotateY(90deg);
+  }
+  
+  .right {
+    height: 100%;
+    width: 0.2em;
+    transform: translateX(2.9em) translateZ(0.1em) rotateY(90deg);
+  }
+  
+  .top {
+    height: 3em;
+    width: 0.2em;
+    transform: translateX(1.4em) translateY(-5.5em) translateZ(0.1em)
+      rotateZ(90deg) rotateY(90deg);
+  }
+  .front {
+    background: rgb(192, 192, 192);
+    background: linear-gradient(
+      333deg,
+      rgba(192, 192, 192, 1) 0%,
+      rgba(255, 255, 255, 1) 17%,
+      rgba(223, 223, 223, 1) 32%,
+      rgba(203, 203, 203, 1) 36%,
+      rgba(192, 192, 192, 1) 46%,
+      rgba(255, 255, 255, 1) 49%,
+      rgba(213, 213, 213, 1) 53%,
+      rgba(192, 192, 192, 1) 58%,
+      rgba(227, 227, 227, 1) 68%,
+      rgba(255, 255, 255, 1) 77%,
+      rgba(192, 192, 192, 1) 85%
+    );
+  
+    transform: translateZ(2px);
+    width: 100%;
+    height: 100%;
+  }
+  /*.back{
+    transform: translateZ(0.2em);
+    width:100%;
+    height: 100%;
+  }*/
+  
+  .ghost {
+    position: relative;
+    bottom: 2.4em;
+    right: -1em;
+    background: white;
+    height: 2.3em;
+    width: 1.3em;
+    border-radius: 50% 50% 0 0;
+  }
+  .eyeLeft {
+    position: absolute;
+    height: 0.3em;
+    width: 0.2em;
+    top: 0.5em;
+    left: 0.8em;
+    border-radius: 50%;
+    background: black;
+  }
+  .eyeRight {
+    position: absolute;
+    height: 0.3em;
+    width: 0.2em;
+    top: 0.5em;
+    left: 0.4em;
+    border-radius: 50%;
+    background: black;
+  }
+  
+  .mouth {
+    position: absolute;
+    height: 0.3em;
+    width: 0.2em;
+    top: 1em;
+    left: 0.6em;
+    border-radius: 50%;
+    background: black;
+  }
+  .mouth2 {
+    position: absolute;
+    height: 0.3em;
+    width: 0.5em;
+    top: 1em;
+    left: 0.5em;
+    border-radius: 0 0 50% 50%;
+    background: black;
+  }
+  .g1 {
+    opacity: 0;
+    animation: appear2 var(--rotateSpeed) infinite linear;
+    animation-delay: calc(5s + var(--delay));
+    transform: translateY(-2.2em) translateZ(-10em) scale(1.5) skewX(-15deg);
+  }
+  .g2 {
+    animation: appear var(--rotateSpeed2) infinite ease-in-out;
+    animation-delay: var(--delay);
+  }
+  
+  @keyframes sceneRotateHaunted {
+    0% {
+      transform: translateX(1em) translateZ(1em) translateY(2em) rotateY(-25deg);
+    }
+    95% {
+      transform: translateX(4em) translateZ(8em) translateY(1em) rotateY(5deg);
+    }
+    100% {
+      transform: translateX(4em) translateZ(8em) translateY(1em) rotateY(5deg);
+    }
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateX(-1em);
+    }
+    32% {
+      opacity: 0;
+    }
+    33% {
+      opacity: 0.5;
+    }
+    34% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 0.6;
+    }
+    36% {
+      opacity: 0.3;
+    }
+    47% {
+      opacity: 0.1;
+    }
+    48% {
+      opacity: 0;
+      transform: translateX(5.5em);
+    }
+    51% {
+      opacity: 0;
+      transform: translateX(5.5em);
+    }
+  
+    83% {
+      opacity: 0;
+    }
+    84% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-1em);
+    }
+  }
+  @keyframes appear2 {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    51% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 1;
+    }
+    56% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes lightsOut {
+    0% {
+      background-color: var(-wallColor);
+    }
+    80% {
+      background-color: var(-wallColor);
+    }
+    81% {
+      background-color: black;
+    }
+    100% {
+      background-color: black;
+    }
+  }
+  
