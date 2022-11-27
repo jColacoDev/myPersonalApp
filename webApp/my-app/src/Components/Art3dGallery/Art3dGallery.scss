@@ -1,0 +1,752 @@
+.Art3dGallery{
+    $none: rgba(255, 255, 255, 0);
+
+    $floor1: #c49d71;
+    $floor2: #361f0e;
+    $floor3: darken($floor2, 5%);
+    $floor1: lighten($floor2, 50%);
+    $floor4: lighten($floor2, 5%);
+    
+    $wall1: #7f95a8;
+    $wall2: #110e12;
+    $wall3: rgba($wall2, 0.5);
+    
+    $darkwall1: #0d2815;
+    
+    $door: lighten($wall1, 10%);
+    $door1: lighten($wall1, 20%);
+    $doorframe: darken($wall1, 10%);
+    $doorframe2: lighten($wall1, 10%);
+    
+    $fireexit: #008b54;
+    $fireexit2: #77e7ba;
+    
+    font-size: .4em;
+
+    perspective: 50em;
+    overflow: hidden;
+    margin: 0;
+    background: #000;
+
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    *,
+    *:before,
+    *:after {
+      transform-style: preserve-3d;
+      box-sizing: border-box;
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      outline: none;
+    }
+    
+    img {
+      width: 100%;
+      position: static;
+    }
+    
+    .pointer {
+      cursor: pointer;
+    }
+    
+    input {
+      display: none;
+    }
+    
+    //movement
+    > label{
+        pointer-events: none;
+    }
+          
+                    
+    #wall4.checked ~ z > x > y{
+        transform: rotateY(#{(20 - 38) * 10}deg);
+        
+        wall2 painting{
+            opacity: 1;
+        }
+    }
+
+
+    #wall4:checked ~ ,
+    #wall4.checked ~ {
+      label:not([for="lightswitch"]) {
+        width: calc(100% / 13);
+        height: calc(100% / 3);
+        position: relative;
+        z-index: 1;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        display: inline;
+    
+        label,
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          transition: 0.1s 0.5s linear;
+        }
+      }
+           
+      @for $i from 1 through 13 {
+        label:nth-of-type(#{$i}):hover ~ z > x > y,
+        label:nth-of-type(#{$i}):focus ~ z > x > y {
+          transform: rotateY(#{($i - 25) * 10}deg);
+        }
+    
+        label:nth-of-type(#{$i}):hover ~ z > x,
+        label:nth-of-type(#{$i}):focus ~ z > x {
+          transform: rotateX(10deg);
+        }
+      }
+    
+      @for $i from 14 through 26 {
+        label:nth-of-type(#{$i}):hover ~ z > x > y,
+        label:nth-of-type(#{$i}):focus ~ z > x > y {
+          transform: rotateY(#{($i - 38) * 10}deg);
+        }
+      }
+    
+      @for $i from 27 through 39 {
+        label:nth-of-type(#{$i}):hover ~ z > x > y,
+        label:nth-of-type(#{$i}):focus ~ z > x > y {
+          transform: rotateY(#{($i - 51) * 10}deg);
+        }
+    
+        label:nth-of-type(#{$i}):hover ~ z > x,
+        label:nth-of-type(#{$i}):focus ~ z > x {
+          transform: rotateX(-10deg);
+        }
+      }
+    }
+    
+    x,
+    y,
+    z {
+      position: absolute;
+      top: -50em;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 1em;
+      height: 1em;
+      transition: 0.5s ease-in-out;
+    }
+    
+    //room
+    floor,
+    ceiling {
+      &,
+      &:before,
+      &:after {
+        width: 300em;
+        height: 300em;
+        box-shadow: 0 0 1em $wall2;
+      }
+    }
+    
+    floor {
+      height: 400em;
+      transform: rotateX(90deg) translate3d(-150em, -50em, 0em);
+      box-shadow: 0 0 1em $wall2, inset 0 0 10em 0 rgba($wall2, 0.75);
+      background: linear-gradient(#000, $none, $none),
+        repeating-linear-gradient(
+          to right,
+          $none,
+          $none 12em,
+          rgba($wall2, 0.5) 12.5em
+        ),
+        //
+        radial-gradient($floor1, $floor2);
+    
+      &:before,
+      &:after {
+        background: radial-gradient(circle at center top, $wall1, $wall2);
+      }
+    
+      &:before {
+        transform: rotateY(90deg) translate3d(-150em, 100em, -150em);
+      }
+    
+      &:after {
+        transform: rotateY(-90deg) translate3d(150em, 100em, -150em);
+      }
+    }
+    
+    ceiling {
+      transform: rotateX(-90deg) translate3d(-150em, 0, -200em);
+      box-shadow: 0 0 1em $wall1, inset 0 0 10em 0 rgba($wall2, 0.2);
+      background: radial-gradient(#fff, $wall1);
+    
+      &:before {
+        display: none;
+      }
+    
+      &:after {
+        transform: rotateX(90deg) translate3d(0, 150em, 150em);
+        background: radial-gradient(circle at center top, $wall1, $wall2);
+      }
+    }
+    
+    //art
+    wall1 painting,
+    wall2 painting,
+    wall3 painting {
+      width: 120em;
+      height: 156em;
+      border: 2em solid $floor1;
+      border-top-color: $floor3;
+      border-left-color: $floor2;
+      border-right-color: $floor4;
+      transform: rotateY(-90deg) translate3d(0, -17em, -89em);
+      background: $wall2;
+      box-shadow: 0 5em 2em -2em rgba($wall2, 0.5), inset 0 0 10em #000;
+      border-radius: 2em;
+      padding: 1em;
+    
+      p {
+        color: #fff;
+        top: 96%;
+        left: 50em;
+        font-size: 8em;
+        transform: translate3d(0, 5em, 0) scaleY(0);
+        width: 130em;
+        width: 0;
+        text-shadow: 5em 5em 2em $wall2;
+        transform-origin: -62em 0;
+        transition: 0.5s ease-in-out;
+        line-height: 1.05em;
+        word-wrap: break-word;
+    
+        &:before {
+          width: 52em;
+          height: 22em;
+          border-right: 0.5em solid #fff;
+          border-top: 0.5em solid #fff;
+          transform: translate3d(-56em, 0em, 0);
+          box-shadow: 2em 0 1em -1em rgba($wall2, 0.5),
+            inset 0 2em 1em -1em rgba($wall2, 0.5);
+        }
+    
+        &:after {
+          width: 6em;
+          height: 50em;
+          border-left: 0.5em solid #fff;
+          border-right: 0.5em solid #fff;
+          transform: skewY(45deg) translate3d(-62em, 9.5em, 0);
+          box-shadow: 2em 0 1em -1em rgba($wall2, 0.5),
+            inset 2em 0 1em -1em rgba($wall2, 0.5);
+        }
+    
+        * {
+          position: relative;
+          content: normal;
+        }
+      }
+    }
+    
+    wall2 painting {
+    $oceanscene: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/159368/oceanscene.jpg";
+
+    opacity: 0;
+    background: url($oceanscene) 50% 50%, linear-gradient(to top, #7f7fd5, #86a8e7, #91eae4);
+    background-size: cover; 
+        width: 200em;
+      height: 126em;
+      transform: translate3d(-100em, 0, 148em) scaleX(-1);
+    }
+    
+    wall3 painting {
+      width: 110em;
+      height: 144em;
+      transform: rotateY(90deg) translate3d(0, -17em, -200em);
+    }
+    
+    //door
+    
+    wall4 {
+      transform: translate3d(-150em, -50em, -150em);
+      background: radial-gradient(circle at 60% 80%, $none, $wall3),
+        linear-gradient(to right, $wall3, $none, $none, $wall3);
+      box-shadow: 0 0 1em $wall2;
+      width: 300em;
+      height: 250em;
+    
+      &:before,
+      door {
+        width: 86em;
+        height: 224em;
+        border-radius: 1em;
+        box-shadow: 0 0 0 150em $wall1;
+        left: -10em;
+        right: -10em;
+        margin: auto;
+        top: 60em;
+        transform: translate3d(0, 0, -1em);
+      }
+    
+      &:after {
+        width: 10em;
+        height: 224em;
+        background: linear-gradient($wall2, $doorframe2, $doorframe);
+        transform: translate3d(183em, 65em, -4.5em) rotateY(90deg);
+      }
+    
+      door {
+        & {
+          border: 5em ridge rgba($doorframe2, 0.65);
+          box-shadow: 1em 0.5em 1em rgba($wall3, 0.5),
+            //
+            0 0 1em 0.5em rgba($wall3, 0.5),
+            //
+            0 0 10em rgba($wall2, 0.2);
+          transform: translate3d(0, 0, 0.5em);
+        }
+    
+        &:before,
+        &:after {
+          transform: translate3d(0, 0, -1em) rotateY(10deg);
+          transform-origin: 0 0;
+          border-radius: 1em;
+        }
+    
+        &:before {
+          width: 100%;
+          height: 185em;
+          background: radial-gradient(circle at top left, rgba($door1, 0.2), $door)
+            $door;
+          box-shadow: inset 0 0 1.5em #000, 0 0 1.5em #000,
+            inset 0 0 5em rgba(#000, 0.5);
+        }
+    
+        &:after {
+          width: calc(100% / 3.5);
+          left: 14%;
+          top: 10%;
+          height: calc(100% / 3.5);
+          box-shadow: 1em 1em 0 $door1,
+            //
+            -1em -1em 0 $wall1,
+            //
+            33em 0 0 $door,
+            //
+            34em 1em 0 $door1,
+            //
+            32em -1em 0 $wall1,
+            //
+            33em 80em 0 $door,
+            //
+            34em 81em 0 $door1,
+            //
+            32em 79em 0 $wall1,
+            //
+            0 80em 0 $door,
+            //
+            1em 81em 0 $door1,
+            //
+            -1em 79em 0 $wall1,
+            //
+            49em 42em 2em -7.5em rgba($wall1, 0.5),
+            //
+            49em 42em 0 -7.5em $door,
+            //
+            48.5em 41.5em 0 -7.5em $door1;
+        }
+    
+        a {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      // light switch
+      label {
+        background: rgba(#fff, 0.5);
+        width: 8em;
+        height: 8em;
+        transform: translate3d(210em, 110em, 1em);
+        border-radius: 1em;
+        box-shadow: 0.5em 1em 2em rgba($wall2, 0.5),
+          //
+          inset -0.25em -0.25em 1em rgba($wall2, 0.25),
+          //
+          inset 0.25em 0.25em 1em #fff;
+    
+        &:after {
+          width: 1em;
+          height: 3em;
+          box-shadow: 0 0 0 0.15em $wall2, 0.15em 0.5em 0.5em $wall2;
+          transform: translate3d(3.5em, 2.5em, 0);
+          opacity: 0.2;
+          border-radius: 0.15em;
+          background: linear-gradient($none, #fff);
+        }
+    
+        &:before {
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 50%;
+          background: $wall2;
+          transform: translate3d(1.5em, 3.75em, 0);
+          box-shadow: 4.75em 0 0 $wall2;
+          opacity: 0.5;
+        }
+      }
+    }
+    
+    @for $i from 1 through 3 {
+      .p#{$i}hover:hover ~ * > * > * > wall#{$i} > * > p {
+        transform: translate3d(0, 5em, 0) scale(1);
+        width: 130em;
+      }
+    }
+    //wall 1 left - isla
+    .p1hover.active ,
+    .p1hover:active {
+      & ~ z {
+        transform: translate3d(0, 0, 100em);
+    
+        & > x > y {
+          transform: rotateY(-270deg) !important;
+        }
+      }
+    }
+    //wall 2 centre - landscape
+    .p2hover.active ~ z ,
+    .p2hover:active ~ z {
+      transform: translate3d(0, 0, 100em);
+    }
+    //wall 3 right - glass
+    .p3hover.active ,
+    .p3hover:active {
+      & ~ z {
+        transform: translate3d(0, 0, 100em);
+    
+        & > x > y {
+          transform: rotateY(-90deg) !important;
+        }
+      }
+    }
+    
+    notice {
+      font-size: 5em;
+      transform: translate3d(50em, 120em, 0.5em);
+    
+      a,
+      a:hover,
+      a:focus {
+        position: relative;
+        padding: 2em;
+        background: rgba(#fff, 0.5);
+        border-radius: 1em;
+        text-decoration: none;
+        margin-bottom: 3em;
+        color: #000;
+        box-shadow: inset 0 0 0 0 rgba(#fff, 0.5),
+          //
+          0 0 0 2em $none,
+          //
+          -0.5em 1em 2em rgba($wall2, 0.5);
+        transition: all 0.25s ease-in-out;
+        display: block;
+        text-align: center;
+    
+        &:hover {
+          box-shadow: inset 0 0 3em 3em rgba(#fff, 0.5),
+            //
+            0 0 0 0.1em #fff,
+            //
+            -0.5em 1em 2em rgba($wall2, 0.5);
+        }
+      }
+    }
+    
+    fireexit {
+      z-index: 99;
+      width: 50em;
+      height: 20em;
+      background: $fireexit;
+      transform: translate3d(125em, 30em, 0);
+      border-radius: 1em;
+      box-shadow: 0.5em 1em 2em rgba($wall2, 0.25), inset 0 0 0 1em $wall1,
+        0 0 50em rgba($fireexit2, 0.1);
+    
+      &:before,
+      &:after {
+        border-bottom: 4em solid $wall1;
+        border-left: 1.5em solid $wall1;
+        border-top: 2em solid $none;
+        transform: translate3d(35em, 0.5em, 0) skewY(-50deg);
+        width: 5em;
+        height: 13em;
+      }
+    
+      &:after {
+        transform: translate3d(30em, 0.5em, 0) scaleX(-1) skewY(-50deg);
+      }
+    
+      i:nth-of-type(1) {
+        background: $wall1;
+        width: 11em;
+        height: 13em;
+        transform: translate3d(11em, 3.5em, 0);
+    
+        &:before {
+          width: 2.2em;
+          height: 2.2em;
+          transform: translate3d(7em, 1.5em, 0);
+          background: $fireexit;
+          border-radius: 50%;
+        }
+    
+        &:after {
+          width: 5.5em;
+          height: 3em;
+          border: 1em solid $fireexit;
+          border-left-width: 1.5em;
+          border-right-width: 2.5em;
+          border-bottom: none;
+          transform: translate3d(2em, 4em, 0) skewX(-45deg);
+          border-radius: 0 1em 0 0;
+        }
+      }
+    
+      i:nth-of-type(2) {
+        border-bottom: 1.2em solid $fireexit;
+        border-right: 1.2em solid $fireexit;
+        width: 4em;
+        height: 4em;
+        transform: translate3d(11.3em, 10.5em, 0) skewX(-15deg);
+    
+        &:before {
+          width: 4em;
+          height: 3em;
+          border-bottom: 1em solid $fireexit;
+          border-left: 1.3em solid $fireexit;
+          transform: translate3d(7em, -3em, 0) skewX(45deg);
+        }
+    
+        &:after {
+          width: 1.3em;
+          height: 7em;
+          background: $fireexit;
+          transform: translate3d(6.5em, 0em, 0) skewX(35deg);
+        }
+      }
+    }
+    
+    #lightswitch:checked ~ z > x > y > {
+      floor {
+        background: radial-gradient($wall2, #000);
+    
+        &:before,
+        &:after {
+          background: radial-gradient(circle at 50% top, $darkwall1, $wall2, #000);
+        }
+      }
+    
+      ceiling {
+        background: radial-gradient(
+          circle at center bottom,
+          $darkwall1,
+          $wall2,
+          $wall2,
+          #000
+        );
+    
+        &:before,
+        &:after {
+          background: $wall2;
+        }
+      }
+    
+      * > painting {
+        border: 2em solid $wall2;
+        border-top-color: #000;
+        border-left-color: #000;
+        border-right-color: $darkwall1;
+        background: $darkwall1;
+        box-shadow: 5em 4em 2em -2em #000;
+    
+        > * {
+          filter: brightness(20%) contrast(120%);
+          opacity: 0.8;
+        }
+      }
+    
+      wall2 > painting {
+        border-left-color: $wall2;
+        border-right-color: $wall2;
+        border-bottom-color: $darkwall1;
+        box-shadow: 0 3em 2em -2em #000, 0 3em 3em #000;
+      }
+    
+      wall3 > painting {
+        border-left-color: $darkwall1;
+        border-right-color: #000;
+        box-shadow: -5em 4em 2em -2em #000;
+      }
+    
+      wall4 {
+        background: none;
+    
+        &:before {
+          box-shadow: 0 0 0 150em $wall2;
+          transform: translate3d(0, 0, 0);
+        }
+    
+        &:after {
+          background: linear-gradient($wall2, $darkwall1, #000);
+        }
+    
+        & > {
+          door {
+            border-color: $wall2;
+            box-shadow: 0 -60em 100em rgba($darkwall1, 0.5);
+    
+            &:before {
+              background: radial-gradient(
+                  circle at top left,
+                  rgba($darkwall1, 0.2),
+                  $wall2
+                )
+                $wall2;
+            }
+    
+            &:after {
+              box-shadow: 1em 1em 0 $darkwall1, -1em -1em 0 #000,
+                33em 0 0 $wall2, 34em 1em 0 $darkwall1, 32em -1em 0 #000,
+                33em 80em 0 $wall2, 34em 81em 0 $darkwall1, 32em 79em 0 #000,
+                0 80em 0 $wall2, 1em 81em 0 $darkwall1, -1em 79em 0 #000,
+                49em 42em 2em -7.5em rgba(#000, 0.5),
+                49em 42em 0 -7.5em $wall2, 48.5em 41.5em 0 -7.5em $darkwall1;
+            }
+          }
+    
+          notice > a {
+            background: $darkwall1;
+            box-shadow: -2em 2em 2em rgba(#000, 0.5),
+              //
+              0 0 0 rgba($wall2, 0.5),
+              //
+              0 0 0 rgba($fireexit2, 0.05),
+              //
+              inset 0 0.25em 0.25em 0 $fireexit2;
+    
+            &:hover,
+            &:focus {
+              color: $fireexit;
+              box-shadow: -2em 2em 2em rgba(#000, 0.5),
+                //
+                0 0 2em rgba($wall2, 0.5),
+                //
+                0 0 10em rgba($fireexit2, 0.15),
+                //
+                inset 0 0.25em 0.25em 0 $fireexit2;
+            }
+          }
+    
+          fireexit {
+            box-shadow: 0 0 1em #000, 0.5em 1em 2em rgba($wall2, 0.25),
+              inset 0 0 0 1em $wall1, 0 0 20em rgba($fireexit2, 0.4),
+              0 0 10em rgba($fireexit, 0.4);
+          }
+          // light switch
+          label {
+            /*opacity: .1;*/
+            background: rgba(#fff, 0.1);
+            box-shadow: 1em 2em 2em #000,
+              //
+              inset -0.25em -0.25em 1em rgba($wall2, 0.25),
+              //
+              inset 0.25em 0.25em 0.5em $fireexit2;
+    
+            &:after {
+              opacity: 1;
+              background: linear-gradient(rgba($wall2, 0.5), $none, $none);
+              box-shadow: 0 0 0 0.15em $wall2,
+                0.75em -0.25em 0.5em -0.35em $wall2,
+                inset 0 0.25em 0.25em 0 $fireexit2;
+            }
+    
+            &:before {
+              background: #000;
+              box-shadow: 4.75em 0 0 #000;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    
+    // turn
+    
+    .turn,
+    .turnback {
+      box-shadow: inset 0 0 0 0 rgba(#fff, 0.1), 0 0 0 5em $none;
+      transition: all 0.25s ease-in-out;
+      border-radius: 4em 0 0 4em;
+    
+      &:before {
+        transform: translate3d(0, 0, 0) rotate(45deg) scale(0);
+        border-top: 0.5em solid rgba(#fff, 0.5);
+        border-right: 0.5em solid rgba(#fff, 0.5);
+        bottom: 0;
+        height: 3em;
+        width: 3em;
+        margin: auto;
+        transition: all 0.25s ease-in-out;
+      }
+    
+      &:hover {
+        box-shadow: inset 0 0 3em 10em rgba(#fff, 0.1), 0 0 0 rgba(#fff, 0.1);
+    
+        &:before {
+          transform: translate3d(3em, 0, 0) rotate(45deg) scale(1);
+        }
+      }
+    }
+    
+    .turnback {
+      width: calc(100% / 13);
+      height: calc(100% / 3);
+      z-index: 1;
+      bottom: 0;
+      cursor: pointer;
+      margin: auto;
+    }
+    
+    #wall4:not(:checked) ~ .turnback ,
+    #wall4:not(.checked) ~ .turnback {
+      transform: scaleX(-1);
+    }
+    
+    #wall4:checked ~ .turnback ,
+    #wall4.checked ~ .turnback {
+      opacity: 0;
+    }
+    
+    @media (min-width: 600px) {
+      #wall4:checked ~ ,
+      #wall4.checked ~ {
+        label:not([for="lightswitch"]) {
+          label {
+            &.active ,
+            &:active {
+              transform: translateY(100%);
+              transition: 0.1s linear;
+            }
+          }
+        }
+      }
+    }
+     
+}

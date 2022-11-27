@@ -2,11 +2,10 @@ import "./TheBuilding.scss"
 import React from 'react'
 import TheRoom from "./TheRoom/TheRoom"
 import TheRooftop from "./TheRooftop/TheRooftop"
-import TheFloor from "./TheFloor/TheFloor"
 import Sunset from "../Sunset/Sunset"
 import LightSwitch from "../LightSwitch/LightSwitch"
 import GraffitiColorFont from "../GraffitiColorFont/GraffitiColorFont"
-
+import Art3dGallery from "../Art3dGallery/Art3dGallery"
 export default function TheBuilding() {
     let changePerspective = false;
     const firstWallGraffiti = "jColaco .dev graffitti CSS artWork";
@@ -21,8 +20,10 @@ export default function TheBuilding() {
             <GraffitiColorFont quote={firstWallGraffiti}></GraffitiColorFont>
         </section>
         <TheRoom changePerspective={changePerspective}></TheRoom>
-        <section className="divWall"></section>
-        <TheFloor changePerspective={changePerspective}></TheFloor>
+        <section className="divWall">
+
+        </section>
+        <Art3dGallery></Art3dGallery>
         <Sunset></Sunset>
     </main>
   )
