@@ -131,8 +131,8 @@ export default function TheRoom({changePerspective}) {
 
     }
     function handleScroll() {
-        let room=  roomRef.current.querySelector(".room");
-        if(changePerspective){
+        let room=  roomRef?.current?.querySelector(".room");
+        if(changePerspective && room){
             room.style.perspectiveOrigin= `50% ${calculatePerspective(room.getBoundingClientRect().top)}%`;
         }
     }

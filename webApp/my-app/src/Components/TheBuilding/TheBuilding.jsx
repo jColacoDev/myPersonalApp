@@ -5,7 +5,8 @@ import TheRooftop from "./TheRooftop/TheRooftop"
 import Sunset from "../Sunset/Sunset"
 import LightSwitch from "../LightSwitch/LightSwitch"
 import GraffitiColorFont from "../GraffitiColorFont/GraffitiColorFont"
-import Art3dGallery from "../Art3dGallery/Art3dGallery"
+import TheBasement from "./TheBasement/TheBasement"
+
 export default function TheBuilding() {
     let changePerspective = false;
     const firstWallGraffiti = "jColaco .dev graffitti CSS artWork";
@@ -23,7 +24,7 @@ export default function TheBuilding() {
         <section className="divWall">
 
         </section>
-        <Art3dGallery></Art3dGallery>
+        <TheBasement></TheBasement>
         <Sunset></Sunset>
     </main>
   )

@@ -45,7 +45,7 @@
       top: 0;
       outline: none;
     }
-    
+
     img {
       width: 100%;
       position: static;
@@ -302,7 +302,6 @@
       }
     
       door {
-        & {
           border: 5em ridge rgba($doorframe2, 0.65);
           box-shadow: 1em 0.5em 1em rgba($wall3, 0.5),
             //
@@ -310,8 +309,13 @@
             //
             0 0 10em rgba($wall2, 0.2);
           transform: translate3d(0, 0, 0.5em);
-        }
     
+          span{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+
         &:before,
         &:after {
           transform: translate3d(0, 0, -1em) rotateY(10deg);
@@ -361,18 +365,13 @@
             //
             48.5em 41.5em 0 -7.5em $door1;
         }
-    
-        a {
-          width: 100%;
-          height: 100%;
-        }
       }
       // light switch
       label {
         background: rgba(#fff, 0.5);
         width: 8em;
         height: 8em;
-        transform: translate3d(210em, 110em, 1em);
+        transform: translate3d(195em, 110em, 1em);
         border-radius: 1em;
         box-shadow: 0.5em 1em 2em rgba($wall2, 0.5),
           //
@@ -380,6 +379,12 @@
           //
           inset 0.25em 0.25em 1em #fff;
     
+          @media (min-width: 440px) {
+            &{
+                transform: translate3d(210em, 110em, 1em);
+            }
+          }
+
         &:after {
           width: 1em;
           height: 3em;
@@ -471,10 +476,10 @@
     
     fireexit {
       z-index: 99;
-      width: 50em;
+      width: 85em;
       height: 20em;
       background: $fireexit;
-      transform: translate3d(125em, 30em, 0);
+      transform: translate3d(108em, 30em, 0);
       border-radius: 1em;
       box-shadow: 0.5em 1em 2em rgba($wall2, 0.25), inset 0 0 0 1em $wall1,
         0 0 50em rgba($fireexit2, 0.1);
@@ -493,6 +498,16 @@
         transform: translate3d(30em, 0.5em, 0) scaleX(-1) skewY(-50deg);
       }
     
+      div{
+        transform: translate3d(5.5em, 0.3em, 0);
+        font-size: 8em;
+        color: #7f95a8;
+
+        &:last-of-type{
+            transform: translate3d(5.5em, 1.3em, 0);
+        }
+      }
+
       i:nth-of-type(1) {
         background: $wall1;
         width: 11em;

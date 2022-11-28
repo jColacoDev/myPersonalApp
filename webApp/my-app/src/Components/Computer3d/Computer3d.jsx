@@ -1,21 +1,99 @@
 import React from 'react'
 import "./Computer3d.scss"
 
-export default function Computer3d() {
+import startWindows from "./gifs/microsoft-windows95.gif"
+import bsod from "./gifs/bsod.gif"
+import bsodCat from "./gifs/bsod-cat.gif"
+import steve from "./gifs/steve-ballmer-microsoft.gif"
+import windowsBooting from "./gifs/windows-booting.gif"
+import internetSetup from "./gifs/internetSetup.gif"
+import infiniteWindows95 from "./gifs/infiniteWindows95.gif"
+
+export default function Computer3d({escapeClick}) {
+    const [stateTimeout, setStateTimeout] = React.useState();
+    const [screenBgImage, setScreenBgImage] = React.useState(steve);
+    const [monitorButtonState, setMonitorButtonState] = React.useState("");
+    const [powerOn, setPowerOn] = React.useState(false);
+    const [monitorOn, setMonitorOn] = React.useState(true);
+
+
+    React.useEffect(() => {
+        let buttonState = "";
+        if(monitorOn){
+            if(powerOn){
+                buttonState = ""
+            }else{
+                buttonState = "YELLOW"
+            }
+        }else {
+            buttonState = "OFF";
+        }
+
+        setMonitorButtonState(buttonState);
+
+      }, [monitorOn, powerOn]);
+
+    function handleEscapeClick(){
+        escapeClick();
+    }
+
+    function handlePowerClick({currentTarget}){
+        if(powerOn && !monitorOn) handleEscapeClick();
+
+        !powerOn ? screen_windowsStart() : screen_windowsEnd();
+
+        setPowerOn(!powerOn);
+    }
+    function handleMonitorClick({currentTarget}){
+        if(monitorOn && !powerOn) handleEscapeClick();
+        setMonitorOn(!monitorOn);
+    }
+    function handlePauseClick({currentTarget}){
+
+    }
+    function handleFloppyClick({currentTarget}){
+
+    }
+
+    function handleGlassCLick({currentTarget}){
+        console.log(currentTarget);
+    }
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+    function screen_windowsStart(){
+        clearTimeout(stateTimeout);
+    
+        setScreenBgImage(windowsBooting);
+        setStateTimeout(setTimeout(() => {
+            setScreenBgImage(startWindows)
+            setStateTimeout(setTimeout(() => setScreenBgImage(infiniteWindows95), "5000"))
+        }, "12500"))
+    }
+    function screen_windowsEnd(){
+        clearTimeout(stateTimeout);
+
+        setScreenBgImage(bsod);
+        setStateTimeout(setTimeout(() => setScreenBgImage(bsodCat), "3500"))
+    }
+
   return (
     <div className="Computer3d">
         
 <div className="rotate left"></div>
 <div className="rotate right"></div>
 <div className="content">
-  <input id="monitor" type="checkbox" checked="checked"/>
-  <input id="floppydisk" type="radio" name="game" checked="checked"/>
-  <input id="removedisk" type="radio" name="game"/>
+  
+  <input id="monitor" type="checkbox" onChange={() => {}} checked={monitorOn ? "checked" : ""}/>
+  <input id="floppydisk" type="radio" name="game" />
+  <input id="removedisk" type="radio" name="game" />
   <input id="paused" type="checkbox"/>
+
   <div className="cuboid monitor"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid button">
     <div className="side">
-      <label for="monitor"></label>
+      <label onClick={handleMonitorClick} className={monitorButtonState} for="monitor"></label>
     </div>
     <div className="side"></div>
     <div className="side"></div>
@@ -23,13 +101,13 @@ export default function Computer3d() {
     <div className="side"></div>
     <div className="side"></div>
   </div>
-  <div className="cuboid screen"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
-  <div className="cuboid glass"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
+  <div className="cuboid screen"><div className="side"></div><div className="side" style={{backgroundImage: `url(${screenBgImage})`}}></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
+  <div className="cuboid glass" onClick={handleGlassCLick}><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid base top"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid base mid"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="column"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid base bot"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
-  <div className="cuboid pc"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
+  <div className="cuboid pc"><div className="side"></div><div onClick={handlePowerClick} className={`side ${powerOn ? "" : "OFF"}`}></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid diskette-hole"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid diskette-box"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>
   <div className="cuboid diskette-box"><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div><div className="side"></div></div>

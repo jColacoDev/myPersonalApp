@@ -1,0 +1,29 @@
+.TheBasement{
+    position: relative;
+
+    .doorDivisions{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        animation: enterDivision .3s forwards linear;
+        z-index: 1;
+          
+        @media screen and (min-width: 1100px) {
+            &{ 
+                width: calc(100vw - var(--sideNav-width));
+            }
+        }
+
+        @keyframes enterDivision {
+            0% {
+                background-color: transparent;
+            }
+            100% {
+                background-color: black;
+            }
+        }
+    }
+
+}

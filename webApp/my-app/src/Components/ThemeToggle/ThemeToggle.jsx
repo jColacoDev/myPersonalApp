@@ -7,17 +7,26 @@ import { setTheme as setThemeActions } from "../../Theme/themeSlice";
 export default function ThemeToggle({ themeToggle }) {
     const [theme, setTheme] = useState(themeToggle);
     const dispatch = useDispatch();
+    const toggleRef = React.useRef();
 
     useEffect(() => {
         dispatch(setThemeActions(theme));
     }, [theme]);
 
     function handleChange(event) {
+        if(event.target.checked){
+            setTheme("lightTheme");
+            toggleRef.current.classList.remove(".darkTheme");
+        }else{
+            setTheme("darkTheme")
+            toggleRef.current.classList.add(".darkTheme");
+        }
         setTheme(event.target.checked ? "lightTheme" : "darkTheme");
+        
     }
 
     return (
-        <div className={"ThemeToggle " + theme}>
+        <div ref={toggleRef} className="ThemeToggle">
             <div className="container">
                 <div className="switch">
                     <label htmlFor="toggle">
