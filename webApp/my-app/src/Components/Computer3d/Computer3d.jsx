@@ -8,10 +8,11 @@ import steve from "./gifs/steve-ballmer-microsoft.gif"
 import windowsBooting from "./gifs/windows-booting.gif"
 import internetSetup from "./gifs/internetSetup.gif"
 import infiniteWindows95 from "./gifs/infiniteWindows95.gif"
+import screenSaverMatrix from "./gifs/screenSaverMatrix.gif"
 
 export default function Computer3d({escapeClick}) {
     const [stateTimeout, setStateTimeout] = React.useState();
-    const [screenBgImage, setScreenBgImage] = React.useState(steve);
+    const [screenBgImage, setScreenBgImage] = React.useState(screenSaverMatrix);
     const [monitorButtonState, setMonitorButtonState] = React.useState("");
     const [powerOn, setPowerOn] = React.useState(false);
     const [monitorOn, setMonitorOn] = React.useState(true);
