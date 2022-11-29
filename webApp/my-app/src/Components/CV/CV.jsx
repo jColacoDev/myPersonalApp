@@ -22,12 +22,10 @@ export default function CV() {
         { state: "", title: pagesData[1].navLinks[1].label, ref: pagesData[1].navLinks[1].ref },
         { state: "", title: pagesData[1].navLinks[2].label, ref: pagesData[1].navLinks[2].ref },
     ];
-    
     function handleLinkClick ({currentTarget}) {
         location.pathname = `${currentTarget.href}`
         return false;
     }
-
     function handleClick_btn (currentTarget) {
         const   pages = document.querySelectorAll(".page"),
                 navLis = document.querySelectorAll(".navbar li");
@@ -75,15 +73,15 @@ return (
                         <article className="user__socials socials">
                             <a className="social social--twitter" 
                                 href="https://www.linkedin.com/in/jcolacodev/" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/linkedin.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/linkedin.png")} alt="" />
                                 <span>linkedin.com/jColacoDev</span>
                             </a>
                             <a className="social social--codepen" href="https://github.com/jColacoDev" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/github.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/github.png")} alt="" />
                                 <span>github.com/jColacoDev</span>
                             </a>
                             <a className="social social--github" href="https://codepen.io/jcolacodev" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/codepen.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/codepen.png")} alt="" />
                                 <span>codepen.io/jColacoDev</span>
                             </a>
                             <a className="social social--github" href="https://forum.arduino.cc/u/jcolaco/" target="_blank" rel="noopener noreferrer">

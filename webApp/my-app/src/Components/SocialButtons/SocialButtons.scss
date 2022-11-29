@@ -1,4 +1,6 @@
 .SocialButtons {
+    --borders-width: 1px;
+
     margin-top: 2em;
 
     > ul {
@@ -37,7 +39,7 @@
                 span:nth-child(1),
                 span:nth-child(3) {
                     width: 100%;
-                    height: 3px;
+                    height: var(--borders-width);
                     background: var(--headerBar-link-color);
                 }
                 span:nth-child(1) {
@@ -64,7 +66,7 @@
 
                 span:nth-child(2),
                 span:nth-child(4) {
-                    width: 3px;
+                    width: var(--borders-width);
                     height: 100%;
                     background: var(--headerBar-link-color);
                 }
