@@ -4,6 +4,7 @@ import SocialButtons from "../SocialButtons/SocialButtons";
 import { NavLink } from "react-router-dom";
 
 export default function MenuButton() {
+    const [qrActive, setQrActive] = React.useState(false);
     const [checked, setChecked] = React.useState(false);
     const [innerWidth, setInnerWidth] = React.useState(0);
 
@@ -17,8 +18,10 @@ export default function MenuButton() {
     function handleResize() {
         if(innerWidth !== window.innerWidth){
             if(window.innerWidth > 1099){
+                if(!checked)setQrActive(false);
                 setChecked(true);
             }else{
+                if(checked)setQrActive(false);
                 setChecked(false);
             }
         }
@@ -43,6 +46,10 @@ export default function MenuButton() {
             label: "CV"
         }
     ]
+    
+    function handleQrClick() {
+        setQrActive(!qrActive);
+    }
     
     function handlLabelClick() {
         setChecked(!checked);
@@ -73,6 +80,9 @@ export default function MenuButton() {
                     )}
                     <li>
                         <SocialButtons></SocialButtons>
+                    </li>
+                    <li className="qrCode">
+                        <figure className={qrActive ? "active" : ""} onClick={handleQrClick}></figure>
                     </li>
                 </ul>
             </nav>
