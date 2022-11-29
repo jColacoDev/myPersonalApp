@@ -7,45 +7,39 @@ export default class SocialButtons extends Component {
             <div className="SocialButtons">
                 <ul>
                     <li>
-                        <a className="facebook" href="#">
+                        <a className="linkdin" href="https://www.linkedin.com/in/jcolacodev/" target="_blank" rel="noreferrer">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <i
-                                className="fa fa-facebook"
-                                aria-hidden="true"></i>
+                            <figure></figure>
                         </a>
                     </li>
                     <li>
-                        <a className="twitter" href="#">
+                        <a className="github" href="https://github.com/jColacoDev" target="_blank" rel="noreferrer">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <figure></figure>
                         </a>
                     </li>
                     <li>
-                        <a className="instagram" href="#">
+                        <a className="codepen" href="https://codepen.io/jcolacodev" target="_blank" rel="noreferrer">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <i
-                                className="fa fa-instagram"
-                                aria-hidden="true"></i>
+                            <figure></figure>
                         </a>
                     </li>
                     <li>
-                        <a className="google" href="#">
+                        <a className="instagram" href="https://www.instagram.com/jocolaco/" target="_blank" rel="noreferrer">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <i
-                                className="fa fa-google-plus"
-                                aria-hidden="true"></i>
+                            <figure></figure>
                         </a>
                     </li>
                 </ul>

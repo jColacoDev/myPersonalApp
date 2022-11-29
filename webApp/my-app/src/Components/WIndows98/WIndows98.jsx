@@ -1,11 +1,34 @@
 import "./WIndows98.scss"
 import React from 'react'
 
-export default function WIndows98() {
+export default function WIndows98({escapeClick}) {
+
+    const [windowsTimeStamp, setWindowsTimeStamp] = React.useState("4:20 AM");
+
+    React.useEffect(() => {
+        setTimeSatamp();
+        setInterval(() => setTimeSatamp, 60000);
+    }, []);
+
+    function setTimeSatamp(){
+        let now = new Date();
+
+        let formatedNow= new Intl.DateTimeFormat('default',
+            {
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric'
+            }).format(now);
+
+        setWindowsTimeStamp(formatedNow)
+    }
+
+    function handleShutdownClick(){
+        escapeClick();
+    }
+    
   return (
     <div className="WIndows98">
-
-
 
 <form id="windows">
     {/* <!-- Login and Shutdown --> */}
@@ -503,7 +526,7 @@ export default function WIndows98() {
                     style={{margin: "0 0.5rem 0 0"}} 
                     alt="" /> Log Off <span className="spiderman logout-prompt"> Spiderman...</span><span className="zark-muckerberg logout-prompt"> Zark Muckerberg...</span><span className="donald-trump logout-prompt"> Donald Trump...</span>
                 </label></li>
-                <li><label for="shutdown-screen-input">
+                <li><label onClick={handleShutdownClick} for="shutdown-screen-input">
                     <img 
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEUAAACGhobAwMB3d3eysrLMzMz4+PjX19eZmZnq6urn59ZNTU2WlpZCQkIzAGYAAIAAAAAzAMwAAP8A/////wBVVVX///99stlUAAAAAXRSTlMAQObYZgAAAAFiS0dEFnzRqBkAAAAHdElNRQfiBhoANBn4/QlFAAAAzUlEQVQ4y83S0Q6DIAwFUGmhYudEdP7/r+6CZEEnvm438emetBDpun+KQW5rQpibtXWOHJHlPedeRHqHQHhm+zXKyKCqMmRhfV53IEb0YUh1EBCIMRH7PIAphEREipgJX71iijER16tAGJ79EShAJrZ3gu4KLMuaCDtqgHVZkwnXAGdYVskzqD3hhRE3IKYV7QkhxHyKBvCDUiKxnsAV2NhrIR9Q9cgGgv8QkAKOfU0KOPeFpGe1g8uHVUgb7MTjAk2QyTjO7T6T2/oHeQPSrw8Qg6bkoQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1MjoyNS0wNDowMOXPqxAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTI6MjUtMDQ6MDCUkhOsAAAAAElFTkSuQmCC" 
                     style={{margin: "0 0.5rem 0 0"}} 
@@ -511,7 +534,7 @@ export default function WIndows98() {
                 </label></li>
             </ul>
         </div>
-        <div id="time-options"></div>
+        <div id="time-options" data-timeStamp={windowsTimeStamp}></div>
     </div>
 </form>
 

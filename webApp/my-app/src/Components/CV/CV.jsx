@@ -179,7 +179,7 @@ return (
                             <p>
                                 <strong>
                                     Wordpress, Visual Studio, Postman, FileZilla, Gitbash, Atlas, Adobe Suite, Jest, Lens, GitLab, Terminal
-                                    , paint.Net, Filmora, Jira, Teams, Slack, Excel
+                                    , paint.Net, Filmora, Jira, Teams, Slack, Excel, Putty, WinSCP
                                 </strong>
                             </p>
                         </article>
@@ -297,9 +297,8 @@ return (
                         <article>
                             <h3>Team</h3>
                             <p>
-                                A work family where one learns and teaches, creating the Vision with Respect, Transparency, Reliability
-                                <br/><i>A team happens when I becomes We, I do my best so We can go further!</i>
-                                <br/>I've experienced team work in school/college, hackathons and professionally with the a notion of purpose and commitment. 
+                                <i>A team happens when I becomes We, I do my best so We can go further!</i>
+                                <br/>I've experienced team work in school/college, hackathons and professionally with the notion of purpose and commitment. 
                             </p>
                         </article>
                         <article>
@@ -321,8 +320,6 @@ return (
                                 Play the <strong>guitar</strong>, walk my <strong>dogs</strong>, <strong>build</strong> something <strong>digital, analog, artistic</strong>.
                                 <br />Go deep into the <strong>wild! Nature</strong>, fresh air and sweet sounds. 
                                 <br /><strong>Photography</strong> and <strong>cinematography</strong>, <i>the angles and perspective as a means for experiencing the world in different lights</i>.
-                                <br />I fly a drone, handle a gimbal and edit with Filmora.
-                                <br />I go explore everywhere with my custom made eScooter!
                             </p>
                         </article>
                     </div>
@@ -428,8 +425,7 @@ return (
         
         <footer className="cv__foot">
             <article className="copyright">
-                Version web de ce CV :
-                <a href="https://cdpn.io/Chmood/debug/daWjgd/VJrxxOOaDjXr" target="_blank" rel="noreferrer">https://chmood.github.io</a> ©&nbsp;João&nbsp;Colaço&nbsp;
+                web Version <em>Curriculum Vitae</em> <strong>©&nbsp;João&nbsp;Colaço&nbsp;</strong>
                 <script>
                     document.write(new Date().getFullYear());
                 </script>

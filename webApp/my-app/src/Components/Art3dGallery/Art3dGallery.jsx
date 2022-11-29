@@ -1,9 +1,10 @@
 import "./Art3dGallery.scss"
 import React from 'react'
 import GoldFish from "../GoldFish/GoldFish"
+import TicTacToe from "../TicTacToe/TicTacToe";
 
 export default function Art3dGallery({openHackerRoom}) {
-    const [wallSelected, setWallSelected] = React.useState("back");
+    const [wallSelected, setWallSelected] = React.useState("front");
 
     function onOpenHackerRoom(){
         openHackerRoom();
@@ -24,23 +25,24 @@ return (
             <floor></floor>
             <ceiling></ceiling>
             <wall1>
-                <painting>
-                <img src="https://tinydesign.co.uk/gallery/gallery-img/portrait.jpg" />
-                <p>
-                    Pure CSS Only Portrait<br />
-                    Isla<br />
-                    <small>Ben ngEvans</small>
-                </p>
+                <painting onClick={()=> {if(wallSelected !== "left") setWallSelected("left")}}>
+                    <span onClick={()=>setWallSelected("front")}></span>
+                    <TicTacToe></TicTacToe>
+                    <p>
+                        Pure CSS Only Portrait<br />
+                        Isla<br />
+                        <small>Ben ngEvans</small>
+                    </p>
                 </painting>
             </wall1>
             <wall2>
-                <painting>
+                <painting onClick={()=>wallSelected === "" ? setWallSelected("front") : setWallSelected("")}>
                 <GoldFish></GoldFish>
                 
                 </painting>
             </wall2>
             <wall3>
-                <painting>
+                <painting onClick={()=>wallSelected === "right" ? setWallSelected("front") : setWallSelected("right")}>
                 <img src="https://tinydesign.co.uk/gallery/gallery-img/still-life.jpg" />
                 <p>
                     Pure CSS Still Life<br />
@@ -52,10 +54,9 @@ return (
             <wall4>
 
                 <notice>
-
-                <a title="Buy the landscape - CSS Art for your wall!" target="_blank" href="https://www.redbubble.com/i/canvas-print/Pure-CSS-Landscape-An-Evening-in-Southwold-by-Ivorjetski/48823594.4ZB30">Buy the landscape</a>
-                <a title="Buy the still life - CSS Art for your wall!" target="_blank" href="https://www.redbubble.com/i/canvas-print/Pure-CSS-Still-Life-Water-and-Lemons-by-Ivorjetski/48862524.4ZB30">Buy the still life</a>
-                <a title="Buy the portrait - CSS Art for your wall!" target="_blank" href="https://www.redbubble.com/i/framed-print/Pure-CSS-Portrait-Isla-by-Ivorjetski/48862324.16RW4">Buy the portrait</a>
+                    <span>Hack3r Z0n3 is a high Graphic CSS danger Only PC allowed!</span>
+                    <span>Click in the paintings to appreciate :D</span>
+                    <span>Turn the Switch OFF to save energy.</span>
                 </notice>
                 <door>
                     <span onClick={onOpenHackerRoom}></span>

@@ -10,7 +10,7 @@ import internetSetup from "./gifs/internetSetup.gif"
 import infiniteWindows95 from "./gifs/infiniteWindows95.gif"
 import screenSaverMatrix from "./gifs/screenSaverMatrix.gif"
 
-export default function Computer3d({escapeClick}) {
+export default function Computer3d({escapeClick, windowsClick}) {
     const [stateTimeout, setStateTimeout] = React.useState();
     const [screenBgImage, setScreenBgImage] = React.useState(screenSaverMatrix);
     const [monitorButtonState, setMonitorButtonState] = React.useState("");
@@ -57,7 +57,7 @@ export default function Computer3d({escapeClick}) {
     }
 
     function handleGlassCLick({currentTarget}){
-        console.log(currentTarget);
+        windowsClick();
     }
 
 ////////////////////////////////////////////////////////

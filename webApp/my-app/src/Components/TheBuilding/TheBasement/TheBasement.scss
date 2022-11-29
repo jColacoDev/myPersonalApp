@@ -1,27 +1,34 @@
 .TheBasement{
     position: relative;
 
+    &::after{
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;  
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-color: transparent;  
+        transition-duration: 1s;
+    }
+
+    &.fadeOut::after{
+        background-color: black;
+    }
+
     .doorDivisions{
         position: absolute;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100%;
-        animation: enterDivision .3s forwards linear;
         z-index: 1;
           
         @media screen and (min-width: 1100px) {
             &{ 
                 width: calc(100vw - var(--sideNav-width));
-            }
-        }
-
-        @keyframes enterDivision {
-            0% {
-                background-color: transparent;
-            }
-            100% {
-                background-color: black;
             }
         }
     }
