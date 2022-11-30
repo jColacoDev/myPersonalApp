@@ -1,6 +1,7 @@
 import "./CurriculumV.scss";
 import CV from "./../../Components/CV/CV";
 import { Animated } from 'react-animated-css'
+import PDFmaker from "../../Components/PDFmaker/PDFmaker";
 
 const CurriculumV = () => {
     return (
@@ -10,6 +11,7 @@ const CurriculumV = () => {
             >
         <div className="CurriculumV">
             <CV/>
+            <PDFmaker></PDFmaker>
         </div>
         </Animated>
     );
