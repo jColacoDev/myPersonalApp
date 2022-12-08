@@ -2,6 +2,7 @@ import React from 'react'
 import "./Studio.scss"
 import TheBuilding from '../../Components/TheBuilding/TheBuilding';
 
+
 const Studio = () => {
 
     return (

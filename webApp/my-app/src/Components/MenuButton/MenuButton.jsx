@@ -2,6 +2,7 @@ import React from "react";
 import "./MenuButton.scss";
 import SocialButtons from "../SocialButtons/SocialButtons";
 import { NavLink } from "react-router-dom";
+import pagesData from "../../router/pagesData";
 
 export default function MenuButton() {
     const [checked, setChecked] = React.useState(false);
@@ -25,24 +26,12 @@ export default function MenuButton() {
         setInnerWidth(window.innerWidth);
     }
 
-    const linkData = [
-        {
-            to: "/",
-            label: "About Me"
-        },
-        {
-            to: "/studio",
-            label: "Studio"
-        },
-        {
-            to: "/news",
-            label: "News"
-        },
-        {
-            to: "/cv",
-            label: "CV"
+    const linkData = pagesData.map(page =>{
+        return {
+            to: `/${page.path}`,
+            label: page.title
         }
-    ]
+    });
     
     function handlLabelClick() {
         setChecked(!checked);

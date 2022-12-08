@@ -1,32 +1,32 @@
 .ContactLetter {
     @import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
 
-    height: 23em;
+    font-size: 16px;
+    height: 28em;
     width: 100%;
     max-width: 450px;
     position: relative;
     margin-bottom: 2em;
     
-    .wrapper .letter .side h1 {
-        font-size: 2em;
+    * {
         font-family: "Dancing Script";
-        color: black;
     }
-    small {
-        display: block;
-        padding: 1em 0;
-        font-size: 0.8em;
-        transition: opacity 0.33s;
+    .wrapper .letter .side h1 {
+        font-size: 2.2em;
+        color: #7e6a00;
+        margin-bottom: 0.2em;
     }
     input::placeholder,
     textarea::placeholder {
-        color: black;
+        color: var(--light-black);
+        font-weight: bold;
+        opacity: .4;
     }
 
     textarea,
     input,
     button {
-        line-height: 1.8em;
+        line-height: 1;
         border: 0;
         outline: none;
         font-family: inherit;
@@ -36,59 +36,60 @@
     }
     textarea,
     input {
-        color: #232323;
+        color: var(--text-color);
         background-color: transparent;
+        background-repeat: space;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgb(229, 225, 187)' x='0' y='23' width='10' height='1'/></svg>");
     }
     textarea {
         width: 100%;
-        height: 8em;
+        height: 5em;
         resize: none;
+        font-size: 1.8em;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-indent: 0.4em;
 
         div {
-            line-height: 3em;
+            line-height: 1;
         }
     }
     input {
-        width: 50%;
-        margin-bottom: 1em;
-        color: #232323;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
         width: 60%;
-        min-width: 14em;
+        min-width: 11em;
+        background-repeat: round;
+        padding: 0.1em 0.5em;
+        letter-spacing: 1px;
+        text-indent: 0.4em;
     }
-    input[type="text"],
-    input [type="email"] {
-        color: black;
-    }
-    input[type="text"]:invalid,
-    input [type="email"]:invalid {
-        box-shadow: none;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(240, 132, 114, 0.5)' x='0' y='23' width='10' height='1'/></svg>");
-    }
+
     button {
-        padding: 0.1em 1em;
+        padding: 0.2em 1em;
         border-radius: 0.25em;
-        color: black;
+        color: #7e6a00;
         box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-        font-size: 1em;
+        font-size: 1.6em;
+        margin-top: 0.4em;
         transition: background-color 0.2s;
         cursor: pointer;
         transition: .2s;
+        font-weight: bold;
     }
-    button:hover,
-    button :focus {
+    button:hover{
         box-shadow: none;
         color: white;
         outline: none;
         background-color: #0037ff8a;
+        transform: translateY(3px);
     }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(78, 94, 114, 0.3)' x='0' y='23' width='10' height='1'/></svg>");
-        outline: none;
+    button:active{
+        background-color: #0037ff30;
     }
+
     .wrapper {
         position: relative;
         background-color: white;
@@ -102,11 +103,9 @@
         top: 0;
         width: 100%;
         perspective: 60em;
-        color: #355c7d;
-        font-family: "Fira Code", monospace;
     }
     .side {
-        height: 12em;
+        height: 14em;
         background-color: var(--letter-bg-color);
         outline: 1px solid transparent;
         box-shadow: rgba(0, 0, 0, .35) 0px 10px 13px;
@@ -117,12 +116,45 @@
     }
     .side.side:nth-of-type(2) {
         padding: 2em;
+        padding-top: 1em;
         border-radius: 0 0 1em 1em;
         text-align: right;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-end;
+
+        footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            span{
+                color: red;
+                font-weight: bold;
+                font-size: 1.5em;
+
+                &.shaking{
+                    animation: shake 0.5s;
+                    animation-iteration-count: infinite;
+                }
+            }
+
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(3px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(3px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(1px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+              }
+        }
     }
     .envelope {
         position: absolute;
@@ -138,6 +170,7 @@
         overflow: hidden;
         z-index: 9999;
         opacity: 0;
+        pointer-events: none;
     }
     .envelope.front::before,
     .envelope.front::after {
@@ -175,10 +208,12 @@
         transform: scaleY(0.6) rotate(45deg);
     }
     .result-message {
+        font-family: "Dancing Script";
         opacity: 0;
         transition: all 0.3s 2s;
         z-index: -9999;
         text-align: center;
+        width: 100%;
         max-width: 15em;
         color: var(--text2-color);
         transition: 0.2s;
@@ -187,8 +222,16 @@
         top: 60%;
         left: 50%;
         z-index: 1;
-        font-size: 1.1em;
+        font-size: 1.5em;
         transform: translateX(-50%);
+        
+        padding: 1em;
+        line-height: 1.3;
+        
+        &:hover{
+            transform: translateX(-50%);
+            background-color: #21337666;
+        }
     }
     &.sent #sendLetter {
         z-index: -1;
@@ -219,11 +262,6 @@
     }
     &.sent .result-message {
         opacity: 1;
-        width: 100%;
-        
-        &:hover{
-            background-color: #21337666;
-        }
     }
     &.sent small {
         opacity: 0;
@@ -273,7 +311,7 @@
         }
         100% {
             opacity: 1;
-            transform: translateY(4.5em);
+            transform: translateY(6.5em);
         }
     }
     @keyframes fadeInEnvelope {
@@ -283,7 +321,7 @@
         }
         100% {
             opacity: 1;
-            transform: translateY(4.5em);
+            transform: translateY(6.5em);
         }
     }
     @-webkit-keyframes scaleLetter {

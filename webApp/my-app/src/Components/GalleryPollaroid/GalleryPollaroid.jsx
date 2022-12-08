@@ -57,7 +57,7 @@ export default function GalleryPollaroid() {
         },
         {
             imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/l867sBU.jpg",
-            caption: "I wonder... I wander",
+            caption: "I wander... I wonder",
             hidden: [
                     "",
                     "",
@@ -78,14 +78,14 @@ export default function GalleryPollaroid() {
     return (
         <div ref={galleryRef} className="GalleryPollaroid">
             <div className="wrapper">
-            {itemsData.map(itemData=>
-                <div key={itemData.caption} onClick={handleClick} className="item">
+            {itemsData.map((itemData, index)=>
+                <div key={index} onClick={handleClick} className="item">
                     <div className="polaroid">
                         <img src={itemData.imgSrc} alt={itemData.caption} />
                         <div className="caption">{itemData.caption}</div>
                         <section>
-                        {itemData.hidden.map(element => 
-                            <p>{element}</p>
+                        {itemData.hidden.map((element, index2) => 
+                            <p  key={index2}>{element}</p>
                         )}
                         </section>
                     </div>

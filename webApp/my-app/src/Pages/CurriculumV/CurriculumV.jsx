@@ -8,9 +8,9 @@ const CurriculumV = () => {
                 animationIn="fadeIn" 
                 animationOut="fadeOut"
             >
-        <div className="CurriculumV">
-            <CV/>
-        </div>
+            <div className="CurriculumV">
+                <CV/>
+            </div>
         </Animated>
     );
 };

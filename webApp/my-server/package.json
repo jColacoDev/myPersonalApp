@@ -3,24 +3,34 @@
     "version": "1.6.9",
     "main": "index.js",
     "scripts": {
+        "start-uploadServer": "node uploadServer.js",
+        "start-index": "node index.js",
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "jColaco.dev",
     "license": "ISC",
     "dependencies": {
-        "body-parser": "^1.19.2",
+        "body-parser": "^1.20.1",
         "cors": "^2.8.5",
-        "express": "^4.17.1",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
         "express-rate-limit": "^5.5.0",
+        "express-validator": "^6.14.2",
         "fs": "^0.0.1-security",
         "helmet": "^4.6.0",
         "http": "^0.0.1-security",
         "https": "^1.0.0",
+        "mongodb": "4.12",
+        "mongoose": "^6.7.5",
+        "multer": "^1.4.5-lts.1",
         "node-fetch": "^2.6.7",
         "path": "^0.12.7",
         "pg": "^8.7.3",
-        "tunnel-ssh": "^4.1.6"
+        "puppeteer": "^19.3.0",
+        "tunnel-ssh": "^4.1.6",
+        "uuid": "^3.4.0",
+        "wkhtmltopdf": "^0.4.0"
     },
     "keywords": [],
     "description": ""

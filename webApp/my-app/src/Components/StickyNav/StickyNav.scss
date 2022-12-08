@@ -12,6 +12,11 @@ nav.stickyNav {
 
     box-shadow: -10px 1px 16px var(--linksColorShadow);
 
+    &.hideNav{
+        height: 1.5em;
+        opacity: .5;
+    }
+
     @media (min-width: 1100px) {
         &{
             padding-right: 0px;

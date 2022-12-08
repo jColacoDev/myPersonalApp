@@ -1,15 +1,16 @@
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const express = require("express");
 const bodyParser = require("body-parser");
+
 const http = require("http");
-const path = require("path");
-const cors = require("cors");
 const pool = require("./db");
-const limiter = rateLimit({ windowMs: 1000, max: 65 });
 const fetch = require('node-fetch');
 
 const indexPath = "../my-app/build";
+const limiter = rateLimit({ windowMs: 1000, max: 65 });
 
 const app = express();
 app.use(bodyParser.json());
@@ -69,7 +70,7 @@ app.get("/quote", function (req, res) {
     fetchQuote(res);
 });
 
-app.get("/*", function (req, res) {
+app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, indexPath, "index.html"));
 });
 

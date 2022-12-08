@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from "react-router-dom";
 import "./CV.scss";
 import pagesData from '../../router/pagesData';
+import MyPDF from './jColacoCV.pdf';
 
 export default function CV() {
     const location = useLocation();
@@ -22,12 +23,10 @@ export default function CV() {
         { state: "", title: pagesData[1].navLinks[1].label, ref: pagesData[1].navLinks[1].ref },
         { state: "", title: pagesData[1].navLinks[2].label, ref: pagesData[1].navLinks[2].ref },
     ];
-    
     function handleLinkClick ({currentTarget}) {
         location.pathname = `${currentTarget.href}`
         return false;
     }
-
     function handleClick_btn (currentTarget) {
         const   pages = document.querySelectorAll(".page"),
                 navLis = document.querySelectorAll(".navbar li");
@@ -66,24 +65,27 @@ return (
                     </h1>
                     <h2 className="user__job">Web developer<br/>Front-end expert<br/>Back-end connoisseur</h2>
                 </section>
-
+                <section className='downloadButton'>
+                    <a download="jColaco_CV" href={MyPDF}>Download my PDF CV
+                        <figure></figure>
+                    </a>
+                </section>
                 <div className="user__metas">
-
                     <section className="user__social section">
                         <h2 className="section__title--simple">Social</h2>
 
                         <article className="user__socials socials">
                             <a className="social social--twitter" 
                                 href="https://www.linkedin.com/in/jcolacodev/" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/linkedin.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/linkedin.png")} alt="" />
                                 <span>linkedin.com/jColacoDev</span>
                             </a>
                             <a className="social social--codepen" href="https://github.com/jColacoDev" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/github.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/github.png")} alt="" />
                                 <span>github.com/jColacoDev</span>
                             </a>
                             <a className="social social--github" href="https://codepen.io/jcolacodev" target="_blank" rel="noopener noreferrer">
-                                <img className="social__icon" src={require("../../Images/icons/codepen.png")} alt="" />
+                                <img className="social__icon" src={require("../../Images/icons/social/codepen.png")} alt="" />
                                 <span>codepen.io/jColacoDev</span>
                             </a>
                             <a className="social social--github" href="https://forum.arduino.cc/u/jcolaco/" target="_blank" rel="noopener noreferrer">
@@ -179,7 +181,7 @@ return (
                             <p>
                                 <strong>
                                     Wordpress, Visual Studio, Postman, FileZilla, Gitbash, Atlas, Adobe Suite, Jest, Lens, GitLab, Terminal
-                                    , paint.Net, Filmora, Jira, Teams, Slack, Excel
+                                    , paint.Net, Filmora, Jira, Teams, Slack, Excel, Putty, WinSCP
                                 </strong>
                             </p>
                         </article>
@@ -211,8 +213,11 @@ return (
                                     </time>
                                     <span>Critical Techworks</span>
                                 </h3>
+                                <span>Frontend developer</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                A BMW and Critical Software joint venture. I worked as a frontend developer with Angular.TS framework, testing TestBed, Jest and Spectator. 
+                                Backend with Java, Springboot, PostgreSQL developed in a Jenkins pipeline amidst Sonar quality control.
+                                Worked with two teams in agile scrum methodology creating managing apps near costumers and design team.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -222,8 +227,9 @@ return (
                                     </time>
                                     <span>Robert Mauser</span>
                                 </h3>
+                                <span>Specialized salesman</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Electronic components store. I worked in the frontend costumer service and backend warehouse logistics.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -233,7 +239,10 @@ return (
                                     </time>
                                     <span>Critical Software</span>
                                 </h3>
-                                <p>Summer internship</p>
+                                <span>Summer camp intern</span>
+                                <p>
+                                Summer internship at Critical Software where I had first contact with professional IT environment.
+                                </p>
                             </article>
                             <article className="timeline__item">
                                 <h3>
@@ -242,8 +251,9 @@ return (
                                     </time>
                                     <span>Ergoface, <span style={{fontVariant: "all-small-caps"}}>mobiliário de escritório e projectos, lda</span></span>
                                 </h3>
+                                <span>Salesman and executive secretary</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Family business office furniture retailer, where I worked in sales, product assembler and office paper work.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -253,8 +263,9 @@ return (
                                     </time>
                                     <span>World Academy</span>
                                 </h3>
+                                <span>Frontend Web Development</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Top professional multimedia, arts and digital events school. Learned deeply about web structure and communication focusing the latest developments with HTML5, CSS3, ES6 and React framework plus React.Native. The course also regards a Wordpress and UxUi module with SEO, prototypes and interfaces core values using Figma and Adobe XD.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -268,8 +279,10 @@ return (
                                         </span>
                                     </span>
                                 </h3>
+                                <span>Computer and electronics Master</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Leading Engeneering college in Europe and the world, where I've learned physics, mathmatics, programming, algorithms, made long lasting friendships and a object oriented mindset.
+                                I have frozen my enrollment  with one year to conclude. Will be resumed in 2023.
                                 </p>
                             </article>
 
@@ -297,9 +310,8 @@ return (
                         <article>
                             <h3>Team</h3>
                             <p>
-                                A work family where one learns and teaches, creating the Vision with Respect, Transparency, Reliability
-                                <br/><i>A team happens when I becomes We, I do my best so We can go further!</i>
-                                <br/>I've experienced team work in school/college, hackathons and professionally with the a notion of purpose and commitment. 
+                                <i>A team happens when I becomes We, I do my best so We can go further!</i>
+                                <br/>I've experienced team work in school/college, hackathons and professionally with the notion of purpose and commitment. 
                             </p>
                         </article>
                         <article>
@@ -321,8 +333,6 @@ return (
                                 Play the <strong>guitar</strong>, walk my <strong>dogs</strong>, <strong>build</strong> something <strong>digital, analog, artistic</strong>.
                                 <br />Go deep into the <strong>wild! Nature</strong>, fresh air and sweet sounds. 
                                 <br /><strong>Photography</strong> and <strong>cinematography</strong>, <i>the angles and perspective as a means for experiencing the world in different lights</i>.
-                                <br />I fly a drone, handle a gimbal and edit with Filmora.
-                                <br />I go explore everywhere with my custom made eScooter!
                             </p>
                         </article>
                     </div>
@@ -428,8 +438,7 @@ return (
         
         <footer className="cv__foot">
             <article className="copyright">
-                Version web de ce CV :
-                <a href="https://cdpn.io/Chmood/debug/daWjgd/VJrxxOOaDjXr" target="_blank" rel="noreferrer">https://chmood.github.io</a> ©&nbsp;João&nbsp;Colaço&nbsp;
+                web Version <em>Curriculum Vitae</em> <strong>©&nbsp;jColaco.dev&nbsp;</strong>by João Colaço
                 <script>
                     document.write(new Date().getFullYear());
                 </script>

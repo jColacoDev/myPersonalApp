@@ -3,8 +3,16 @@
     top: 1em;
     right: 1em;
     font-size: .5em;
-    z-index: 99999;
+    z-index: 999999;
 
+    
+    @media screen and (max-width: 1100px) {
+        &.hideNav{
+            right: 3em;
+            font-size: .25em;
+            opacity: .6;
+        }
+    }
     @media screen and (min-width: 1100px) {
         & {
             right: 8em;
