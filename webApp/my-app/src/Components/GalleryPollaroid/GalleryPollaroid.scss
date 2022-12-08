@@ -154,7 +154,7 @@
         transition: all 0.35s;
 
         .polaroid img {
-            filter: blur(2px);
+            // filter: blur(2px);
         }
     }
     .item:hover .polaroid:before {

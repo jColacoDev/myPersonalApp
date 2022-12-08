@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from "react-router-dom";
 import "./CV.scss";
 import pagesData from '../../router/pagesData';
+import MyPDF from './jColacoCV.pdf';
 
 export default function CV() {
     const location = useLocation();
@@ -64,9 +65,12 @@ return (
                     </h1>
                     <h2 className="user__job">Web developer<br/>Front-end expert<br/>Back-end connoisseur</h2>
                 </section>
-
+                <section className='downloadButton'>
+                    <a download="jColaco_CV" href={MyPDF}>Download my PDF CV
+                        <figure></figure>
+                    </a>
+                </section>
                 <div className="user__metas">
-
                     <section className="user__social section">
                         <h2 className="section__title--simple">Social</h2>
 
@@ -209,8 +213,11 @@ return (
                                     </time>
                                     <span>Critical Techworks</span>
                                 </h3>
+                                <span>Frontend developer</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                A BMW and Critical Software joint venture. I worked as a frontend developer with Angular.TS framework, testing TestBed, Jest and Spectator. 
+                                Backend with Java, Springboot, PostgreSQL developed in a Jenkins pipeline amidst Sonar quality control.
+                                Worked with two teams in agile scrum methodology creating managing apps near costumers and design team.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -220,8 +227,9 @@ return (
                                     </time>
                                     <span>Robert Mauser</span>
                                 </h3>
+                                <span>Specialized salesman</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Electronic components store. I worked in the frontend costumer service and backend warehouse logistics.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -231,7 +239,10 @@ return (
                                     </time>
                                     <span>Critical Software</span>
                                 </h3>
-                                <p>Summer internship</p>
+                                <span>Summer camp intern</span>
+                                <p>
+                                Summer internship at Critical Software where I had first contact with professional IT environment.
+                                </p>
                             </article>
                             <article className="timeline__item">
                                 <h3>
@@ -240,8 +251,9 @@ return (
                                     </time>
                                     <span>Ergoface, <span style={{fontVariant: "all-small-caps"}}>mobiliário de escritório e projectos, lda</span></span>
                                 </h3>
+                                <span>Salesman and executive secretary</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Family business office furniture retailer, where I worked in sales, product assembler and office paper work.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -251,8 +263,9 @@ return (
                                     </time>
                                     <span>World Academy</span>
                                 </h3>
+                                <span>Frontend Web Development</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Top professional multimedia, arts and digital events school. Learned deeply about web structure and communication focusing the latest developments with HTML5, CSS3, ES6 and React framework plus React.Native. The course also regards a Wordpress and UxUi module with SEO, prototypes and interfaces core values using Figma and Adobe XD.
                                 </p>
                             </article>
                             <article className="timeline__item">
@@ -266,8 +279,10 @@ return (
                                         </span>
                                     </span>
                                 </h3>
+                                <span>Computer and electronics Master</span>
                                 <p>
-                                    Intégration CSS, développement JS, Symfony, WordPress, Drupal, Twig, Webpack.
+                                Leading Engeneering college in Europe and the world, where I've learned physics, mathmatics, programming, algorithms, made long lasting friendships and a object oriented mindset.
+                                I have frozen my enrollment  with one year to conclude. Will be resumed in 2023.
                                 </p>
                             </article>
 
@@ -423,7 +438,7 @@ return (
         
         <footer className="cv__foot">
             <article className="copyright">
-                web Version <em>Curriculum Vitae</em> <strong>©&nbsp;João&nbsp;Colaço&nbsp;</strong>
+                web Version <em>Curriculum Vitae</em> <strong>©&nbsp;jColaco.dev&nbsp;</strong>by João Colaço
                 <script>
                     document.write(new Date().getFullYear());
                 </script>

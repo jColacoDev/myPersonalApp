@@ -7,7 +7,7 @@ const pagesData = [
     {
         path: "",
         element: <LandingPage />,
-        title: "About me",
+        title: "Home",
         navLinks: [
             {
                 ref: "#AboutMe",
@@ -67,16 +67,16 @@ const pagesData = [
         title: "Studio",
         navLinks: [
             {
-                ref: "#studio",
-                label: "Studio"
+                ref: "#rooftop",
+                label: "Rooftop"
             },
             {
-                ref: "#interests",
-                label: "Interests"
+                ref: "#gallery",
+                label: "Gallery"
             },
             {
-                ref: "#projects",
-                label: "Projects"
+                ref: "#basement",
+                label: "Basement"
             },
         ]
     },

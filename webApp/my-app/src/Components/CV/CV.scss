@@ -7,6 +7,34 @@
         margin: 0 auto;
     }
 
+    .downloadButton{
+        width: 100%;
+
+        a{
+            width: 100%;
+            font-size: 1.2em;
+            padding: 0.5em 0.2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5em;
+            transition-duration: .2s;
+
+            &:hover{
+                color: red;
+            }
+
+            figure{
+                width: 3em;
+                height: 3em;
+                background-image: url("./../../Images/icons/downloadPDF.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
     & *,
     > * {
         transition: all .25s;
@@ -41,10 +69,8 @@
     // Layout
     $breakpoints: (
         "sm": 30em,
-        // 480px
         "md": 45em,
-        // 720px,
-        "lg": 60em // 960px,
+        "lg": 60em
     ) !default;
 
     $cv-width-md: 40em; // Tablet document width
@@ -869,7 +895,6 @@
 
     %trailing-slashes {
         &:after {
-            content: " //";
             margin-right: $gutter-quarter;
         }
     }
@@ -1029,12 +1054,19 @@
         .timeline__item {
             margin-bottom: $gutter;
 
+            > span{
+                margin: 0.4em;
+                font-size: 1.2em;
+                line-height: 1.5;
+            }
+
             > *:first-child {
                 position: relative;
-                padding-top: ($timeline-dot-size - $timeline-item-size); // vert center
-                margin-bottom: $gutter-half;
+                padding-top: ($timeline-dot-size - $timeline-item-size);
+                margin-bottom: .2em;
                 line-height: 1;
                 font-size: $timeline-item-size;
+                color: #ffe476;
 
                 &:before {
                     content: "";
@@ -1044,7 +1076,7 @@
                     left: -($timeline-tree-size + $timeline-dot-size) / 2;
                     width: $timeline-dot-size;
                     height: $timeline-dot-size;
-                    background-color: white;
+                    background-color: #ffe476;
                     border-radius: 50%;
                     box-shadow: inset 0 0 0 $timeline-line-size var(--orange);
                 }

@@ -57,7 +57,7 @@ export default function GalleryPollaroid() {
         },
         {
             imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/l867sBU.jpg",
-            caption: "I wonder... I wander",
+            caption: "I wander... I wonder",
             hidden: [
                     "",
                     "",

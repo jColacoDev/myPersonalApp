@@ -1,6 +1,7 @@
 .ContactLetter {
     @import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
 
+    font-size: 16px;
     height: 28em;
     width: 100%;
     max-width: 450px;
@@ -58,7 +59,7 @@
         font-size: 1.5em;
         margin-bottom: 0.5em;
         width: 60%;
-        min-width: 12em;
+        min-width: 11em;
         background-repeat: round;
         padding: 0.1em 0.5em;
         letter-spacing: 1px;
@@ -72,7 +73,7 @@
         box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
         rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
         font-size: 1.6em;
-        margin-top: 0.5em;
+        margin-top: 0.4em;
         transition: background-color 0.2s;
         cursor: pointer;
         transition: .2s;
@@ -115,6 +116,7 @@
     }
     .side.side:nth-of-type(2) {
         padding: 2em;
+        padding-top: 1em;
         border-radius: 0 0 1em 1em;
         text-align: right;
         display: flex;
