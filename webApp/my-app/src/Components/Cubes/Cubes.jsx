@@ -103,7 +103,7 @@ export default function Cubes() {
             <section className="cubes-container">
 
                 {booksData.map((e,i)=>
-                <article className="cubeData">
+                <article key={i} className="cubeData">
                     <div className="cube-container">
                         <div className={`photo-cube ${cssSel[navSel]}`}>
                             <img className="front" src={data[0][i].imgSrc} alt={data[0][i].title} />

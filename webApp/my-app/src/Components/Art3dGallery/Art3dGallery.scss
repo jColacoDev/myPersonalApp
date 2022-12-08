@@ -51,7 +51,7 @@
       position: static;
     }
     
-    wall1 > painting span {
+    div.wall1 > div.painting span {
       position: absolute;
       top: 30%;
       left: calc(100% + 20em);
@@ -64,7 +64,7 @@
       cursor: pointer;
     }
 
-    painting{
+    div.painting{
       cursor: pointer;
     }
     .pointer {
@@ -81,10 +81,10 @@
     }
           
                     
-    #wall4.checked ~ z > x > y{
+    #wall4.checked ~ div.z > div.x > div.y{
         transform: rotateY(#{(20 - 38) * 10}deg);
         
-        wall2 painting{
+        div.wall2 div.painting{
             opacity: 1;
         }
     }
@@ -113,40 +113,40 @@
       }
            
       @for $i from 1 through 13 {
-        label:nth-of-type(#{$i}):hover ~ z > x > y,
-        label:nth-of-type(#{$i}):focus ~ z > x > y {
+        label:nth-of-type(#{$i}):hover ~ div.z > div.x > div.y,
+        label:nth-of-type(#{$i}):focus ~ div.z > div.x > div.y {
           transform: rotateY(#{($i - 25) * 10}deg);
         }
     
-        label:nth-of-type(#{$i}):hover ~ z > x,
-        label:nth-of-type(#{$i}):focus ~ z > x {
+        label:nth-of-type(#{$i}):hover ~ div.z > div.x,
+        label:nth-of-type(#{$i}):focus ~ div.z > div.x {
           transform: rotateX(10deg);
         }
       }
     
       @for $i from 14 through 26 {
-        label:nth-of-type(#{$i}):hover ~ z > x > y,
-        label:nth-of-type(#{$i}):focus ~ z > x > y {
+        label:nth-of-type(#{$i}):hover ~ div.z > div.x > div.y,
+        label:nth-of-type(#{$i}):focus ~ div.z > div.x > div.y {
           transform: rotateY(#{($i - 38) * 10}deg);
         }
       }
     
       @for $i from 27 through 39 {
-        label:nth-of-type(#{$i}):hover ~ z > x > y,
-        label:nth-of-type(#{$i}):focus ~ z > x > y {
+        label:nth-of-type(#{$i}):hover ~ div.z > div.x > div.y,
+        label:nth-of-type(#{$i}):focus ~ div.z > div.x > div.y {
           transform: rotateY(#{($i - 51) * 10}deg);
         }
     
-        label:nth-of-type(#{$i}):hover ~ z > x,
-        label:nth-of-type(#{$i}):focus ~ z > x {
+        label:nth-of-type(#{$i}):hover ~ div.z > div.x,
+        label:nth-of-type(#{$i}):focus ~ div.z > div.x {
           transform: rotateX(-10deg);
         }
       }
     }
     
-    x,
-    y,
-    z {
+    div.x,
+    div.y,
+    div.z {
       position: absolute;
       top: -50em;
       left: 0;
@@ -159,8 +159,8 @@
     }
     
     //room
-    floor,
-    ceiling {
+    div.floor,
+    div.ceiling {
       &,
       &:before,
       &:after {
@@ -170,7 +170,7 @@
       }
     }
     
-    floor {
+    div.floor {
       height: 400em;
       transform: rotateX(90deg) translate3d(-150em, -50em, 0em);
       box-shadow: 0 0 1em $wall2, inset 0 0 10em 0 rgba($wall2, 0.75);
@@ -198,7 +198,7 @@
       }
     }
     
-    ceiling {
+    div.ceiling {
       transform: rotateX(-90deg) translate3d(-150em, 0, -200em);
       box-shadow: 0 0 1em $wall1, inset 0 0 10em 0 rgba($wall2, 0.2);
       background: radial-gradient(#fff, $wall1);
@@ -214,9 +214,9 @@
     }
     
     //art
-    wall1 painting,
-    wall2 painting,
-    wall3 painting {
+    div.wall1 div.painting,
+    div.wall2 div.painting,
+    div.wall3 div.painting {
       width: 120em;
       height: 156em;
       border: 2em solid $floor1;
@@ -270,7 +270,7 @@
       }
     }
     
-    wall2 painting {
+    div.wall2 div.painting {
     $oceanscene: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/159368/oceanscene.jpg";
 
     opacity: 0;
@@ -281,7 +281,7 @@
       transform: translate3d(-100em, 0, 148em) scaleX(-1);
     }
     
-    wall3 painting {
+    div.wall3 div.painting {
       width: 110em;
       height: 144em;
       transform: rotateY(90deg) translate3d(0, -17em, -200em);
@@ -289,7 +289,7 @@
     
     //door
     
-    wall4 {
+    div.wall4 {
       transform: translate3d(-150em, -50em, -150em);
       background: radial-gradient(circle at 60% 80%, $none, $wall3),
         linear-gradient(to right, $wall3, $none, $none, $wall3);
@@ -298,7 +298,7 @@
       height: 250em;
     
       &:before,
-      door {
+      div.door {
         width: 86em;
         height: 224em;
         border-radius: 1em;
@@ -317,7 +317,7 @@
         transform: translate3d(183em, 65em, -4.5em) rotateY(90deg);
       }
     
-      door {
+      div.door {
           border: 5em ridge rgba($doorframe2, 0.65);
           box-shadow: 1em 0.5em 1em rgba($wall3, 0.5),
             //
@@ -432,32 +432,32 @@
     //wall 1 left - isla
     .p1hover.active ,
     .p1hover:active {
-      & ~ z {
+      & ~ div.z {
         transform: translate3d(0, 0, 100em);
     
-        & > x > y {
+        & > div.x > div.y {
           transform: rotateY(-270deg) !important;
         }
       }
     }
     //wall 2 centre - landscape
-    .p2hover.active ~ z ,
-    .p2hover:active ~ z {
+    .p2hover.active ~ div.z ,
+    .p2hover:active ~ div.z {
       transform: translate3d(0, 0, 100em);
     }
     //wall 3 right - glass
     .p3hover.active ,
     .p3hover:active {
-      & ~ z {
+      & ~ div.z {
         transform: translate3d(0, 0, 100em);
     
-        & > x > y {
+        & > div.x > div.y {
           transform: rotateY(-90deg) !important;
         }
       }
     }
     
-    notice {
+    div.notice {
       width: 35em;
       font-size: 2.5em;
       transform: translate3d(4em, 28em, 0.5em);
@@ -489,7 +489,7 @@
     }
     
     
-    fireexit {
+    div.fireexit {
       z-index: 99;
       width: 85em;
       height: 20em;
@@ -573,8 +573,8 @@
       }
     }
     
-    #lightswitch:checked ~ z > x > y > {
-      floor {
+    #lightswitch:checked ~ div.z > div.x > div.y > {
+      div.floor {
         background: radial-gradient($wall2, #000);
     
         &:before,
@@ -583,7 +583,7 @@
         }
       }
     
-      ceiling {
+      div.ceiling {
         background: radial-gradient(
           circle at center bottom,
           $darkwall1,
@@ -598,7 +598,7 @@
         }
       }
     
-      * > painting {
+      * > div.painting {
         border: 2em solid $wall2;
         border-top-color: #000;
         border-left-color: #000;
@@ -612,20 +612,20 @@
         }
       }
 
-      wall2 > painting {
+      div.wall2 > div.painting {
         border-left-color: $wall2;
         border-right-color: $wall2;
         border-bottom-color: $darkwall1;
         box-shadow: 0 3em 2em -2em #000, 0 3em 3em #000;
       }
     
-      wall3 > painting {
+      div.wall3 > div.painting {
         border-left-color: $darkwall1;
         border-right-color: #000;
         box-shadow: -5em 4em 2em -2em #000;
       }
     
-      wall4 {
+      div.wall4 {
         background: none;
     
         &:before {
@@ -638,7 +638,7 @@
         }
     
         & > {
-          door {
+          div.door {
             border-color: $wall2;
             box-shadow: 0 -60em 100em rgba($darkwall1, 0.5);
     
@@ -661,7 +661,7 @@
             }
           }
     
-          notice{ 
+          div.notice{ 
             
             background-color: #301616;
             
@@ -683,7 +683,7 @@
                   }
               }
         }
-          fireexit {
+          div.fireexit {
             box-shadow: 0 0 1em #000, 0.5em 1em 2em rgba($wall2, 0.25),
               inset 0 0 0 1em $wall1, 0 0 20em rgba($fireexit2, 0.4),
               0 0 10em rgba($fireexit, 0.4);

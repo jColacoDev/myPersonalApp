@@ -2,9 +2,9 @@ import React from "react";
 import "./MenuButton.scss";
 import SocialButtons from "../SocialButtons/SocialButtons";
 import { NavLink } from "react-router-dom";
+import pagesData from "../../router/pagesData";
 
 export default function MenuButton() {
-    const [qrActive, setQrActive] = React.useState(false);
     const [checked, setChecked] = React.useState(false);
     const [innerWidth, setInnerWidth] = React.useState(0);
 
@@ -18,38 +18,20 @@ export default function MenuButton() {
     function handleResize() {
         if(innerWidth !== window.innerWidth){
             if(window.innerWidth > 1099){
-                if(!checked)setQrActive(false);
                 setChecked(true);
             }else{
-                if(checked)setQrActive(false);
                 setChecked(false);
             }
         }
         setInnerWidth(window.innerWidth);
     }
 
-    const linkData = [
-        {
-            to: "/",
-            label: "About Me"
-        },
-        {
-            to: "/studio",
-            label: "Studio"
-        },
-        {
-            to: "/news",
-            label: "News"
-        },
-        {
-            to: "/cv",
-            label: "CV"
+    const linkData = pagesData.map(page =>{
+        return {
+            to: `/${page.path}`,
+            label: page.title
         }
-    ]
-    
-    function handleQrClick() {
-        setQrActive(!qrActive);
-    }
+    });
     
     function handlLabelClick() {
         setChecked(!checked);
@@ -80,9 +62,6 @@ export default function MenuButton() {
                     )}
                     <li>
                         <SocialButtons></SocialButtons>
-                    </li>
-                    <li className="qrCode">
-                        <figure className={qrActive ? "active" : ""} onClick={handleQrClick}></figure>
                     </li>
                 </ul>
             </nav>

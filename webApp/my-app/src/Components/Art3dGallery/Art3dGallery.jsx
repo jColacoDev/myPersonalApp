@@ -19,13 +19,13 @@ return (
         <label className={wallSelected==="back" ? "active p2hover" : "p2hover"}></label>
         <label className={wallSelected==="right" ? "active p3hover" : "p3hover"}></label>
 
-        <z>
-        <x>
-            <y>
-            <floor></floor>
-            <ceiling></ceiling>
-            <wall1>
-                <painting onClick={()=> {if(wallSelected !== "left") setWallSelected("left")}}>
+        <div className="z">
+        <div className="x">
+            <div className="y">
+            <div className="floor"></div>
+            <div className="ceiling"></div>
+            <div className="wall1">
+                <div className="painting" onClick={()=> {if(wallSelected !== "left") setWallSelected("left")}}>
                     <span onClick={()=>setWallSelected("front")}></span>
                     <TicTacToe></TicTacToe>
                     <p>
@@ -33,47 +33,47 @@ return (
                         Isla<br />
                         <small>Ben ngEvans</small>
                     </p>
-                </painting>
-            </wall1>
-            <wall2>
-                <painting onClick={()=>wallSelected === "" ? setWallSelected("front") : setWallSelected("")}>
+                </div>
+            </div>
+            <div className="wall2">
+                <div className="painting" onClick={()=>wallSelected === "" ? setWallSelected("front") : setWallSelected("")}>
                 <GoldFish></GoldFish>
                 
-                </painting>
-            </wall2>
-            <wall3>
-                <painting onClick={()=>wallSelected === "right" ? setWallSelected("front") : setWallSelected("right")}>
+                </div>
+            </div>
+            <div className="wall3">
+                <div className="painting" onClick={()=>wallSelected === "right" ? setWallSelected("front") : setWallSelected("right")}>
                 <img src="https://tinydesign.co.uk/gallery/gallery-img/still-life.jpg" />
                 <p>
                     Pure CSS Still Life<br />
                     Water and Lemons<br />
                     <small>Ben Evans</small>
                 </p>
-                </painting>
-            </wall3>
-            <wall4>
+                </div>
+            </div>
+            <div className="wall4">
 
-                <notice>
+                <div className="notice">
                     <span>Hack3r Z0n3 is a high Graphic CSS danger Only PC allowed!</span>
                     <span>Click in the paintings to appreciate :D</span>
                     <span>Turn the Switch OFF to save energy.</span>
-                </notice>
-                <door>
+                </div>
+                <div className="door">
                     <span onClick={onOpenHackerRoom}></span>
-                </door>
+                </div>
 
-                <label for="lightswitch" className="pointer" title="Switch"></label>
-                <fireexit>
+                <label htmlFor="lightswitch" className="pointer" title="Switch"></label>
+                <div className="fireexit">
                     <i></i>
                     <i></i>
                     <div>HACKER</div>
                     <div>ZONE</div>
-                </fireexit>
-            </wall4>
-            </y>
-        </x>
-        </z>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
 
-        <label className="turnback" title="Rotate left" for="wall4"></label>
+        <label className="turnback" title="Rotate left" htmlFor="wall4"></label>
     </div>
 )}

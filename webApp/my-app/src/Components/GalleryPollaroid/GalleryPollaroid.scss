@@ -1,12 +1,16 @@
 .GalleryPollaroid {
     max-width: 900px;
         
-        @media screen and (min-width: 1600px) {
-            & {
-                max-width: 45%;
-            }
+    @media screen and (min-width: 1600px) {
+        & {
+            max-width: 45%;
         }
+    }
 
+    *{
+        font-family: "Fira Code", monospace;
+    }
+    
     img {
         max-width: 100%;
         height: auto;
@@ -34,7 +38,7 @@
         font-size: 1.3em;
         text-align: center;
         line-height: 1.2;
-        color: black;
+        color: var(--light-black);
     }
     .item {
         display: inline-block;
