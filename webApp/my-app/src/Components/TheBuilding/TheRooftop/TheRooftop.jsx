@@ -9,7 +9,6 @@ export default function TheRooftop({changePerspective}) {
     const sunset = useSelector((state) => state.sunset);
     const [timer, setTimer] = React.useState(false);
 
-
     React.useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         
@@ -51,7 +50,7 @@ export default function TheRooftop({changePerspective}) {
     }
 
     return (
-        <div ref={roomRef} className={`TheRooftop ${sunset ? "dark" : ""}`}>
+        <div id="rooftop" ref={roomRef} className={`TheRooftop ${sunset ? "dark" : ""}`}>
             <section className={`room ${sunset ? "dark" : ""}`}>
                 <div className="room-walls"></div>
                 <div className={`frontWall_decor ${sunset ? "dark" : ""}`}>

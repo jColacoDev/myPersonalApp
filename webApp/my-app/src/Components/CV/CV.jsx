@@ -149,7 +149,7 @@ return (
                         <article>
                             <h3>F<span className="smallCaps">rontend Development</span></h3>
                             <p>HTML5, CSS3, Sass, Javascript ES6, Typescript
-                               <br/>React, Angular, Redux, DevTools
+                               <br/>React, Next, Native, Angular, Redux, DevTools
                             </p>
                         </article>
                         <article>
@@ -160,7 +160,7 @@ return (
                         </article>
                         <article>
                             <h3>D<span className="smallCaps">evOps (CI/CD)</span></h3>
-                            <p>Node npm, Git, GitHub, Bitbucket, Maven, Jenkins, CircleCI, Docker, Sonar, Kubernetes, Linux, Scripts</p>
+                            <p>Node npm, Git, GitHub, Bitbucket, Maven, Jenkins, CircleCI, Docker, Sonar, Kubernetes, Linux, Scripts, Vercel</p>
                         </article>
                         <article>
                             <h3>E<span className="smallCaps">lectronics</span></h3>
@@ -344,11 +344,14 @@ return (
                     <div className="section__body">
                         <article>
                             <h3>WebApps</h3>
-                            <p>Mes derniers projets</p>
+                            <p>Built over the browser to display and gather information from the user and to the user. I'm keen on using React with Next.js on the frontend and Node with Express in backend with PostgreSQL or Mongo database. 
+                            </p>
                         </article>
                         <article>
                             <h3>Electronics</h3>
-                            <p>Socles front-end</p>
+                            <p>Built with transistors, components and ATmel, ESPressif uControllers with Arduino framework.
+                            <br />I'm interested in deploying a Azure RTOS ThreadX IoT and LoRaWAN program, using WebApps as bridge to digital and physical world.
+                             </p>
                         </article>
                     </div>
                     <div className="section__foot"></div>

@@ -108,12 +108,12 @@ export default function ContactLetter() {
     }
 
     return (
-        <form ref={form} id="ContactLetter" className={`ContactLetter ${sentClass}`} autocomplete="off">
+        <form ref={form} id="ContactLetter" className={`ContactLetter ${sentClass}`} autoComplete="off">
             <div className="wrapper">
                 <article className="letter">
                     <div className="side">
                         <h1>Contact me</h1>
-                        <textarea autocomplete="off" placeholder="Message"
+                        <textarea autoComplete="off" placeholder="Message"
                             onChange={handleMessageChange}
                             name="message"
                             id="message"
@@ -122,19 +122,19 @@ export default function ContactLetter() {
                         </textarea>
                     </div>
                     <div className="side">
-                        <input autocomplete="off" type="subjectType" placeholder="Subject"
+                        <input autoComplete="off" type="subjectType" placeholder="Subject"
                             name="subject"
                             id="subject"
                             onChange={handleSubjectChange}
                             value={subjectInput}
                         />
-                        <input autocomplete="off" type="name" placeholder="Name"
+                        <input autoComplete="off" type="name" placeholder="Name"
                             name="name"
                             id="name"
                             onChange={handleNameChange}
                             value={nameInput}
                         />
-                        <input autocomplete="off" type="cartaType" placeholder="&#69;-&#109;
+                        <input autoComplete="off" type="cartaType" placeholder="&#69;-&#109;
 ail" 
                             name="cartaType"
                             id="cartaType"

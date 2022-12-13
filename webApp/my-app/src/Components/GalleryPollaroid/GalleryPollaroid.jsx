@@ -59,8 +59,8 @@ export default function GalleryPollaroid() {
             imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/l867sBU.jpg",
             caption: "I wander... I wonder",
             hidden: [
-                    "",
-                    "",
+                    "Wander Often ",
+                    "Always Wonder",
                     "",
                 ]
         },
@@ -68,9 +68,9 @@ export default function GalleryPollaroid() {
             imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/7cQCk5I.jpg",
             caption: "Think Green!",
             hidden: [
-                        "",
-                        "",
-                        "",
+                        "I value as sacred the 3 R's', no trowing garbage to the ground and waste planning.",
+                        "I always stand for the environment, I understand the need to change habits, food, clothes, water, plastic, CO2 and all others, bearing in mind the sustainability and the ecological footprint",
+                        "When walking by the beach I often bring a bag to clean my way through.",
                     ]
         }
     ]

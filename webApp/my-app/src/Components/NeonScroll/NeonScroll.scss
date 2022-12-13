@@ -1,6 +1,9 @@
 .NeonScroll{
-    @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+	font-family: "Fira Code", monospace;
+
+	*{
+		font-family: "Fira Code", monospace;
+	}
 
 $neonBlue: #001eff;
 $neonLightBlue: #4deeea;
@@ -19,7 +22,6 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Audiowide", sans-serif;
 	letter-spacing: 0.1em;
 }
 
@@ -48,7 +50,6 @@ figure {
 
 	figcaption {
 		position: absolute;
-		font-family: "Open Sans", sans-serif;
 		padding: 0.4em;
 		font-size: 0.8rem;
 		color: black;
@@ -60,8 +61,7 @@ figure {
 }
 
 p {
-	font-family: "Open Sans", sans-serif;
-	line-height: 2em;
+	line-height: 1.2;
 	padding: 0.5em 0;
 }
 
@@ -117,7 +117,6 @@ p {
 	color: white;
 	padding: 1em;
 	border-left: 0.6rem solid $neonYellow;
-	font-family: "Open Sans", sans-serif;
 
 	&::after {
 		content: "";
