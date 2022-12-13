@@ -48,17 +48,13 @@ const pagesData = [
         title: "News",
         navLinks: [
             {
-                ref: "#CV--btn",
-                label: "CV"
+                ref: "#NeonScroll",
+                label: "Top"
             },
             {
-                ref: "#PORTFOLIO--btn",
-                label: "Portfolio"
-            },
-            {
-                ref: "#PROJECTS--btn",
-                label: "Projects"
-            },
+                ref: "#PDFgenerator",
+                label: "PDFgenerator"
+            }
         ]
     },
     {

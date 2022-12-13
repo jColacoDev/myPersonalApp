@@ -13,7 +13,14 @@ const LandingPage = () => {
     const theme = useSelector((state) => state.theme);
     const [imgSrc, setImgSrc] = React.useState("");
 
-    
+    const myIntroTxt = <p>
+        Welcome to my personal domain, here I share some of my interests.
+        <br /> This is a React.js application with a Express Node.js backend server, used to practice and explore webApp development, aiming mobile to big screen responsiveness.
+        <br /> Hover, scroll and click to trigger animations! Join the dark side or turn on the light theme by toggling the time button. Browse the menu to find my life racecourse, aka <em>curriculum vitae</em>, where one can take a look or download a .pdf version. 
+        <br />Enjoy a beautiful sunrise by Studio rooftop, scroll down to the art gallery, stay for the basement games! Studio is a place of study in 3 dimensions to explore new ways of user interactivity.
+        <br />At news I'll be sharing projects for the future! Check it out and let me know what you think of it!
+    </p>;
+
     React.useEffect(() => {
         setImgSrc(theme === "darkTheme" ? require("./favThingsWhite.png") : require("./favThings.png"));
     }, [theme]);
@@ -29,11 +36,7 @@ const LandingPage = () => {
                 <div className="flexGrid">
                     <CanvasPortrait></CanvasPortrait>
                     <p className="myIntro">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Architecto eveniet ipsa pariatur reprehenderit
-                        distinctio modi aperiam earum, provident eius quos
-                        libero aliquid repellat deserunt vero, facere
-                        perferendis excepturi labore velit!
+                        {myIntroTxt}
                     </p>
                 </div>
             </section>

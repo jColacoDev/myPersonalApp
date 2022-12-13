@@ -50,7 +50,7 @@ export default function TheBasement() {
     }
 
 return (
-<div ref={basementRef} className="TheBasement">
+<div ref={basementRef} className="TheBasement" id="basement">
     {hackerDivision && 
         <section className="doorDivisions">
                 <Computer3d escapeClick={onEscapeBasementClick} windowsClick={onOpenWindowsClick}></Computer3d>

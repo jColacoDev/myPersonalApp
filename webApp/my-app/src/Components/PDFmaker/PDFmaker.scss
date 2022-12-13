@@ -1,7 +1,6 @@
 .PDFmaker{
-    font-family: "Inter", sans-serif;
+    font-family: "Fira Code", monospace;
     font-weight: 400;
-    color: #000000;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -10,6 +9,16 @@
     align-items: center;
     gap: 2em;
     padding: 2em 0;
+
+    font-size: 1.2em;
+    *{
+        font-family: "Fira Code", monospace;
+    }
+
+    form{
+        font-family: "Fira Code", monospace;
+        color: black;
+    }
 }
 
 .cp_embed_wrapper {

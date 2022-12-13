@@ -12,6 +12,18 @@ export default function SliderFrame({exhibitFrames = [], controls = false, autoP
     }, []);
 
     React.useEffect(() => {
+        
+        if(autoPlay !== -1){
+            const timer = setTimeout(() => {
+                if(index >= exhibitFrames.length - 1) setIndex(0);
+                else setIndex(index + 1);
+                
+            }, autoPlay);
+            return () => clearTimeout(timer);
+        }
+    }, [autoPlay, index, exhibitFrames]);
+
+    React.useEffect(() => {
         let auxIndex = 0;
         const slider = sliderRef?.current.querySelectorAll("li");
         for(let slide of slider){
@@ -36,15 +48,6 @@ export default function SliderFrame({exhibitFrames = [], controls = false, autoP
                     }
                     auxIndex= auxIndex + 1;
                 }
-            }
-
-            if(autoPlay !== -1){
-                const timer = setTimeout(() => {
-                    if(index >= auxIndex - 1) setIndex(0);
-                    else setIndex(index + 1);
-                    
-                }, autoPlay);
-                return () => clearTimeout(timer);
             }
         }
     }, [index]);

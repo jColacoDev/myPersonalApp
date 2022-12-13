@@ -54,6 +54,15 @@ export default function TheRoom({changePerspective}) {
     gallery.map((pic)=> loremPics.push({
         element: <figure><img src={pic.download_url} alt="" /></figure>
     }))
+
+    let myPics = [];
+    for(let aux = 0; aux < 30; aux++){
+        myPics = [...myPics,
+            {
+                element: <figure><img src={require(`./jcolaco.art/pic${aux}.jpg`)} alt="one of my art works" /></figure>
+            },
+        ]
+    }
     
     function calculatePerspective(elementPosition){
 
@@ -148,14 +157,14 @@ export default function TheRoom({changePerspective}) {
     }
 
     return (
-        <div ref={roomRef} className="TheRoom">
+        <div ref={roomRef} className="TheRoom" id="gallery">
             <section className="room">
                 <div className="room-walls"></div>
                 <div onClick={openMysticRoom} className="doorDecor right"></div>
                 <div onClick={openHauntedHause} className="doorDecor left"></div>
                 <div className="frontWall_decor">
                     <div onClick={handleLeftSliderClick}>
-                        <SliderFrame autoPlay={3500} exhibitFrames={loremPics}></SliderFrame>
+                        <SliderFrame autoPlay={5000} exhibitFrames={myPics}></SliderFrame>
                     </div>
                     <div className="signs">
                         <button className="infoSign" onClick={handleMiddleClick}><span>Gallery</span></button>
@@ -163,7 +172,7 @@ export default function TheRoom({changePerspective}) {
                         <button onClick={handleLeftClick}><ExitSign upWord="Haunted" downWord="Room" ></ExitSign></button>
                     </div>
                     <div onClick={handleRightSliderClick}>
-                        <SliderFrame exhibitFrames={exhibitFrames}></SliderFrame>
+                        <SliderFrame autoPlay={3500} exhibitFrames={loremPics}></SliderFrame>
                     </div>
                 </div>
             </section>
