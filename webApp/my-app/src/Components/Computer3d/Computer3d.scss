@@ -208,9 +208,9 @@
     }
     
     @keyframes w2ms2 {
-        0% { background-image: url(), url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
-        33% { background-image: url(), url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
-        75% { background-image: url(), url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
+        0% { background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
+        33% { background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
+        75% { background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
         75% { background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/83/Microsoft_Windows_95_Version_4.00.1111_command.com_MS-DOS_Prompt_492x259.png"), url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
         100% { background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/83/Microsoft_Windows_95_Version_4.00.1111_command.com_MS-DOS_Prompt_492x259.png"), url("https://upload.wikimedia.org/wikipedia/en/e/eb/Windows_95_at_first_run.png"); }
     }

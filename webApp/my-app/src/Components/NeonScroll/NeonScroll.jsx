@@ -26,6 +26,13 @@ return (
 			</div>
 		</div>
 		<div className="content">
+			<h2>E-commerce template webApp</h2>
+			<p>
+                I want to build an App fully responsive with a management interface for displaying and selling products online.
+                <br />From art studios, tattoo shops, clothes or any other product service, a kind of WordPress app maker.
+                <br />Also thought for non-profit organizations like kennels to provide digital support.
+            </p>
+
 			<h2>Condominium Management App</h2>
 			<p>
 				Nowadays most buildings have poor condominium administration due to the lack of transparency. I intent to build an app for condominium management, working as a network for tenants where one can share alerts and oversee all matters related.
