@@ -11,7 +11,8 @@ export default function TextQuote() {
 
     function fetchQuote() {
         // GET request using fetch with error handling
-        fetch("http://localhost:8080/quote")
+        // fetch("http://localhost:8080/quote")
+        fetch("http://jcolaco.dev/api/quote")
             .then(async (response) => {
                 let data = await response.json();
                 setQuote(data.q);

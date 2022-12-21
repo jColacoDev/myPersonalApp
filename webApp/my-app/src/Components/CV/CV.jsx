@@ -282,7 +282,7 @@ return (
                                 <span>Computer and electronics Master</span>
                                 <p>
                                 Leading Engeneering college in Europe and the world, where I've learned physics, mathmatics, programming, algorithms, made long lasting friendships and a object oriented mindset.
-                                I have frozen my enrollment  with one year to conclude. Will be resumed in 2023.
+                                I have frozen my enrollment, will be resumed in 2023.
                                 </p>
                             </article>
 
