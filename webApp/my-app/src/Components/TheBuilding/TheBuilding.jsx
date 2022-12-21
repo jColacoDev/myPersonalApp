@@ -6,6 +6,8 @@ import Sunset from "../Sunset/Sunset"
 import LightSwitch from "../LightSwitch/LightSwitch"
 import GraffitiColorFont from "../GraffitiColorFont/GraffitiColorFont"
 import TheBasement from "./TheBasement/TheBasement"
+import TextHoverPieces from "../TextHoverPieces/TextHoverPieces"
+
 
 export default function TheBuilding() {
     let changePerspective = false;
@@ -22,7 +24,7 @@ export default function TheBuilding() {
         </section>
         <TheRoom changePerspective={changePerspective}></TheRoom>
         <section className="divWall">
-
+          <TextHoverPieces></TextHoverPieces>
         </section>
         <TheBasement></TheBasement>
         <Sunset></Sunset>

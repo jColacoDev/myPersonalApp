@@ -380,7 +380,7 @@ return (
                     <div className="section__body">
                         <article>
                             <h3>Web App Developer</h3>
-                            <p>Developpement JS sur-mesure</p>
+                            <p>I develop software programs, applications, accessible using a web browser designed for interaction with the end user.</p>
                         </article>
                     </div>
                     <div className="section__foot"></div>
@@ -388,19 +388,16 @@ return (
                 <section className="section section--orange section--projects-1">
                     <h2 className="section__title section__title--primary">What drives me</h2>
                     <div className="section__body">
-                        <p><em>Mes outils open-source, exploités en production pour nos clients</em></p>
-                        <ul>
-                            <li><a href="https://github.com/Chmood/quasu" target="_blank" rel="noreferrer">Quasu</a> : starter app pour VueJS / Quasar Framework (<a href="https://www.qwesta-builder.fr/" target="_blank" rel="noreferrer">Qwesta</a>).</li>
-                            <li><a href="https://github.com/webcd/lightwords" target="_blank" rel="noreferrer">Lightwords</a> : starter theme WordPress. Pour sites premium / custom. Basé sur Timber / Twig</li>
-                            <li><a href="https://github.com/Chmood/cyanid" target="_blank" rel="noreferrer">Cyanid</a> : grille CSS Flexbox responsive. Utilisé en production sur des dizaines de sites clients.</li>
-                            <li><a href="https://github.com/webcd/batstroop" target="_blank" rel="noreferrer">Batstroop</a> : framework front-end, en remplacement de Bootstrap (Flexbox, Gulp)</li>
-                        </ul>
+                        <p>
+                            I love developing programs with meaningful impact. I see web app development as a powerful path to create and share over the internet tools to improve everyday tasks.
+                        </p>
                     </div>
                 </section>
                 <section className="section section--primary section--projects-2">
                     <h2 className="section__title section__title--secondary">Hackathons</h2>
                     <div className="section__body">
-                        <p><em>Les applis web que j'ai développées</em></p>
+                        <p><em>With great power comes great responsibility.</em></p>
+                        <p>Participating in hackathons allows me to share and learn from others in projects we develop aiming to make a better future, more sustainable.</p>
                         <ul>
                             <li><a href="taikai.network/en/cityhack/challenges/city-hack-2021/projects/ckp1yk9ak13436020rugdbzyuzmt/idea" target="_blank" rel="noreferrer">
                             Future City2022- Compass Rose</a>
@@ -425,13 +422,39 @@ return (
                 <section className="section section--secondary section--projects-3">
                     <h2 className="section__title section__title--white">Bookmarks</h2>
                     <div className="section__body">
-                        <p><em>Quel dev n'aime pas coder ça&nbsp;? (voir mon <a href="https://github.com/Chmood" target="_blank" rel="noreferrer">github</a> pour les
-                                sources)</em></p>
+                        <p><em>Bookmarks I find useful for web development</em></p>
                         <ul>
-                            <li><a href="https://chmood.github.io/hexgame/" target="_blank" rel="noreferrer">Hexgame</a>, un clone de Advance wars sous WebGL/<a href="https://threejs.org/" target="_blank" rel="noreferrer">ThreeJS</a> et <a href="https://vuejs.org/" target="_blank" rel="noreferrer">Vue.js</a><span className="pill">perso</span></li>
-                            <li><a href="http://chmood.github.io/shmup/dist/" target="_blank" rel="noreferrer">SHMUP</a>, un shoot-em-up avec <a href="http://impactjs.com/" target="_blank" rel="noreferrer">Impact</a><span className="pill">perso</span></li>
-                            <li><a href="https://github.com/Chmood/rotlike" target="_blank" rel="noreferrer">Rot-like</a>, un rogue-like avec <a href="http://ondras.github.io/rot.js/hp/" target="_blank" rel="noreferrer">rot.js</a><span className="pill">perso</span></li>
-                            <li><a href="http://chmood.github.io/cannon-racer/src/" target="_blank" rel="noreferrer">Cannon Racer</a>, Un jeu de course 3D avec Three.js et <a href="http://www.cannonjs.org/" target="_blank" rel="noreferrer">Cannon.js</a> <span className="pill">perso</span></li>
+                            <li><a href="https://caniuse.com/" target="_blank" rel="noreferrer">canIuse</a>
+                                Used to understand how we can improve our web presence.
+                                <span className="pill">perso</span>
+                            </li>
+                            <li><a href="https://seositecheckup.com/" target="_blank" rel="noreferrer">SEOsiteCheckup</a>
+                            </li>
+                            <li><a href="https://cssgridgarden.com/" target="_blank" rel="noreferrer">CSSgridGarden</a>
+                                Games are the best way to learn new skills.                            
+                            </li>
+                            <li><a href="http://www.csszengarden.com/" target="_blank" rel="noreferrer">CSSzenGarden</a>
+                            </li>
+                            <li><a href="https://flexboxfroggy.com/" target="_blank" rel="noreferrer">flexBoxFroggy</a>
+                            </li>
+                            <li><a href="https://sitesee.co/" target="_blank" rel="noreferrer">siteSee</a>
+                                Inspiration web sites to better express ourselves digitally.
+                            </li>
+                            <li><a href="https://siteinspire.com/" target="_blank" rel="noreferrer">siteInspire</a>
+                            </li>
+                            <li><a href="https://unicode-table.com/pt/" target="_blank" rel="noreferrer">unicode-table</a>
+                                Icons characters and images to build content
+                            </li>
+                            <li><a href="https://pngtree.com/" target="_blank" rel="noreferrer">PNG tree</a>
+                            </li>
+                            <li><a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a>
+                            </li>
+                            <li><a href="https://picsum.photos/" target="_blank" rel="noreferrer">Picsum</a>
+                            </li>
+                            <li><a href="https://www.pexels.com/" target="_blank" rel="noreferrer">Pexels</a>
+                            </li>
+                            <li><a href="https://yoksel.github.io/url-encoder/" target="_blank" rel="noreferrer">url-encoder</a>
+                            </li>
                         </ul>
                     </div>
                 </section>
