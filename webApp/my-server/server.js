@@ -9,7 +9,6 @@ const http = require("http");
 const pool = require("./db");
 const fetch = require('node-fetch');
 
-const indexPath = "../my-app/build";
 const limiter = rateLimit({ windowMs: 1000, max: 65 });
 
 const app = express();
@@ -70,8 +69,12 @@ app.get("/quote", function (req, res) {
     fetchQuote(res);
 });
 
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, indexPath, "index.html"));
+// const indexPath = "../my-app/public";
+const indexPath = "webApp";
+app.get("/*", function (req, res) {
+    res.send(path.join(__dirname, indexPath, "index.html"));
+    // res.sendFile(path.join(__dirname, indexPath, "index.html"));
+    // res.redirect('https://app.example.io');
 });
 
 const serverHTTP = http.createServer(app);

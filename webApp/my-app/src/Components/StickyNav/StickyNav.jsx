@@ -61,7 +61,7 @@ export default function StickyNav({pagesData}) {
 
     return (
         <nav className= {`stickyNav hover-underline07 ${displayNav ? "" : "hideNav"}`}>
-            {pagesData[linkIndex].navLinks.map((navLink, i)=>
+            {pagesData[linkIndex]?.navLinks.map((navLink, i)=>
                 <a key={i} href={navLink.ref}>{navLink.label}</a>    
             )}
         </nav>

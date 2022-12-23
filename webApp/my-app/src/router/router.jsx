@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import pagesData from "./pagesData";
@@ -12,9 +13,17 @@ import StickyNav from "../Components/StickyNav/StickyNav";
 import Footer from "../Components/Footer/Footer";
 
 const Router = () => {
-    const pageRoutes = pagesData.map(({ path, title, element }) => {
-        return <Route key={title} path={`/${path}`} element={element} />;
-    });
+    React.useEffect(() => {
+        // console.log(window.location.href)
+    }, []);
+
+    const pageRoutes = <>
+        {pagesData.map(({ path, title, element }) => {
+            return <Route key={title} path={`/${path}`} element={element} />;
+        })}
+        <Route path="*" element={pagesData[0].element}></Route>
+    </>
+    
     const theme = useSelector((state) => state.theme);
 
     return (
@@ -33,7 +42,9 @@ const Router = () => {
                 </div>
                 <StickyNav pagesData={pagesData}/>
                     <div id="RouteStart">
-                        <Routes>{pageRoutes}</Routes>
+                        <Routes>
+                            {pageRoutes}
+                        </Routes>
                     </div>
                 <Footer></Footer>
             </div>

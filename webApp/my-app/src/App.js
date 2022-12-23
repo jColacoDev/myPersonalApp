@@ -5,7 +5,7 @@ import Router from "./router/router";
 
 function App() {
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter basename="/webApp">
             <ParallaxProvider>
                     <Router />
             </ParallaxProvider>

@@ -3,8 +3,8 @@
     "version": "1.6.9",
     "main": "server.js",
     "scripts": {
-        "start-uploadServer": "node uploadServer.js",
-        "start": "node server.js",
+        "uploadServer": "node uploadServer.js",
+        "server": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "jColaco.dev",
