@@ -1,5 +1,4 @@
 import { ParallaxBanner } from "react-scroll-parallax";
-import lxBg from "../../Images/lxBg.png";
 import "./ParallaxBanner1.scss";
 import LogoJcolaco from "../LogoJcolaco/LogoJcolaco";
 
@@ -24,6 +23,7 @@ export const ParallaxBanner1 = () => {
         ),
     };
 
+    const lxBg= process.env.PUBLIC_URL + `/images/lxBg.png`
     const foreground = {
         image: lxBg,
         translateY: [0, 15],

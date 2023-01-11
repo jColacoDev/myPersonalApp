@@ -2,7 +2,6 @@ import React from 'react'
 import { useLocation } from "react-router-dom";
 import "./CV.scss";
 import pagesData from '../../router/pagesData';
-import MyPDF from './jColacoCV.pdf';
 
 export default function CV() {
     const location = useLocation();
@@ -66,7 +65,8 @@ return (
                     <h2 className="user__job">Web developer<br/>Front-end expert<br/>Back-end connoisseur</h2>
                 </section>
                 <section className='downloadButton'>
-                    <a download="jColaco_CV" href={MyPDF}>Download my PDF CV
+                    <a download 
+                        href= {process.env.PUBLIC_URL + '/files/jColaco_CV.pdf'}>Download my PDF CV
                         <figure></figure>
                     </a>
                 </section>
@@ -195,7 +195,7 @@ return (
 <li>Excellent communication skills; both verbal and written</li>
 <li>Willing to update my knowledge and learn new skills to perform efficiently</li>
                             </ul>
-                            <img className='imgWorkflow' src={require("./imgs/agile.png")} alt="agile pic" />
+                            <img className='imgWorkflow' src={process.env.PUBLIC_URL + "/images/agile.png"} alt="agile pic" />
                         </article>
                     </div>
                     <div className="section__foot"></div>
@@ -282,7 +282,7 @@ return (
                                 <span>Computer and electronics Master</span>
                                 <p>
                                 Leading Engeneering college in Europe and the world, where I've learned physics, mathmatics, programming, algorithms, made long lasting friendships and a object oriented mindset.
-                                I have frozen my enrollment, will be resumed in 2023.
+                                I have frozen my enrollment, to be resumed in 2023.
                                 </p>
                             </article>
 
@@ -361,7 +361,8 @@ return (
                     <h2 className="section__title section__title--primary">Web Apps</h2>
                     <div className="section__body">
                         <figure className='underConstruction'>
-                            <img src={require("./../../Images/underConstruction.png")} alt="under Cunstruction" />
+                            <img src={process.env.PUBLIC_URL + "/images/underConstruction.png"}
+                            alt="under Construction" />
                         </figure>
                     </div>
                 </section>
@@ -370,7 +371,8 @@ return (
                     <h2 className="section__title">Electronics</h2>
                     <div className="section__body" style={{paddingBottom: "1.6rem"}}>
                         <figure className='underConstruction'>
-                            <img src={require("./../../Images/underConstruction.png")} alt="under Cunstruction" />
+                            <img src={process.env.PUBLIC_URL + "/images/underConstruction.png"}
+                            alt="under Construction" />
                         </figure>
                     </div>
                 </section>

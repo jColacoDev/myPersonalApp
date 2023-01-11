@@ -59,7 +59,10 @@ export default function TheRoom({changePerspective}) {
     for(let aux = 0; aux < 30; aux++){
         myPics = [...myPics,
             {
-                element: <figure><img src={require(`./jcolaco.art/pic${aux}.jpg`)} alt="one of my art works" /></figure>
+                element: <figure><img alt="one of my art works" 
+                    src={process.env.PUBLIC_URL + 
+                        `/jcolaco_art/pic${aux}.jpg`}
+                /></figure>
             },
         ]
     }

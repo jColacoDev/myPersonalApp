@@ -34,7 +34,7 @@ const Router = () => {
 
             <ThemeToggle themeToggle={theme}></ThemeToggle>
             <MenuButton></MenuButton>
-
+o
             <div className="marginMenu">
                 <div id="landingParallax">
                     <DayNight1 theme={theme}></DayNight1>

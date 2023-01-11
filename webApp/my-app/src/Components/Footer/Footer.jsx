@@ -18,9 +18,9 @@ export default function Footer() {
             </article>
             <article>
                 <h2>Curriculum Vitae</h2>
-                <Link to="#top">CV</Link>
-                <Link to="#top">Portfolio</Link>
-                <Link to="#top">Projects</Link>
+                <Link to="/cv#CV--btn">CV</Link>
+                <Link to="/cv#PORTFOLIO--btn">Portfolio</Link>
+                <Link to="/cv#PROJECTS--btn">Projects</Link>
             </article>
             <article>
                 <Link onClick={handleTopClick}>

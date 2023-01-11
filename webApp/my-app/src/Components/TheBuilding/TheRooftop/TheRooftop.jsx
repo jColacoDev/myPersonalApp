@@ -23,7 +23,7 @@ export default function TheRooftop({changePerspective}) {
 
     const exhibitFrames = [
         {
-            element: <img src={require("./mySunshine.png")} />,
+            element: <img src={process.env.PUBLIC_URL + '/images/building/mySunshine.png'} alt="exhibitFrame" />,
         }
     ];
 
