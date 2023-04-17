@@ -15,7 +15,7 @@ jobs:
             sudo apt-get update
             sudo apt-get -qq install git-ftp
             echo "Deploying project ..."
-            git ftp push --user 'admin@jcolaco.dev' --passwd 'SEZ610ii!!' ftp.jcolaco.dev
+            git ftp push --user 'xxx' --passwd 'xxx' ftp.jcolaco.dev
 
  
 workflows:
